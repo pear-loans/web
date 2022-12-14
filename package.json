@@ -1,0 +1,54 @@
+{
+  "author": "austin@pear.loans",
+  "browserslist": [
+    "> 5% in US and not dead"
+  ],
+  "dependencies": {
+    "@cloudflare/pages-plugin-stytch": "1.0.0",
+    "@solidjs/meta": "0.28.2",
+    "@solidjs/router": "0.5.1",
+    "solid-js": "1.6.4",
+    "solid-toast": "0.3.5",
+    "tailwindcss": "3.2.4",
+    "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "@types/apple-signin-api": "1.5.1",
+    "@types/google-one-tap": "1.2.2",
+    "@typescript-eslint/eslint-plugin": "5.46.0",
+    "@typescript-eslint/parser": "5.46.0",
+    "eslint": "8.29.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-config-standard": "17.0.0",
+    "eslint-config-standard-with-typescript": "23.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
+    "eslint-plugin-n": "15.6.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-simple-import-sort": "8.0.0",
+    "eslint-plugin-solid": "0.9.1",
+    "postcss": "8.4.19",
+    "postcss-lightningcss": "0.6.0",
+    "postcss-variable-compress": "2.0.1",
+    "prettier": "2.8.1",
+    "prettier-plugin-tailwindcss": "0.2.1",
+    "vite": "4.0.0",
+    "vite-plugin-inject-preload": "1.1.2",
+    "vite-plugin-minify": "1.5.2",
+    "vite-plugin-pwa": "0.13.3",
+    "vite-plugin-solid": "2.5.0",
+    "wrangler": "2.6.2"
+  },
+  "name": "pear-loans",
+  "packageManager": "pnpm@7.14.0",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "preview": "vite preview",
+    "prod": "pnpm build && pnpm preview",
+    "upl": "pnpm up --latest"
+  }
+}

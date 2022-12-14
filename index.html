@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="dark relative h-full overflow-x-hidden bg-green-50 text-black dark:bg-black dark:text-green-50"
+>
+  <head>
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      window.theme = localStorage.theme || "device";
+    </script>
+
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Student loan peer-to-peer crowdfunding. List your student loan or help others by donating."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Pear Loans" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pear.loans" />
+    <meta
+      property="og:image"
+      content="https://pear.loans/apple-touch-icon.png"
+    />
+    <meta property="og:image:alt" content="Image of a pear" />
+    <meta name="theme-color" content="#ecfdf5" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link href="https://accounts.google.com" rel="preconnect" crossorigin />
+    <link href="https://appleid.cdn-apple.com" rel="preconnect" crossorigin />
+    <link
+      crossorigin
+      href="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"
+      rel="prefetch"
+    />
+    <link href="https://accounts.google.com/gsi/client" rel="prefetch" />
+    <link href="https://accounts.google.com/gsi/style" rel="prefetch" />
+
+    <style type="text/css">
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      html.dark,
+      html.dark body {
+        @apply bg-black text-green-50;
+      }
+    </style>
+  </head>
+  <body
+    class="relative h-full overflow-x-hidden bg-green-50 text-black [scrollbar-gutter:stable] dark:bg-black dark:text-green-50"
+  >
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src="/src/index.tsx" type="module"></script>
+  </body>
+</html>
