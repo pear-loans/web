@@ -10,8 +10,8 @@ const Button: ParentComponent<{
 
   return (
     <button
-      class={`${classes} ${props.class}`}
-      onClick={props.onClick}
+      class={`${classes} ${props.class ?? ""}`}
+      onClick={(...args) => props.onClick?.(...args)}
       type="button"
       tabindex={props.tabindex}
     >

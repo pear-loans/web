@@ -1,6 +1,6 @@
 import { Title } from "@solidjs/meta";
 import type { Component, ParentProps } from "solid-js";
-import toast from "solid-toast";
+import solidToast from "solid-toast";
 
 import Button from "🍐/components/button";
 import icons from "🍐/config/icons";
@@ -13,7 +13,7 @@ const Account: Component<ParentProps> = () => {
         <Button
           onClick={() => {
             // Sign out here
-            toast("Signed out!", { icon: icons.success });
+            solidToast("Signed out!", { icon: icons.success });
           }}
         >
           Sign Out

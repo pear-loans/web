@@ -12,7 +12,7 @@ const loadThirdParty = async (
 ): Promise<Window["google"] | Window["apple"]> => {
   if (cache.has(src)) return window[id];
 
-  return new Promise<Window["google"] | Window["apple"]>((resolve) => {
+  return await new Promise<Window["google"] | Window["apple"]>((resolve) => {
     const script = document.createElement("script");
     script.src = src;
     script.onload = () => {
@@ -48,7 +48,7 @@ const loadScripts = (): Promise<LoginAPI> | LoginAPI => {
   ]);
 };
 
-const AccountData = () => {
+const AccountData = (): Resource<LoginAPI> => {
   const [data] = createResource<LoginAPI>(loadScripts);
   return data;
 };

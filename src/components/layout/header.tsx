@@ -1,4 +1,3 @@
-import { Title } from "@solidjs/meta";
 import { A } from "@solidjs/router";
 import type { JSX } from "solid-js";
 import { onCleanup } from "solid-js";
@@ -11,7 +10,7 @@ const LINK_CLASSES =
 const ACTIVE_LINK_CLASSES =
   "text-green-50 bg-green-900 dark:text-green-900 dark:bg-green-200";
 
-const Header = () => {
+const Header = (): JSX.Element => {
   const bodyClick: JSX.EventHandler<
     HTMLAnchorElement,
     MouseEvent | TouchEvent
@@ -35,8 +34,6 @@ const Header = () => {
 
   return (
     <header class="max-w-6xl py-1 sm:mx-auto sm:py-3">
-      <Title>Pear Loans</Title>
-
       <nav class="relative flex items-center justify-between gap-x-5 text-green-900 dark:text-green-50 sm:justify-start">
         <A
           class="text-xl font-bold sm:text-2xl"

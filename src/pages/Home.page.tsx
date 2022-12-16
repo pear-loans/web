@@ -1,9 +1,10 @@
 import { Title } from "@solidjs/meta";
+import type { JSX } from "solid-js";
 
 import Button from "🍐/components/button";
 import Link from "🍐/components/link";
 
-const Home = () => (
+const Home = (): JSX.Element => (
   <>
     <Title>Pear Loans: Home Page</Title>
     <section class="space-y-2 rounded-xl bg-gradient-to-bl from-green-100 to-green-200 py-28 text-center dark:from-green-900 dark:to-black sm:py-56">

@@ -1,4 +1,5 @@
 import { Route, Router, Routes } from "@solidjs/router";
+import type { JSX } from "solid-js";
 import { lazy } from "solid-js";
 
 import Header from "🍐/components/layout/header";
@@ -10,7 +11,7 @@ const About = lazy(async () => await import("🍐/pages/About.page"));
 const Account = lazy(async () => await import("🍐/pages/Account.page"));
 const Donate = lazy(async () => await import("🍐/pages/Donate.page"));
 
-const AppRouter = () => (
+const AppRouter = (): JSX.Element => (
   <Router>
     <Header />
     <Main>

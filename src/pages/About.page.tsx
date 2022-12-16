@@ -1,6 +1,7 @@
 import { Title } from "@solidjs/meta";
+import type { JSX } from "solid-js";
 
-const About = () => (
+const About = (): JSX.Element => (
   <>
     <Title>Pear Loans: About Page</Title>
 

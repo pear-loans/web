@@ -21,15 +21,15 @@ const TEXT = {
 const THEME_ORDER: Array<Window["theme"]> = ["device", "dark", "light"];
 
 const ThemeToggle: Component<{ class: string }> = (props) => {
-  const loadedTheme = THEME_ORDER.indexOf(window.theme || "device");
+  const loadedTheme = THEME_ORDER.indexOf(window.theme ?? "device");
   const [themeIndex, setThemeIndex] = createSignal<number>(
     loadedTheme > -1 ? loadedTheme : 0
   );
 
-  const onClick = () => {
+  const onClick = (): void => {
     const currentIndex = themeIndex();
     const nextIndex = (currentIndex + 1) % 3;
-    const nextTheme = THEME_ORDER[nextIndex];
+    const nextTheme = THEME_ORDER[nextIndex] ?? "device";
 
     window.localStorage.setItem("theme", nextTheme);
 
@@ -50,17 +50,20 @@ const ThemeToggle: Component<{ class: string }> = (props) => {
     setThemeIndex(nextIndex);
   };
 
+  const currentTheme = (): "dark" | "device" | "light" =>
+    THEME_ORDER[themeIndex()] ?? "device";
+
   return (
     <button
-      aria-label={TEXT.ARIA[THEME_ORDER[themeIndex()]]}
+      aria-label={TEXT.ARIA[currentTheme()]}
       class={props.class}
       onClick={onClick}
-      title={TEXT.BUTTON[THEME_ORDER[themeIndex()]]}
+      title={TEXT.BUTTON[currentTheme()]}
       type="button"
     >
       <span class="pointer-events-none">
-        {TEXT.THEME[THEME_ORDER[themeIndex()]]}{" "}
-        <span class="sm:sr-only">{TEXT.BUTTON[THEME_ORDER[themeIndex()]]}</span>
+        {TEXT.THEME[currentTheme()]}{" "}
+        <span class="sm:sr-only">{TEXT.BUTTON[currentTheme()]}</span>
       </span>
     </button>
   );

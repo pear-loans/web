@@ -1,12 +1,12 @@
 import { useRouteData } from "@solidjs/router";
-import type { Component, Resource } from "solid-js";
+import type { Component, JSX, Resource } from "solid-js";
 import { Show } from "solid-js";
 
 import type { LoginAPIResource } from "🍐/pages/Account.data";
 
-const renderGoogleButton = (googleObj: Window["google"]) => {
+const renderGoogleButton = (googleObj: Window["google"]): HTMLDivElement => {
   const googleButton = document.createElement("div");
-  googleObj.accounts.id.renderButton(googleButton, {
+  googleObj?.accounts.id.renderButton(googleButton, {
     shape: "circle",
     size: "large",
     text: "continue_with",
@@ -18,7 +18,7 @@ const renderGoogleButton = (googleObj: Window["google"]) => {
 let appleButtonContainer: HTMLDivElement;
 let appleButtonTarget: HTMLDivElement;
 
-const renderAppleButton = (appleObj: Window["apple"]) => {
+const renderAppleButton = (appleObj: Window["apple"]): HTMLDivElement => {
   appleButtonTarget = document.createElement("div");
   appleButtonTarget.id = "appleid-signin";
   appleButtonTarget.dataset.color = "white";
@@ -28,7 +28,7 @@ const renderAppleButton = (appleObj: Window["apple"]) => {
   appleButtonContainer.append(appleButtonTarget);
 
   requestAnimationFrame(() => {
-    appleObj.auth.init({
+    appleObj?.auth.init({
       clientId: "[CLIENT_ID]",
       nonce: "[NONCE]",
       redirectURI: "[REDIRECT_URI]",
@@ -41,7 +41,7 @@ const renderAppleButton = (appleObj: Window["apple"]) => {
   return appleButtonTarget;
 };
 
-const Skeleton = () => (
+const Skeleton = (): JSX.Element => (
   <div class="h-[40px] w-[225px] animate-pulse rounded-full bg-white" />
 );
 
@@ -60,13 +60,13 @@ const Login: Component = () => {
           </span>
         </h1>
         <div class="h-[45px] w-max overflow-hidden">
-          <Show when={data()?.[0]} fallback={<Skeleton />}>
-            {renderGoogleButton(data()?.[0])}
+          <Show when={data?.()?.[0]} fallback={<Skeleton />}>
+            {renderGoogleButton(data?.()?.[0])}
           </Show>
         </div>
         <div class="w-max" ref={appleButtonContainer}>
-          <Show when={data()?.[1]} fallback={<Skeleton />}>
-            {renderAppleButton(data()?.[1])}
+          <Show when={data?.()?.[1]} fallback={<Skeleton />}>
+            {renderAppleButton(data?.()?.[1])}
           </Show>
         </div>
       </div>
