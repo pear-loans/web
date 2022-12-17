@@ -34,7 +34,7 @@ const loadScripts = (): Promise<LoginAPI> | LoginAPI => {
       "https://accounts.google.com/gsi/client",
       "google",
       (google: Window["google"]) => {
-        google.accounts.id.initialize({
+        google?.accounts.id.initialize({
           // callback: handleGoogleResponse,
           client_id: import.meta.env.VITE_GOOGLE_CLIENTID,
         });
