@@ -6,8 +6,8 @@
   "dependencies": {
     "@cloudflare/pages-plugin-stytch": "1.0.0",
     "@solidjs/meta": "0.28.2",
-    "@solidjs/router": "0.5.1",
-    "solid-js": "1.6.5",
+    "@solidjs/router": "0.6.0",
+    "solid-js": "1.6.6",
     "solid-toast": "0.3.5",
     "tailwindcss": "3.2.4",
     "typescript": "4.9.4"
@@ -34,7 +34,7 @@
     "postcss-variable-compress": "2.0.1",
     "prettier": "2.8.1",
     "prettier-plugin-tailwindcss": "0.2.1",
-    "vite": "4.0.2",
+    "vite": "4.0.3",
     "vite-plugin-inject-preload": "1.1.2",
     "vite-plugin-minify": "1.5.2",
     "vite-plugin-pwa": "0.14.0",
