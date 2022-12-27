@@ -1,11 +1,11 @@
 import { Title } from "@solidjs/meta";
-import type { Component, ParentProps } from "solid-js";
+import type { JSX } from "solid-js";
 import solidToast from "solid-toast";
 
 import Button from "🍐/components/button";
 import icons from "🍐/config/icons";
 
-const Account: Component<ParentProps> = () => {
+const Account = (): JSX.Element => {
   return (
     <>
       <Title>Pear Loans: Account Page</Title>
