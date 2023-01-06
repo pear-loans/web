@@ -17,7 +17,7 @@
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "plugins": ["simple-import-sort", "solid", "jsx-a11y"],
+  "plugins": ["prettier", "simple-import-sort", "solid", "jsx-a11y"],
   "rules": {
     "prettier/prettier": "error",
     "simple-import-sort/exports": "error",
