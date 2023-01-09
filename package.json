@@ -32,7 +32,7 @@
     "postcss": "8.4.21",
     "postcss-lightningcss": "0.6.0",
     "postcss-variable-compress": "2.0.1",
-    "prettier": "2.8.1",
+    "prettier": "2.8.2",
     "prettier-plugin-tailwindcss": "0.2.1",
     "vite": "4.0.4",
     "vite-plugin-inject-preload": "1.1.2",
