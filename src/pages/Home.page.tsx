@@ -3,11 +3,12 @@ import type { JSX } from "solid-js";
 
 import Button from "🍐/components/button";
 import Link from "🍐/components/link";
+import Section from "🍐/layout/section";
 
 const Home = (): JSX.Element => (
   <>
     <Title>Pear Loans: Home Page</Title>
-    <section class="space-y-2 rounded-xl bg-gradient-to-bl from-green-100 to-green-200 py-28 text-center dark:from-green-900 dark:to-black sm:py-56">
+    <Section>
       <h1 class="text-4xl font-semibold sm:text-5xl">
         Help out your{" "}
         <abbr
@@ -43,9 +44,9 @@ const Home = (): JSX.Element => (
           <Link href="/account">📝 List</Link>
         </span>
       </div>
-    </section>
+    </Section>
 
-    <section class="space-y-5 py-10 sm:py-20">
+    <Section>
       <h2 class="text-center text-4xl font-semibold sm:text-5xl">
         <span class="inline-block bg-gradient-to-bl from-red-700 to-red-400 bg-clip-text font-extrabold text-transparent dark:from-red-500 dark:to-red-200">
           Student loans
@@ -139,9 +140,9 @@ const Home = (): JSX.Element => (
           </figure>
         </li>
       </ul>
-    </section>
+    </Section>
 
-    <section class="space-y-5 py-10 sm:py-20">
+    <Section>
       <h2 class="text-center text-4xl font-semibold sm:text-5xl">
         <span class="inline-block bg-gradient-to-bl from-green-700 to-emerald-400 bg-clip-text font-extrabold leading-loose text-transparent dark:from-green-500 dark:to-emerald-200">
           Help
@@ -320,7 +321,7 @@ const Home = (): JSX.Element => (
       </div>
 
       <div class="grid grid-cols-1 items-center space-y-5 lg:grid-cols-12 lg:space-x-5">
-        <div class="z-20 space-y-3 rounded-lg bg-gradient-to-bl from-green-100 to-green-300 px-10 py-5 dark:from-green-300 dark:to-green-600 lg:col-span-5 lg:col-start-7 lg:row-start-1 lg:shadow-lg">
+        <div class="z-20 space-y-3 rounded-lg bg-gradient-to-bl  from-green-100 to-green-300 px-10 py-5 dark:from-green-300 dark:to-green-600 lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:shadow-lg">
           <h3 class="text-xl">
             <span class="font-bold text-green-900 dark:text-green-50">
               List
@@ -338,7 +339,7 @@ const Home = (): JSX.Element => (
             </ul>
           </div>
         </div>
-        <div class="z-10 select-none space-y-5 rounded-lg bg-slate-100 p-5 py-2 dark:bg-slate-900 lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:shadow-lg">
+        <div class="z-10 select-none space-y-5 rounded-lg bg-slate-100 p-5 py-2 dark:bg-slate-900 lg:col-span-7 lg:col-start-2 lg:row-start-1 lg:shadow-lg">
           <div class="flex h-10 items-center">
             <div class="mr-4 flex space-x-2">
               <div class="ml-2 h-3 w-3 rounded-full bg-red-500" />
@@ -399,7 +400,7 @@ const Home = (): JSX.Element => (
           </p>
         </div>
       </div>
-    </section>
+    </Section>
   </>
 );
 
