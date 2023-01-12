@@ -5,7 +5,6 @@
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "standard",
     "standard-with-typescript",
     "plugin:solid/typescript",
     "plugin:jsx-a11y/recommended",
