@@ -30,7 +30,9 @@ const Header = (): JSX.Element => {
     list.classList.toggle("!-right-0");
   };
 
-  onCleanup(() => document.body.removeEventListener("click", bodyClick));
+  onCleanup(() => {
+    document.body.removeEventListener("click", bodyClick);
+  });
 
   return (
     <header class="max-w-6xl py-1 sm:mx-auto sm:py-3">

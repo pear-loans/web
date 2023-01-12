@@ -34,7 +34,9 @@ const ThemeToggle: Component<{ class: string }> = (props) => {
     window.localStorage.setItem("theme", nextTheme);
 
     const action = {
-      dark: () => document.documentElement.classList.add("dark"),
+      dark: () => {
+        document.documentElement.classList.add("dark");
+      },
       device: () => {
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
           document.documentElement.classList.add("dark");
@@ -43,7 +45,9 @@ const ThemeToggle: Component<{ class: string }> = (props) => {
         }
         window.localStorage.removeItem("theme");
       },
-      light: () => document.documentElement.classList.remove("dark"),
+      light: () => {
+        document.documentElement.classList.remove("dark");
+      },
     }[nextTheme];
 
     action();
