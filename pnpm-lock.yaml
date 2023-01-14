@@ -6,16 +6,16 @@ dependencies:
     version: 1.0.0
   '@solidjs/meta':
     specifier: 0.28.2
-    version: 0.28.2(solid-js@1.6.8)
+    version: 0.28.2(solid-js@1.6.9)
   '@solidjs/router':
     specifier: 0.6.0
-    version: 0.6.0(solid-js@1.6.8)
+    version: 0.6.0(solid-js@1.6.9)
   solid-js:
-    specifier: 1.6.8
-    version: 1.6.8
+    specifier: 1.6.9
+    version: 1.6.9
   solid-toast:
     specifier: 0.4.0
-    version: 0.4.0(solid-js@1.6.8)
+    version: 0.4.0(solid-js@1.6.9)
   tailwindcss:
     specifier: 3.2.4
     version: 3.2.4(postcss@8.4.21)
@@ -59,7 +59,7 @@ devDependencies:
     version: 15.6.1(eslint@8.31.0)
   eslint-plugin-prettier:
     specifier: 4.2.1
-    version: 4.2.1(eslint-config-prettier@8.6.0)(eslint@8.31.0)(prettier@2.8.2)
+    version: 4.2.1(eslint-config-prettier@8.6.0)(eslint@8.31.0)(prettier@2.8.3)
   eslint-plugin-promise:
     specifier: 6.1.1
     version: 6.1.1(eslint@8.31.0)
@@ -79,11 +79,11 @@ devDependencies:
     specifier: 2.0.1
     version: 2.0.1(postcss@8.4.21)
   prettier:
-    specifier: 2.8.2
-    version: 2.8.2
+    specifier: 2.8.3
+    version: 2.8.3
   prettier-plugin-tailwindcss:
     specifier: 0.2.1
-    version: 0.2.1(prettier@2.8.2)
+    version: 0.2.1(prettier@2.8.3)
   vite:
     specifier: 4.0.4
     version: 4.0.4
@@ -98,7 +98,7 @@ devDependencies:
     version: 0.14.1(vite@4.0.4)
   vite-plugin-solid:
     specifier: 2.5.0
-    version: 2.5.0(solid-js@1.6.8)(vite@4.0.4)
+    version: 2.5.0(solid-js@1.6.9)(vite@4.0.4)
   wrangler:
     specifier: 2.7.1
     version: 2.7.1
@@ -1912,20 +1912,20 @@ packages:
       rollup: 3.10.0
     dev: true
 
-  /@solidjs/meta@0.28.2(solid-js@1.6.8):
+  /@solidjs/meta@0.28.2(solid-js@1.6.9):
     resolution: {integrity: sha512-avlLgBPdk4KVxzRGFlYp/MIJo8B5jVgXPgk6OUnUP8km21Z+ovO+DUd7ZPA7ejv8PBdWi9GE3zCzw8RU2YuV2Q==}
     peerDependencies:
       solid-js: '>=1.4.0'
     dependencies:
-      solid-js: 1.6.8
+      solid-js: 1.6.9
     dev: false
 
-  /@solidjs/router@0.6.0(solid-js@1.6.8):
+  /@solidjs/router@0.6.0(solid-js@1.6.9):
     resolution: {integrity: sha512-7ug2fzXXhvvDBL4CQyMvMM9o3dgBE6PoRh38T8UTmMnYz4rcCfROqSZc9yq+YEC96qWt5OvJgZ1Uj/4EAQXlfA==}
     peerDependencies:
       solid-js: ^1.5.3
     dependencies:
-      solid-js: 1.6.8
+      solid-js: 1.6.9
     dev: false
 
   /@surma/rollup-plugin-off-main-thread@2.2.3:
@@ -2323,8 +2323,8 @@ packages:
       - supports-color
     dev: true
 
-  /babel-preset-solid@1.6.7(@babel/core@7.20.12):
-    resolution: {integrity: sha512-OYPYPX0d1ncf5MGJ7rdb8V1u0BQDaoUAR6LAgR7Cm2hS/BgjGkznrcmpY00Y6RxmQq7n2ozW+hPl2w2k7/v4vg==}
+  /babel-preset-solid@1.6.9(@babel/core@7.20.12):
+    resolution: {integrity: sha512-Dz4xROTGtAZ2B9+79KYUzi/bhjNGsx+8c+AD3VO/Cg1CisM1qq29XsnkWrRJeTMMn3XZkAI/Bf5Rz37d/gvPVQ==}
     peerDependencies:
       '@babel/core': ^7.0.0
     dependencies:
@@ -2368,7 +2368,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001443
+      caniuse-lite: 1.0.30001444
       electron-to-chromium: 1.4.284
       node-releases: 2.0.8
       update-browserslist-db: 1.0.10(browserslist@4.21.4)
@@ -2420,8 +2420,8 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /caniuse-lite@1.0.30001443:
-    resolution: {integrity: sha512-jUo8svymO8+Mkj3qbUbVjR8zv8LUGpGkUM/jKvc9SO2BvjCI980dp9fQbf/dyLs6RascPzgR4nhAKFA4OHeSaA==}
+  /caniuse-lite@1.0.30001444:
+    resolution: {integrity: sha512-ecER9xgJQVMqcrxThKptsW0pPxSae8R2RB87LNa+ivW9ppNWRHEplXcDzkCOP4LYWGj8hunXLqaiC41iBATNyg==}
     dev: true
 
   /chalk@2.4.2:
@@ -2578,7 +2578,7 @@ packages:
     resolution: {integrity: sha512-RdpzE0Hv4lhowpIUKKMJfeH6C1pXdtT1/it80ubgWqwI3qpuxUBpC1S4hnHg+zjnuOoDkzUtUCEEkG+XG5l3Mw==}
     dependencies:
       call-bind: 1.0.2
-      es-get-iterator: 1.1.2
+      es-get-iterator: 1.1.3
       get-intrinsic: 1.1.3
       is-arguments: 1.1.1
       is-array-buffer: 3.0.1
@@ -2730,7 +2730,7 @@ packages:
       is-string: 1.0.7
       is-typed-array: 1.1.10
       is-weakref: 1.0.2
-      object-inspect: 1.12.2
+      object-inspect: 1.12.3
       object-keys: 1.1.1
       object.assign: 4.1.4
       regexp.prototype.flags: 1.4.3
@@ -2742,8 +2742,8 @@ packages:
       which-typed-array: 1.1.9
     dev: true
 
-  /es-get-iterator@1.1.2:
-    resolution: {integrity: sha512-+DTO8GYwbMCwbywjimwZMHp8AuYXOS2JZFWoi2AlPOS3ebnII9w/NLpNZtA7A0YLaVDw+O7KFCeoIV7OPvM7hQ==}
+  /es-get-iterator@1.1.3:
+    resolution: {integrity: sha512-sPZmqHBe6JIiTfN5q2pEi//TwxmAFHwj/XEuYjTuse78i8KxaqMTTzxPoFKuzRpDpTJ+0NAbpfenkmH2rePtuw==}
     dependencies:
       call-bind: 1.0.2
       get-intrinsic: 1.1.3
@@ -2753,6 +2753,7 @@ packages:
       is-set: 2.0.2
       is-string: 1.0.7
       isarray: 2.0.5
+      stop-iteration-iterator: 1.0.0
     dev: true
 
   /es-set-tostringtag@2.0.1:
@@ -3223,7 +3224,7 @@ packages:
       semver: 7.3.8
     dev: true
 
-  /eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.6.0)(eslint@8.31.0)(prettier@2.8.2):
+  /eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.6.0)(eslint@8.31.0)(prettier@2.8.3):
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -3236,7 +3237,7 @@ packages:
     dependencies:
       eslint: 8.31.0
       eslint-config-prettier: 8.6.0(eslint@8.31.0)
-      prettier: 2.8.2
+      prettier: 2.8.3
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -4456,8 +4457,8 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /object-inspect@1.12.2:
-    resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
+  /object-inspect@1.12.3:
+    resolution: {integrity: sha512-geUvdk7c+eizMNUDkRpW1wJwgfOiOeHbxBR/hLXK1aT6zmVSO0jsQcs7fj6MGw89jC/cjGfLcNOrtMYtGqm81g==}
     dev: true
 
   /object-is@1.1.5:
@@ -4728,17 +4729,17 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier-plugin-tailwindcss@0.2.1(prettier@2.8.2):
+  /prettier-plugin-tailwindcss@0.2.1(prettier@2.8.3):
     resolution: {integrity: sha512-aIO8IguumORyRsmT+E7JfJ3A9FEoyhqZR7Au7TBOege3VZkgMvHJMkufeYp4zjnDK2iq4ktkvGMNOQR9T8lisQ==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
       prettier: '>=2.2.0'
     dependencies:
-      prettier: 2.8.2
+      prettier: 2.8.3
     dev: true
 
-  /prettier@2.8.2:
-    resolution: {integrity: sha512-BtRV9BcncDyI2tsuS19zzhzoxD8Dh8LiCx7j7tHzrkz8GFXAexeWFdi22mjE1d16dftH2qNaytVxqiRTGlMfpw==}
+  /prettier@2.8.3:
+    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -4995,7 +4996,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       get-intrinsic: 1.1.3
-      object-inspect: 1.12.2
+      object-inspect: 1.12.3
     dev: true
 
   /signal-exit@3.0.7:
@@ -5012,12 +5013,12 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /solid-js@1.6.8:
-    resolution: {integrity: sha512-+X5rf4bL3Il/LI2pn6O2d63D/KyG8Shxj3DM6violSPOhRgm5ln37Pq6uVDAvJcmsObOBeGOjXAwZvqwyZjisg==}
+  /solid-js@1.6.9:
+    resolution: {integrity: sha512-kV3fMmm+1C2J95c8eDOPKGfZHnuAkHUBLG4hX1Xu08bXeAIPqmxuz/QdH3B8SIdTp3EatBVIyA6RCes3hrGzpg==}
     dependencies:
       csstype: 3.1.1
 
-  /solid-refresh@0.4.2(solid-js@1.6.8):
+  /solid-refresh@0.4.2(solid-js@1.6.9):
     resolution: {integrity: sha512-6g1HsgQkY0X0ZmsaydNgHwRaQIhH3bAbagZiYwWnGO7mqli50ehlwQUN18RZ2MH3fTIs9Y1bankZapVhMVuijg==}
     peerDependencies:
       solid-js: ^1.3
@@ -5025,15 +5026,15 @@ packages:
       '@babel/generator': 7.20.7
       '@babel/helper-module-imports': 7.18.6
       '@babel/types': 7.20.7
-      solid-js: 1.6.8
+      solid-js: 1.6.9
     dev: true
 
-  /solid-toast@0.4.0(solid-js@1.6.8):
+  /solid-toast@0.4.0(solid-js@1.6.9):
     resolution: {integrity: sha512-ciJbj+n+7KbUN6wfwZsW7lqFESLoQ9sXMG4uJWuHrIw2f0GxX3/wLSKs0Q1YwdTZZRxyRJ1Nwc2eBVcJvs91+g==}
     peerDependencies:
       solid-js: ^1.5.4
     dependencies:
-      solid-js: 1.6.8
+      solid-js: 1.6.9
     dev: false
 
   /source-map-js@1.0.2:
@@ -5071,6 +5072,13 @@ packages:
 
   /stack-trace@0.0.10:
     resolution: {integrity: sha512-KGzahc7puUKkzyMt+IqAep+TVNbKP+k2Lmwhub39m1AsTSkaDutx56aDCo+HLDzf/D26BIHTJWNiTG1KAJiQCg==}
+    dev: true
+
+  /stop-iteration-iterator@1.0.0:
+    resolution: {integrity: sha512-iCGQj+0l0HOdZ2AEeBADlsRC+vsnDsZsbdSiH1yNSjcfKM7fdpCMfqAL/dwF5BLiw/XhRft/Wax6zQbhq2BcjQ==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      internal-slot: 1.0.4
     dev: true
 
   /streamsearch@1.1.0:
@@ -5452,7 +5460,7 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-solid@2.5.0(solid-js@1.6.8)(vite@4.0.4):
+  /vite-plugin-solid@2.5.0(solid-js@1.6.9)(vite@4.0.4):
     resolution: {integrity: sha512-VneGd3RyFJvwaiffsqgymeMaofn0IzQLPwDzafTV2f1agoWeeJlk5VrI5WqT9BTtLe69vNNbCJWqLhHr9fOdDw==}
     peerDependencies:
       solid-js: ^1.3.17 || ^1.4.0 || ^1.5.0 || ^1.6.0
@@ -5460,10 +5468,10 @@ packages:
     dependencies:
       '@babel/core': 7.20.12
       '@babel/preset-typescript': 7.18.6(@babel/core@7.20.12)
-      babel-preset-solid: 1.6.7(@babel/core@7.20.12)
+      babel-preset-solid: 1.6.9(@babel/core@7.20.12)
       merge-anything: 5.1.4
-      solid-js: 1.6.8
-      solid-refresh: 0.4.2(solid-js@1.6.8)
+      solid-js: 1.6.9
+      solid-refresh: 0.4.2(solid-js@1.6.9)
       vite: 4.0.4
       vitefu: 0.2.4(vite@4.0.4)
     transitivePeerDependencies:
