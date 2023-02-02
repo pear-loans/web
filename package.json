@@ -4,23 +4,23 @@
     "> 5% in US and not dead"
   ],
   "dependencies": {
-    "@cloudflare/pages-plugin-stytch": "1.0.0",
+    "@cloudflare/pages-plugin-stytch": "1.0.1",
     "@solidjs/meta": "0.28.2",
     "@solidjs/router": "0.7.0",
-    "solid-js": "1.6.9",
+    "solid-js": "1.6.10",
     "solid-toast": "0.4.0",
     "tailwindcss": "3.2.4",
-    "typescript": "4.9.4"
+    "typescript": "4.9.5"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "4.20230115.0",
     "@types/apple-signin-api": "1.5.1",
     "@types/google-one-tap": "1.2.2",
-    "@typescript-eslint/eslint-plugin": "5.49.0",
-    "@typescript-eslint/parser": "5.49.0",
+    "@typescript-eslint/eslint-plugin": "5.50.0",
+    "@typescript-eslint/parser": "5.50.0",
     "eslint": "8.33.0",
     "eslint-config-prettier": "8.6.0",
-    "eslint-config-standard-with-typescript": "33.0.0",
+    "eslint-config-standard-with-typescript": "34.0.0",
     "eslint-import-resolver-typescript": "3.5.3",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jsx-a11y": "6.7.1",
@@ -40,7 +40,7 @@
     "vite-plugin-pwa": "0.14.1",
     "vite-plugin-solid": "2.5.0",
     "vitest": "0.28.3",
-    "wrangler": "2.8.1"
+    "wrangler": "2.9.0"
   },
   "name": "pear-loans",
   "packageManager": "pnpm@7.14.0",
