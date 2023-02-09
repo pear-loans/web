@@ -25,7 +25,7 @@ const renderAppleButton = (appleObj: Window["apple"]): HTMLDivElement => {
   appleButtonTarget.dataset.type = "continue";
   appleButtonTarget.dataset.width = "200";
   appleButtonTarget.dataset.height = "40";
-  appleButtonContainer.append(appleButtonTarget);
+  appleButtonContainer.appendChild(appleButtonTarget);
 
   requestAnimationFrame(() => {
     appleObj?.auth.init({
