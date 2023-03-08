@@ -25,8 +25,8 @@ dependencies:
 
 devDependencies:
   '@cloudflare/workers-types':
-    specifier: 4.20230228.0
-    version: 4.20230228.0
+    specifier: 4.20230307.0
+    version: 4.20230307.0
   '@types/apple-signin-api':
     specifier: 1.5.1
     version: 1.5.1
@@ -70,8 +70,8 @@ devDependencies:
     specifier: 10.0.0
     version: 10.0.0(eslint@8.35.0)
   eslint-plugin-solid:
-    specifier: 0.10.0
-    version: 0.10.0(eslint@8.35.0)(typescript@5.0.1-rc)
+    specifier: 0.11.0
+    version: 0.11.0(eslint@8.35.0)(typescript@5.0.1-rc)
   postcss:
     specifier: 8.4.21
     version: 8.4.21
@@ -106,8 +106,8 @@ devDependencies:
     specifier: 0.29.2
     version: 0.29.2
   wrangler:
-    specifier: 2.12.0
-    version: 2.12.0
+    specifier: 2.12.1
+    version: 2.12.1
 
 packages:
 
@@ -1337,8 +1337,8 @@ packages:
       cookie: 0.5.0
     dev: false
 
-  /@cloudflare/workers-types@4.20230228.0:
-    resolution: {integrity: sha512-tDaqH3DrKmDoe/YrCnzVSqjNH6GnUOOajv2Ztj2h7BPLFyYTb81iCkARgb+G4bpxhn7y4f1KxxDT2+Yp4rt7Hg==}
+  /@cloudflare/workers-types@4.20230307.0:
+    resolution: {integrity: sha512-Go968aDDcqONHQcUdgIiPRkPdT4QTzD0ecHJsI1u7ZiHPMOoZn+Dy7hYsdUJ5ldX9wTZDrICBM1rDKTRaDUitg==}
     dev: true
 
   /@esbuild-plugins/node-globals-polyfill@0.1.1(esbuild@0.16.3):
@@ -2682,8 +2682,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001460
-      electron-to-chromium: 1.4.321
+      caniuse-lite: 1.0.30001462
+      electron-to-chromium: 1.4.323
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10(browserslist@4.21.5)
     dev: true
@@ -2739,8 +2739,8 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /caniuse-lite@1.0.30001460:
-    resolution: {integrity: sha512-Bud7abqjvEjipUkpLs4D7gR0l8hBYBHoa+tGtKJHvT2AYzLp1z7EmVkUT4ERpVUfca8S2HGIVs883D8pUH1ZzQ==}
+  /caniuse-lite@1.0.30001462:
+    resolution: {integrity: sha512-PDd20WuOBPiasZ7KbFnmQRyuLE7cFXW2PVd7dmALzbkUXEP46upAuCDm9eY9vho8fgNMGmbAX92QBZHzcnWIqw==}
     dev: true
 
   /chai@4.3.7:
@@ -3047,8 +3047,8 @@ packages:
       jake: 10.8.5
     dev: true
 
-  /electron-to-chromium@1.4.321:
-    resolution: {integrity: sha512-ERuAqNq7YknVY3+47VbB+Q92kWH7O7sX3mkZINqZtsGJMQFb0dj71d5U3PRTihX03qt2NWIfZic2CCcGXOHJ7A==}
+  /electron-to-chromium@1.4.323:
+    resolution: {integrity: sha512-+a0hMEQxE8u1F1vOHcE0M18kQ2+4AwOXdRrU4avZ1LeR/sa9WAallYE3uES/PNcEGt/wCFcOgWcArSLx5C+WNQ==}
     dev: true
 
   /emoji-regex@9.2.2:
@@ -3440,8 +3440,8 @@ packages:
       eslint: 8.35.0
     dev: true
 
-  /eslint-plugin-solid@0.10.0(eslint@8.35.0)(typescript@5.0.1-rc):
-    resolution: {integrity: sha512-x8Jpe1EI44neuMuXG8safkIHWozkjJ2UCi9k6204OYL5sK+1+fSOOHuwd9i6bG2NcHV49SIykG3rbZCuojwtfA==}
+  /eslint-plugin-solid@0.11.0(eslint@8.35.0)(typescript@5.0.1-rc):
+    resolution: {integrity: sha512-3ve6IpEtl8nOvJnjaJACqlBmv449l6dMMhMczjQWvvLlRqkzLemgsJ9H+Isu8GLSBTNxDIm5oSKx/lO2j8vKbA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -6205,8 +6205,8 @@ packages:
       workbox-core: 6.5.4
     dev: true
 
-  /wrangler@2.12.0:
-    resolution: {integrity: sha512-yAqv3JbJqkB1oaciI2CGEiEscQ98BXaFN+Z7VbWuepMqVL2UV2wUjA2mJLjWuoZOwSmC74MsDzZ+5hzDs/2Nkg==}
+  /wrangler@2.12.1:
+    resolution: {integrity: sha512-u0GNyPRc6oabd7dQf8BSj1ztJtDlvvHJMVTuCuFDUFbQQKCDXmCnlLk/ZzPE0sfBsMH9LdyMqx4inRiJt6LbjQ==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     dependencies:
