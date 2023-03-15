@@ -11,10 +11,7 @@ const ACTIVE_LINK_CLASSES =
   "text-green-50 bg-green-900 dark:text-green-900 dark:bg-green-200";
 
 const Header = (): JSX.Element => {
-  const bodyClick: JSX.EventHandler<
-    HTMLAnchorElement,
-    MouseEvent | TouchEvent
-  > = (e) => {
+  const bodyClick: EventListener = (e) => {
     if (!e.isTrusted || e.target instanceof HTMLButtonElement) return;
     list.classList.remove("!-right-0");
     document.body.removeEventListener("click", bodyClick);
