@@ -97,8 +97,8 @@ devDependencies:
     specifier: 1.5.2
     version: 1.5.2(vite@4.2.1)
   vite-plugin-pwa:
-    specifier: 0.14.5
-    version: 0.14.5(vite@4.2.1)
+    specifier: 0.14.6
+    version: 0.14.6(vite@4.2.1)
   vite-plugin-solid:
     specifier: 2.6.1
     version: 2.6.1(solid-js@1.6.15)(vite@4.2.1)
@@ -1766,8 +1766,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@eslint-community/regexpp@4.4.0:
-    resolution: {integrity: sha512-A9983Q0LnDGdLPjxyXQ00sbV+K+O+ko2Dr+CZigbHWtX9pNfxlaBkMR8X1CztI73zuEyEBXTVjx7CE+/VSwDiQ==}
+  /@eslint-community/regexpp@4.4.1:
+    resolution: {integrity: sha512-BISJ6ZE4xQsuL/FmsyRaiffpq977bMlsKfGHTQrOGFErfByxIe6iZTxPf/00Zon9b9a7iUykfQwejN3s2ZW/Bw==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
     dev: true
 
@@ -2105,7 +2105,7 @@ packages:
       rollup: 2.79.1
     dev: true
 
-  /@rollup/plugin-replace@5.0.2(rollup@3.20.0):
+  /@rollup/plugin-replace@5.0.2(rollup@3.20.1):
     resolution: {integrity: sha512-M9YXNekv/C/iHHK+cvORzfRYfPbq0RDD8r0G+bMiTXjNGKulPnCT9O3Ss46WfhI6ZOCgApOP7xAdmCQJ+U2LAA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -2114,9 +2114,9 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@rollup/pluginutils': 5.0.2(rollup@3.20.0)
+      '@rollup/pluginutils': 5.0.2(rollup@3.20.1)
       magic-string: 0.27.0
-      rollup: 3.20.0
+      rollup: 3.20.1
     dev: true
 
   /@rollup/pluginutils@3.1.0(rollup@2.79.1):
@@ -2131,7 +2131,7 @@ packages:
       rollup: 2.79.1
     dev: true
 
-  /@rollup/pluginutils@5.0.2(rollup@3.20.0):
+  /@rollup/pluginutils@5.0.2(rollup@3.20.1):
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -2143,7 +2143,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
-      rollup: 3.20.0
+      rollup: 3.20.1
     dev: true
 
   /@solidjs/meta@0.28.2(solid-js@1.6.15):
@@ -2273,7 +2273,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@eslint-community/regexpp': 4.4.0
+      '@eslint-community/regexpp': 4.4.1
       '@typescript-eslint/parser': 5.56.0(eslint@8.36.0)(typescript@5.0.2)
       '@typescript-eslint/scope-manager': 5.56.0
       '@typescript-eslint/type-utils': 5.56.0(eslint@8.36.0)(typescript@5.0.2)
@@ -2705,7 +2705,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001469
-      electron-to-chromium: 1.4.336
+      electron-to-chromium: 1.4.337
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10(browserslist@4.21.5)
     dev: true
@@ -3069,8 +3069,8 @@ packages:
       jake: 10.8.5
     dev: true
 
-  /electron-to-chromium@1.4.336:
-    resolution: {integrity: sha512-yLaoSY/ngjgRpEGU4ueeW0vlj456idQBn74r6s1yutoOIadvd7rwt05TGenPj0PoetJ5pEHomVkmfTdIgqPfJw==}
+  /electron-to-chromium@1.4.337:
+    resolution: {integrity: sha512-W8gdzXG86mVPoc56eM8YA+QiLxaAxJ8cmDjxZgfhLLWVvZQxyA918w5tX2JEWApZta45T1/sYcmFHTsTOUE3nw==}
     dev: true
 
   /emoji-regex@9.2.2:
@@ -3535,7 +3535,7 @@ packages:
     hasBin: true
     dependencies:
       '@eslint-community/eslint-utils': 4.3.0(eslint@8.36.0)
-      '@eslint-community/regexpp': 4.4.0
+      '@eslint-community/regexpp': 4.4.1
       '@eslint/eslintrc': 2.0.1
       '@eslint/js': 8.36.0
       '@humanwhocodes/config-array': 0.11.8
@@ -5236,8 +5236,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /rollup@3.20.0:
-    resolution: {integrity: sha512-YsIfrk80NqUDrxrjWPXUa7PWvAfegZEXHuPsEZg58fGCdjL1I9C1i/NaG+L+27kxxwkrG/QEDEQc8s/ynXWWGQ==}
+  /rollup@3.20.1:
+    resolution: {integrity: sha512-sz2w8cBJlWQ2E17RcpvHuf4sk2BQx4tfKDnjNPikEpLEevrbIAR7CH3PGa2hpPwWbNgPaA9yh9Jzljds5bc9zg==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
@@ -5856,16 +5856,16 @@ packages:
       vite: 4.2.1
     dev: true
 
-  /vite-plugin-pwa@0.14.5(vite@4.2.1):
-    resolution: {integrity: sha512-LH3VCtoWx0scfim8Ph+daVl45uVRyWzXn3C3GUq92uWUui1p8eh+DjTQ23Pvb7SJ0SJtxZ99LCpOLCkFkaxokg==}
+  /vite-plugin-pwa@0.14.6(vite@4.2.1):
+    resolution: {integrity: sha512-3mqbkjvSF89pCSZyXAbv6AO4gYKYZel0rcpBgWOWqEupoBOZF9oHDdgHc+FgjmvQXxuU2k9aEFOfRCMGorV+4Q==}
     peerDependencies:
       vite: ^3.1.0 || ^4.0.0
     dependencies:
-      '@rollup/plugin-replace': 5.0.2(rollup@3.20.0)
+      '@rollup/plugin-replace': 5.0.2(rollup@3.20.1)
       debug: 4.3.4
       fast-glob: 3.2.12
       pretty-bytes: 6.1.0
-      rollup: 3.20.0
+      rollup: 3.20.1
       vite: 4.2.1
       workbox-build: 6.5.4
       workbox-window: 6.5.4
@@ -5921,7 +5921,7 @@ packages:
       esbuild: 0.17.12
       postcss: 8.4.21
       resolve: 1.22.1
-      rollup: 3.20.0
+      rollup: 3.20.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -5955,7 +5955,7 @@ packages:
       esbuild: 0.17.12
       postcss: 8.4.21
       resolve: 1.22.1
-      rollup: 3.20.0
+      rollup: 3.20.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true

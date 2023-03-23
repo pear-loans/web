@@ -1,6 +1,4 @@
 import { defineConfig } from "vite";
-// Keep an 👀 on this repo.
-// import ClassMangler from "vite-plugin-class-mangler";
 import pluginPreload from "vite-plugin-inject-preload";
 import pluginMinify from "vite-plugin-minify";
 import { VitePWA } from "vite-plugin-pwa";
@@ -60,13 +58,6 @@ export default defineConfig({
       sortAttributes: true,
       sortClassNames: true,
     }),
-    // ClassMangler({
-    //   dev: true,
-    //   min: 2,
-    //   max: 6,
-    //   length: 8,
-    //   suffixes: [".tsx", ".html"],
-    // }),
   ],
   resolve: {
     alias: [
