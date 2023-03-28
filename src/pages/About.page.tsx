@@ -5,7 +5,7 @@ const About = (): JSX.Element => (
   <>
     <Title>Pear Loans: About Page</Title>
 
-    <section class="mx-auto max-w-6xl px-5 pt-20 pb-10">
+    <section class="mx-auto max-w-6xl px-5 pb-10 pt-20">
       <p>
         If you've come across this page, hello! 👋 Welcome to{" "}
         <abbr title="🍐 Loans, Peer Loans">Pear Loans.</abbr>

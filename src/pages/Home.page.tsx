@@ -57,7 +57,7 @@ const Home = (): JSX.Element => (
         </span>
       </h2>
       <ul class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
-        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-500 py-5 px-3 text-center text-red-100 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-200 dark:text-red-900 dark:hover:border-red-200">
+        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-500 px-3 py-5 text-center text-red-100 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-200 dark:text-red-900 dark:hover:border-red-200">
           <figure>
             <div class="text-4xl">💰</div>
             <blockquote>
@@ -66,7 +66,7 @@ const Home = (): JSX.Element => (
             </blockquote>
           </figure>
         </li>
-        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-300 py-5 px-3 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:text-red-900 dark:hover:border-red-200">
+        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-300 px-3 py-5 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:text-red-900 dark:hover:border-red-200">
           <figure>
             <div class="text-4xl">💳</div>
             <blockquote>
@@ -75,7 +75,7 @@ const Home = (): JSX.Element => (
             </blockquote>
           </figure>
         </li>
-        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-300 py-5 px-3 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-800 dark:text-red-200 dark:hover:border-red-200">
+        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-300 px-3 py-5 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-800 dark:text-red-200 dark:hover:border-red-200">
           <figure>
             <div class="text-4xl">💸</div>
             <blockquote>
@@ -84,7 +84,7 @@ const Home = (): JSX.Element => (
             </blockquote>
           </figure>
         </li>
-        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-200 py-5 px-3 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-600 dark:text-red-200 dark:hover:border-red-200">
+        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-200 px-3 py-5 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-600 dark:text-red-200 dark:hover:border-red-200">
           <figure>
             <div class="text-4xl">🧑‍🎓</div>
             <blockquote>
@@ -93,7 +93,7 @@ const Home = (): JSX.Element => (
             </blockquote>
           </figure>
         </li>
-        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-900 py-5 px-3 text-center text-red-100 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-200 dark:text-red-900 dark:hover:border-red-200">
+        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-900 px-3 py-5 text-center text-red-100 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-200 dark:text-red-900 dark:hover:border-red-200">
           <figure>
             <div class="text-4xl">🎓</div>
             <blockquote>
@@ -102,7 +102,7 @@ const Home = (): JSX.Element => (
             </blockquote>
           </figure>
         </li>
-        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-500 py-5 px-3 text-center text-red-100 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-200 dark:text-red-900 dark:hover:border-red-200">
+        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-500 px-3 py-5 text-center text-red-100 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-200 dark:text-red-900 dark:hover:border-red-200">
           <figure>
             <div class="text-4xl">📉</div>
             <blockquote>
@@ -111,7 +111,7 @@ const Home = (): JSX.Element => (
             </blockquote>
           </figure>
         </li>
-        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-300 py-5 px-3 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:text-red-900 dark:hover:border-red-200">
+        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-300 px-3 py-5 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:text-red-900 dark:hover:border-red-200">
           <figure>
             <div class="text-4xl">📈</div>
 
@@ -121,7 +121,7 @@ const Home = (): JSX.Element => (
             </blockquote>
           </figure>
         </li>
-        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-300 py-5 px-3 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-800 dark:text-red-200 dark:hover:border-red-200">
+        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-300 px-3 py-5 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-800 dark:text-red-200 dark:hover:border-red-200">
           <figure>
             <div class="text-4xl">👨‍👩‍👧‍👦</div>
             <blockquote>
@@ -130,7 +130,7 @@ const Home = (): JSX.Element => (
             </blockquote>
           </figure>
         </li>
-        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-200 py-5 px-3 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-600 dark:text-red-200 dark:hover:border-red-200">
+        <li class="flex h-full items-center justify-center rounded-xl border border-solid border-transparent bg-red-200 px-3 py-5 text-center text-red-900 transition-transform hover:scale-110 hover:border-red-900 dark:bg-red-600 dark:text-red-200 dark:hover:border-red-200">
           <figure>
             <div class="text-4xl">🏦</div>
             <blockquote>
@@ -189,8 +189,8 @@ const Home = (): JSX.Element => (
               <div class="h-3 w-3 rounded-full bg-green-500" />
             </div>
             <div class="flex space-x-2">
-              <div class="h-2.5 w-2.5 -rotate-[135deg] border-t-[1.5px] border-r-[1.5px] border-slate-600 dark:border-slate-300" />
-              <div class="h-2.5 w-2.5 rotate-45 border-t-[1.5px] border-r-[1.5px] border-slate-300 dark:border-slate-600" />
+              <div class="h-2.5 w-2.5 -rotate-[135deg] border-r-[1.5px] border-t-[1.5px] border-slate-600 dark:border-slate-300" />
+              <div class="h-2.5 w-2.5 rotate-45 border-r-[1.5px] border-t-[1.5px] border-slate-300 dark:border-slate-600" />
             </div>
             <div class="flex-1">
               <div class="mx-auto w-[85%] rounded-md bg-slate-200 py-1 text-center text-sm text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300 lg:w-[75%]">
@@ -347,8 +347,8 @@ const Home = (): JSX.Element => (
               <div class="h-3 w-3 rounded-full bg-green-500" />
             </div>
             <div class="flex space-x-2">
-              <div class="h-2.5 w-2.5 -rotate-[135deg] border-t-[1.5px] border-r-[1.5px] border-slate-600 dark:border-slate-300" />
-              <div class="h-2.5 w-2.5 rotate-45 border-t-[1.5px] border-r-[1.5px] border-slate-300 dark:border-slate-600" />
+              <div class="h-2.5 w-2.5 -rotate-[135deg] border-r-[1.5px] border-t-[1.5px] border-slate-600 dark:border-slate-300" />
+              <div class="h-2.5 w-2.5 rotate-45 border-r-[1.5px] border-t-[1.5px] border-slate-300 dark:border-slate-600" />
             </div>
             <div class="flex-1">
               <div class="mx-auto w-[85%] rounded-md bg-slate-200 py-1 text-center text-sm text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300 lg:w-[75%]">
@@ -357,7 +357,7 @@ const Home = (): JSX.Element => (
               </div>
             </div>
           </div>
-          <figure class="p-5 pt-3 pb-0">
+          <figure class="p-5 pb-0 pt-3">
             <figcaption class="flex space-x-3">
               <div class="flex h-20 w-20 items-center justify-center rounded-full border border-green-600 bg-gradient-to-bl from-green-100 to-green-300 p-5 text-3xl dark:from-green-500 dark:to-emerald-200">
                 🥸
@@ -376,7 +376,7 @@ const Home = (): JSX.Element => (
             </figcaption>
           </figure>
           <div class="flex flex-col items-center justify-center space-x-3 space-y-3 sm:flex-row sm:space-y-0">
-            <h3 class="rounded-full bg-slate-200 py-2 px-3 text-3xl dark:bg-slate-700">
+            <h3 class="rounded-full bg-slate-200 px-3 py-2 text-3xl dark:bg-slate-700">
               <span class="bg-gradient-to-bl from-green-700 to-emerald-400 bg-clip-text font-extrabold text-transparent decoration-green-500 dark:from-green-500 dark:to-emerald-200">
                 $14,395.14
               </span>

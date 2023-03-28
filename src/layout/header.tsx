@@ -6,7 +6,7 @@ import ThemeToggle from "🍐/components/layout/theme-toggle";
 
 let list: HTMLUListElement;
 const LINK_CLASSES =
-  "border-transparent border rounded-xl py-2 px-3 no-underline inline-block hover:bg-green-100 hover:border-green-700 hover:text-green-800 dark:hover:bg-green-900 dark:hover:border-green-300 dark:hover:text-green-50";
+  "border border-transparent rounded-xl py-2 px-3 no-underline inline-block hover:bg-green-100 hover:border-green-700 hover:text-green-800 dark:hover:bg-green-900 dark:hover:border-green-300 dark:hover:text-green-50";
 const ACTIVE_LINK_CLASSES =
   "text-green-50 bg-green-900 dark:text-green-900 dark:bg-green-200";
 
@@ -52,7 +52,7 @@ const Header = (): JSX.Element => {
           📃 Menu
         </button>
         <ul
-          class="absolute -right-64 top-11 z-30 flex grow flex-col justify-between gap-y-5 gap-x-5 rounded-bl-xl bg-green-50 p-1 transition-direction dark:bg-black sm:static sm:flex-row sm:bg-transparent sm:p-0"
+          class="transition-direction absolute -right-64 top-11 z-30 flex grow flex-col justify-between gap-x-5 gap-y-5 rounded-bl-xl bg-green-50 p-1 dark:bg-black sm:static sm:flex-row sm:bg-transparent sm:p-0"
           ref={list}
         >
           <li>
