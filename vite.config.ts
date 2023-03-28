@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import pluginPreload from "vite-plugin-inject-preload";
+import lightningcss from "vite-plugin-lightningcss";
 import pluginMinify from "vite-plugin-minify";
 import { VitePWA } from "vite-plugin-pwa";
 import pluginSolid from "vite-plugin-solid";
@@ -46,6 +47,10 @@ export default defineConfig({
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
       },
+    }),
+    lightningcss({
+      browserslist: "> 5% in US and not dead",
+      sourceMap: false,
     }),
     pluginMinify({
       collapseWhitespace: true,
