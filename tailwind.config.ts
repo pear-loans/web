@@ -1,6 +1,6 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from "tailwindcss";
 
-module.exports = {
+export default {
   content: ["./index.html", "./src/**/*.tsx"],
   darkMode: "class",
   experimental: "all",
@@ -12,4 +12,4 @@ module.exports = {
       },
     },
   },
-};
+} satisfies Config;

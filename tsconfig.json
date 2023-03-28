@@ -19,5 +19,5 @@
       "@cloudflare/workers-types"
     ]
   },
-  "include": ["src", "functions", "vite.config.ts"]
+  "include": ["src", "functions", "vite.config.ts", "*.config.ts"]
 }
