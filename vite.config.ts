@@ -1,3 +1,5 @@
+import postcssVariableCompress from "postcss-variable-compress";
+import postcssTailwind from "tailwindcss";
 import type { UserConfig } from "vite";
 import pluginPreload from "vite-plugin-inject-preload";
 import pluginLightning from "vite-plugin-lightningcss";
@@ -12,6 +14,11 @@ export default {
       polyfill: false,
     },
     target: "esnext",
+  },
+  css: {
+    postcss: {
+      plugins: [postcssTailwind(), postcssVariableCompress()],
+    },
   },
   esbuild: {
     legalComments: "none",
