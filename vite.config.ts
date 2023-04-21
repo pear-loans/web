@@ -1,12 +1,11 @@
 import type { UserConfig } from "vite";
-import { defineConfig } from "vite";
 import pluginPreload from "vite-plugin-inject-preload";
 import pluginLightning from "vite-plugin-lightningcss";
 import pluginMinify from "vite-plugin-minify";
 import { VitePWA as pluginPWA } from "vite-plugin-pwa";
 import pluginSolid from "vite-plugin-solid";
 
-export default defineConfig({
+export default {
   build: {
     commonjsOptions: { include: [] },
     modulePreload: {
@@ -70,4 +69,4 @@ export default defineConfig({
       { find: /^🍐/, replacement: new URL("./src/", import.meta.url).pathname },
     ],
   },
-} satisfies UserConfig);
+} satisfies UserConfig;
