@@ -9,7 +9,7 @@ import pluginSolid from "vite-plugin-solid";
 
 export default {
   build: {
-    commonjsOptions: { include: [] },
+    // commonjsOptions: { include: [] },
     modulePreload: {
       polyfill: false,
     },
@@ -25,9 +25,9 @@ export default {
     // starts or ends with underscore
     mangleProps: /(^_[a-zA-Z0-9]*)|([a-zA-Z0-9$]*_)$/,
   },
-  optimizeDeps: {
-    disabled: false,
-  },
+  // optimizeDeps: {
+  //   disabled: false,
+  // },
   plugins: [
     pluginPreload({
       files: [

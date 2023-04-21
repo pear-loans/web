@@ -3,6 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "esModuleInterop": true,
+    "isolatedModules": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -14,10 +15,10 @@
     "strict": true,
     "target": "ESNext",
     "types": [
+      "@cloudflare/workers-types",
       "vite-plugin-pwa/client",
-      "vite/client",
-      "@cloudflare/workers-types"
+      "vite/client"
     ]
   },
-  "include": ["src", "functions", "vite.config.ts", "*.config.ts"]
+  "include": ["*.config.ts", "functions", "src", "vite.config.ts"]
 }
