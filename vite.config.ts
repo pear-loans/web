@@ -1,3 +1,4 @@
+import type { UserConfig } from "vite";
 import { defineConfig } from "vite";
 import pluginPreload from "vite-plugin-inject-preload";
 import pluginLightning from "vite-plugin-lightningcss";
@@ -69,4 +70,4 @@ export default defineConfig({
       { find: /^🍐/, replacement: new URL("./src/", import.meta.url).pathname },
     ],
   },
-});
+} satisfies UserConfig);
