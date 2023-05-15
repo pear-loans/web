@@ -1,15 +1,14 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
-  content: ["./index.html", "./src/**/*.tsx"],
-  darkMode: "class",
-  experimental: "all",
-  theme: {
-    extend: {
-      transitionProperty: {
-        direction: "right, bottom, left, top",
-        height: "min-height, max-height, height",
-      },
-    },
-  },
+	content: ["src/**/*.{js,jsx,ts,tsx}", "index.html"],
+	experimental: "all",
+	theme: {
+		extend: {
+			fontFamily: {
+				sans: [...defaultTheme.fontFamily.sans]
+			}
+		}
+	}
 } satisfies Config;
