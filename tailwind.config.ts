@@ -2,7 +2,8 @@ import type { Config } from "tailwindcss";
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
-	content: ["src/**/*.{js,jsx,ts,tsx}", "index.html"],
+	content: ["src/**/*.{js,jsx,ts,tsx}"],
+	darkMode: "class",
 	experimental: "all",
 	theme: {
 		extend: {

@@ -1,5 +1,16 @@
-.DS_Store
-.env
+# Build
+/dist
+/lib
+/lib-types
+/server
+/tmp
 
-dist
+# Development
 node_modules
+*.local
+
+# Cache
+.cache
+.mf
+*.log
+.DS_Store

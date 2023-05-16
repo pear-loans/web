@@ -1,13 +1,10 @@
-import { Title } from "@solidjs/meta";
-import type { JSX } from "solid-js";
+import { component$ } from '@builder.io/qwik';
 
-const About = (): JSX.Element => (
-	<>
-		<Title>Pear Loans: About Page</Title>
-
+export default component$(() => {
+  return (
 		<section class="mx-auto max-w-6xl px-5 pb-10 pt-20">
 			<p>
-				If you've come across this page, hello! 👋 Welcome to{" "}
+				If you've come across this page, egg! 👋 Welcome to{" "}
 				<abbr title="🍐 Loans, Peer Loans">🍐 Pear Loans.</abbr>
 			</p>
 			<p>
@@ -143,7 +140,5 @@ const About = (): JSX.Element => (
 				</li>
 			</ul>
 		</section>
-	</>
-);
-
-export default About;
+  );
+});
