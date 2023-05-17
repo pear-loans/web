@@ -3,14 +3,14 @@
   "browserslist": "> 5% in US and not dead",
   "description": "App with Routing built-in ready to create your app",
   "devDependencies": {
-    "@builder.io/qwik": "1.1.2",
-    "@builder.io/qwik-city": "1.1.2",
+    "@builder.io/qwik": "1.1.4",
+    "@builder.io/qwik-city": "1.1.4",
     "postcss-variable-compress": "3.0.0",
-    "rome": "12.1.0",
+    "rome": "12.1.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4",
     "undici": "5.22.1",
-    "vite": "4.3.6",
+    "vite": "4.3.7",
     "vite-plugin-lightningcss": "0.0.5"
   },
   "name": "pear-loans",

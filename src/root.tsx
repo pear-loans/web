@@ -1,21 +1,26 @@
-import { component$ } from "@builder.io/qwik";
+import {
+	component$,
+	useContextProvider,
+	useSignal,
+	useVisibleTask$,
+} from "@builder.io/qwik";
 import {
 	QwikCityProvider,
 	RouterOutlet,
 	ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
-import { RouterHead } from "./components/router-head/router-head";
+import { RouterHead } from "./components/layout/router-head";
+import { ThemeContext, type Theme } from "./theme";
 
 import "./global.css";
 
 export default component$(() => {
-	/**
-	 * The root of a QwikCity site always start with the <QwikCityProvider> component,
-	 * immediately followed by the document's <head> and <body>.
-	 *
-	 * Dont remove the `<head>` and `<body>` elements.
-	 */
-
+	// Handles Initializing the current theme
+	const theme = useSignal<Theme>("device");
+	useContextProvider(ThemeContext, theme);
+	useVisibleTask$(() => {
+		theme.value = (localStorage.getItem("theme") as Theme) || "device";
+	});
 	return (
 		<QwikCityProvider>
 			<head>
@@ -61,11 +66,8 @@ export default component$(() => {
 				/>
 				<link rel="manifest" href="/site.webmanifest" />
 				<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
-
-				<script
-					// rome-ignore lint/security/noDangerouslySetInnerHtml: Script in head might be fastest way to set theme.
-          dangerouslySetInnerHTML='"dark"===localStorage.theme||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches||document.documentElement.classList.remove("dark"),window.theme=localStorage.theme||"device"'
-				/>
+				{/* rome-ignore lint/security/noDangerouslySetInnerHtml: Getting theme from storage */}
+				<script dangerouslySetInnerHTML='"dark"===localStorage.theme||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches||document.documentElement.classList.remove("dark")' />
 				<RouterHead />
 			</head>
 			<body class="">

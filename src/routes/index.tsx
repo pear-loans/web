@@ -1,10 +1,13 @@
-import { component$ } from '@builder.io/qwik';
+import { component$ } from "@builder.io/qwik";
+import { ThemeToggle } from "🍐/components/layout/theme-toggle";
 
 export default component$(() => {
-  return (
-		<section class="mx-auto max-w-6xl px-5 pb-10 pt-20">
+	return (
+		<section class="mx-auto max-w-6xl px-5 pb-10 pt-20 dark:bg-black dark:text-white">
+			<ThemeToggle />
+
 			<p>
-				If you've come across this page, egg! 👋 Welcome to{" "}
+				If you've come across this page, hello! 👋 Welcome to{" "}
 				<abbr title="🍐 Loans, Peer Loans">🍐 Pear Loans.</abbr>
 			</p>
 			<p>
@@ -140,5 +143,5 @@ export default component$(() => {
 				</li>
 			</ul>
 		</section>
-  );
+	);
 });
