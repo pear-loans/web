@@ -3,7 +3,7 @@ import { ThemeToggle } from "🍐/components/layout/theme-toggle";
 
 export default component$(() => {
 	return (
-		<section class="mx-auto max-w-6xl px-5 pb-10 pt-20 dark:bg-black dark:text-white">
+		<section class="mx-auto max-w-6xl px-5 pb-10 pt-20">
 			<ThemeToggle />
 
 			<p>

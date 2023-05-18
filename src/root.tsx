@@ -1,7 +1,7 @@
 import {
 	component$,
 	useContextProvider,
-	useSignal,
+	useStore,
 	useVisibleTask$,
 } from "@builder.io/qwik";
 import {
@@ -9,21 +9,29 @@ import {
 	RouterOutlet,
 	ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
-import { RouterHead } from "./components/layout/router-head";
-import { ThemeContext, type Theme } from "./theme";
+import { RouterHead } from "./components/layout/head";
+import { ThemeContext, type ThemeOptions, type Theme } from "./theme";
 
 import "./global.css";
 
 export default component$(() => {
 	// Handles Initializing the current theme
-	const theme = useSignal<Theme>("device");
+	const theme = useStore<Theme>(
+		{ mode: "device", loading: true },
+		{ deep: false },
+	);
 	useContextProvider(ThemeContext, theme);
 	useVisibleTask$(() => {
-		theme.value = (localStorage.getItem("theme") as Theme) || "device";
+		theme.loading = false;
+		theme.mode = (localStorage.getItem("theme") as ThemeOptions) || "device";
 	});
+
 	return (
 		<QwikCityProvider>
 			<head>
+				{/* rome-ignore lint/security/noDangerouslySetInnerHtml: Getting theme from storage */}
+				<script dangerouslySetInnerHTML='"dark"===localStorage.theme||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches||document.documentElement.classList.remove("dark")' />
+				<title>Pear Loans</title>
 				<meta
 					name="description"
 					content="Student loan peer-to-peer crowdfunding. List your student loan or help others by donating."
@@ -66,11 +74,9 @@ export default component$(() => {
 				/>
 				<link rel="manifest" href="/site.webmanifest" />
 				<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
-				{/* rome-ignore lint/security/noDangerouslySetInnerHtml: Getting theme from storage */}
-				<script dangerouslySetInnerHTML='"dark"===localStorage.theme||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches||document.documentElement.classList.remove("dark")' />
 				<RouterHead />
 			</head>
-			<body class="">
+			<body class="dark:bg-black dark:text-white">
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 			</body>

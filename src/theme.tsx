@@ -1,5 +1,8 @@
-import { type Signal, createContextId } from "@builder.io/qwik";
+import { createContextId } from "@builder.io/qwik";
 
-export type Theme = "light" | "dark" | "device";
-
-export const ThemeContext = createContextId<Signal<Theme>>("site.theme");
+export type ThemeOptions = "light" | "dark" | "device";
+export interface Theme {
+	loading: boolean; // Loading used to help prevent flash of theme button, mainly.
+	mode: ThemeOptions;
+}
+export const ThemeContext = createContextId<Theme>("site.theme");
