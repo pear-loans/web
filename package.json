@@ -5,6 +5,7 @@
   "devDependencies": {
     "@builder.io/qwik": "1.1.4",
     "@builder.io/qwik-city": "1.1.4",
+    "@fortawesome/fontawesome-pro": "6.4.0",
     "postcss-variable-compress": "3.0.0",
     "rome": "12.1.2",
     "tailwindcss": "3.3.2",
