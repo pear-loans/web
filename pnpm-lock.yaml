@@ -11,8 +11,8 @@ devDependencies:
     specifier: 3.0.0
     version: 3.0.0(postcss@8.4.23)
   rome:
-    specifier: 12.1.1
-    version: 12.1.1
+    specifier: 12.1.2
+    version: 12.1.2
   tailwindcss:
     specifier: 3.3.2
     version: 3.3.2
@@ -23,8 +23,8 @@ devDependencies:
     specifier: 5.22.1
     version: 5.22.1
   vite:
-    specifier: 4.3.7
-    version: 4.3.7
+    specifier: 4.3.8
+    version: 4.3.8
   vite-plugin-lightningcss:
     specifier: 0.0.5
     version: 0.0.5
@@ -336,48 +336,48 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@rometools/cli-darwin-arm64@12.1.1:
-    resolution: {integrity: sha512-9ohLIjRnZtgvgBizhZPHzJ3hXR+cTI1v9TmBO7hgUyScnyMrmqr3G3INl4FVFdyjgOWf8y6IT9mvkbCOvHNncQ==}
+  /@rometools/cli-darwin-arm64@12.1.2:
+    resolution: {integrity: sha512-9QxtAwNyX9n7ysxo+9qWczl70I1opulmX7LFNsRJKS9qqyTNc5K++btnNK07vWAIeQsMx4QYwr7241thuBMlFw==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@rometools/cli-darwin-x64@12.1.1:
-    resolution: {integrity: sha512-5H7vWFofuU5qLxgzIaSCHVpc5mcXfs0HCluXhoX9yxeVVxnMEJkwFT6RrXzpud9j82BHiDOFaQmrNUeT1fc+KQ==}
+  /@rometools/cli-darwin-x64@12.1.2:
+    resolution: {integrity: sha512-w28NkGYK/rSmQU2WkNzw1h7ec8IR5a7LzYwPHDvG2ogY5sTcygkg0TGKOF/MHUvixU6EBPrFobua2gPhpr/m5A==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@rometools/cli-linux-arm64@12.1.1:
-    resolution: {integrity: sha512-jKJeT6SI1d9bkAlMOYl3dQtzvTi98dsJAzEM91SVXLl5Onjk55Z9QG9f1E4nbS76LK4eZaNMcKqs7F2hSyVedQ==}
+  /@rometools/cli-linux-arm64@12.1.2:
+    resolution: {integrity: sha512-7BPGqPtnJy1O8B/ucJ5Vg+p6EUvJJ9DazrT1UEdVR/4inPqAVac9PIZDjjHXyMrt/3IngnetPyn5EXNTAqpJVw==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@rometools/cli-linux-x64@12.1.1:
-    resolution: {integrity: sha512-CsLjZYtLQdKoMcroXXKUmZdyFQfgVl7C8oIIDcJNzmHZKdVwRhI1M+nK/0vpiFtVjCt6j+Cw2gDYkoQSihTt0w==}
+  /@rometools/cli-linux-x64@12.1.2:
+    resolution: {integrity: sha512-qH2iJKPLp34D0GFK1gLolHGkTA8q2vGKh2Ae1AwoTh87g0mXyyeQf4mAtxJtf4/ydMgjEkAZdEwyaevbTX8gnQ==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@rometools/cli-win32-arm64@12.1.1:
-    resolution: {integrity: sha512-HHaBZNTIup5xEZRwgAdH15oMBQVnVWG54BizqGJn4oR6zlXkf8S012MNOfgVdEIWW+KDhyfX6vxAH/SBf1Yp1w==}
+  /@rometools/cli-win32-arm64@12.1.2:
+    resolution: {integrity: sha512-iIdqss2R8bni7C7isA9OLBj1UAA3MeKfca0aHNZr+2gSRdiSxO/47j6s3Tpebso99xsJBAFdWBOruG+l/C+LQg==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /@rometools/cli-win32-x64@12.1.1:
-    resolution: {integrity: sha512-yPQPEvaBp/uCulnwl5d5xOxWsb/DtccmBPGg5A8TOm0Lfcts4zSUgEaq3yZ9vwXw1KepMS5NHnZ+zuDjzdtV/Q==}
+  /@rometools/cli-win32-x64@12.1.2:
+    resolution: {integrity: sha512-MKOd02sSnd/Biogh3rIKpLFZzYbDSVvRNAxbFHJOpyGLbeQHfAg7QxjKwz0PqyrHVjZaTEEPlswrf4IFii0GNg==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
@@ -460,8 +460,8 @@ packages:
     resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==}
     dev: true
 
-  /astring@1.8.4:
-    resolution: {integrity: sha512-97a+l2LBU3Op3bBQEff79i/E4jMD2ZLFD8rHx9B6mXyB2uQwhJQYfiDqUwtfjF4QA1F2qs//N6Cw8LetMbQjcw==}
+  /astring@1.8.5:
+    resolution: {integrity: sha512-TuBbdn7jWVzf8dmFGTaRpW8qgANtWLi1qJLnkfGO5uVf6jf9f/F4B1H35tnOI+qVYZo3p3i8WZlbZOuPAE0wEA==}
     hasBin: true
     dev: true
 
@@ -498,8 +498,8 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001488
-      electron-to-chromium: 1.4.398
-      node-releases: 2.0.10
+      electron-to-chromium: 1.4.402
+      node-releases: 2.0.11
       update-browserslist-db: 1.0.11(browserslist@4.21.5)
     dev: true
 
@@ -615,8 +615,8 @@ packages:
     resolution: {integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==}
     dev: true
 
-  /electron-to-chromium@1.4.398:
-    resolution: {integrity: sha512-tT90Lmieb+Y4jX5Awub8BsvuFM/ICKr01oZFBR9Cy6pxCf+rAmwcpRl4xfXb66DzTXc4qSMPqlqLDoghm27utQ==}
+  /electron-to-chromium@1.4.402:
+    resolution: {integrity: sha512-gWYvJSkohOiBE6ecVYXkrDgNaUjo47QEKK0kQzmWyhkH+yoYiG44bwuicTGNSIQRG3WDMsWVZJLRnJnLNkbWvA==}
     dev: true
 
   /esbuild@0.17.19:
@@ -676,7 +676,7 @@ packages:
     resolution: {integrity: sha512-IzU74r1PK5IMMGZXUVZbmiu4A1uhiPgW5hm1GjcOfr4ZzHaMPpLNJjR7HjXiIOzi25nZDrgFTobHTkV5Q6ITjA==}
     dependencies:
       '@types/estree-jsx': 1.0.0
-      astring: 1.8.4
+      astring: 1.8.5
       source-map: 0.7.4
     dev: true
 
@@ -1030,8 +1030,8 @@ packages:
       - supports-color
     dev: true
 
-  /mdast-util-mdx-jsx@2.1.3:
-    resolution: {integrity: sha512-NlnLUrnNkBjzI5UyqlqmYHo6KDJ6sTnuHSFmU2ei8qIHFxQTBoPcffBvdQ2PKrmwHpVUgCmA5o1T1JG2oClpBw==}
+  /mdast-util-mdx-jsx@2.1.4:
+    resolution: {integrity: sha512-DtMn9CmVhVzZx3f+optVDF8yFgQVt7FghCRNdlIaS3X5Bnym3hZwPbg/XW86vdpKjlc1PVj26SpnLGeJBXD3JA==}
     dependencies:
       '@types/estree-jsx': 1.0.0
       '@types/hast': 2.3.4
@@ -1054,7 +1054,7 @@ packages:
     dependencies:
       mdast-util-from-markdown: 1.3.0
       mdast-util-mdx-expression: 1.3.2
-      mdast-util-mdx-jsx: 2.1.3
+      mdast-util-mdx-jsx: 2.1.4
       mdast-util-mdxjs-esm: 1.3.1
       mdast-util-to-markdown: 1.5.0
     transitivePeerDependencies:
@@ -1414,8 +1414,8 @@ packages:
     hasBin: true
     dev: true
 
-  /node-releases@2.0.10:
-    resolution: {integrity: sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==}
+  /node-releases@2.0.11:
+    resolution: {integrity: sha512-+M0PwXeU80kRohZ3aT4J/OnR+l9/KD2nVLNNoRgFtnf+umQVFdGBAO2N8+nCnEi0xlh/Wk3zOGC+vNNx+uM79Q==}
     dev: true
 
   /normalize-path@3.0.0:
@@ -1630,26 +1630,26 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
     dev: true
 
-  /rollup@3.22.0:
-    resolution: {integrity: sha512-imsigcWor5Y/dC0rz2q0bBt9PabcL3TORry2hAa6O6BuMvY71bqHyfReAz5qyAqiQATD1m70qdntqBfBQjVWpQ==}
+  /rollup@3.22.1:
+    resolution: {integrity: sha512-ZI+GSAqOkCyTtJPlwyPOaYKa0RqvztN4miRVusVJseMj6BIBT2f6pFeK90IdJsQ86FLMYkxju2whuck3yKPE4Q==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
 
-  /rome@12.1.1:
-    resolution: {integrity: sha512-pUUAf8KHHzzxYCXja80wIlPNvHeU2TEFmxapKOXLfYr4C5XmAjGj3ial4cJOk1JzBGZmd8fgBU3y/mxP3XqiYA==}
+  /rome@12.1.2:
+    resolution: {integrity: sha512-ObyDevKRU6k3R9fAK9hDvrX9FSPEJ0JWNv5i65enknV+epWjEIL0jnDuijPUX7MSVS6M/ngTiKUaeF3w63SJXw==}
     engines: {node: '>=14.*'}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      '@rometools/cli-darwin-arm64': 12.1.1
-      '@rometools/cli-darwin-x64': 12.1.1
-      '@rometools/cli-linux-arm64': 12.1.1
-      '@rometools/cli-linux-x64': 12.1.1
-      '@rometools/cli-win32-arm64': 12.1.1
-      '@rometools/cli-win32-x64': 12.1.1
+      '@rometools/cli-darwin-arm64': 12.1.2
+      '@rometools/cli-darwin-x64': 12.1.2
+      '@rometools/cli-linux-arm64': 12.1.2
+      '@rometools/cli-linux-x64': 12.1.2
+      '@rometools/cli-win32-arm64': 12.1.2
+      '@rometools/cli-win32-x64': 12.1.2
     dev: true
 
   /run-parallel@1.2.0:
@@ -1904,8 +1904,8 @@ packages:
       lightningcss: 1.20.0
     dev: true
 
-  /vite@4.3.7:
-    resolution: {integrity: sha512-MTIFpbIm9v7Hh5b0wSBgkcWzSBz7SAa6K/cBTwS4kUiQJfQLFlZZRJRQgqunCVzhTPCk674tW+0Qaqh3Q00dBg==}
+  /vite@4.3.8:
+    resolution: {integrity: sha512-uYB8PwN7hbMrf4j1xzGDk/lqjsZvCDbt/JC5dyfxc19Pg8kRm14LinK/uq+HSLNswZEoKmweGdtpbnxRtrAXiQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -1931,7 +1931,7 @@ packages:
     dependencies:
       esbuild: 0.17.19
       postcss: 8.4.23
-      rollup: 3.22.0
+      rollup: 3.22.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
