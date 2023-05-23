@@ -54,6 +54,11 @@ export default component$(() => {
 						to, such as filtering by school, major, or other criteria. Also,
 						donors can choose to donate to random student(s).
 					</p>
+					<p>
+						The hope is that this site will give students another means to pay
+						down their student loans, if not at least reduce the burden of their
+						monthly payment.
+					</p>
 				</li>
 
 				<li class="space-y-2">
