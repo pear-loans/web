@@ -43,6 +43,20 @@ export default component$(() => {
 
 			<ul class="space-y-5">
 				<li class="space-y-2">
+					<h3 class="font-bold">🤔 What is this site?</h3>
+					<p>
+						This site will let you list your student loan balance alongside a
+						profile you create. People who wish to donate can then find your
+						profile and donate directly to you!
+					</p>
+					<p>
+						I intend to give donors tools to find students they want to donate
+						to, such as filtering by school, major, or other criteria. Also,
+						donors can choose to donate to random student(s).
+					</p>
+				</li>
+
+				<li class="space-y-2">
 					<h3 class="font-bold">✍️ How will I list my student loan?</h3>
 					<p>
 						I am hoping to use{" "}
