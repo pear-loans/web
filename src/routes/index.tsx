@@ -1,166 +1,55 @@
 import { component$ } from "@builder.io/qwik";
-import { ThemeToggle } from "🍐/components/layout/theme-toggle";
+import { Fa } from "🍐/includes/fa";
+import {
+	faPear,
+	faGraduationCap,
+	faMoneyBill1Wave,
+	faSchool,
+	faLandmark,
+} from "@fortawesome/pro-duotone-svg-icons";
 
-export default component$(() => {
-	return (
-		<section class="mx-auto max-w-6xl px-5 pb-10 pt-20">
-			<ThemeToggle />
+export default component$(() => (
+	<>
+		<section class="py-20 md:py-40 flex justify-center">
+			<div class="relative">
+				<Fa
+					icon={faPear}
+					opacity={[0.8, 0.9]}
+					class="text-4xl xs:text-5xl md:text-7xl absolute -top-8 xs:-top-10 md:-top-16 right-8 rotate-12 animate-wiggle"
+				/>
+				<Fa
+					icon={faGraduationCap}
+					opacity={[0.8, 0.9]}
+					class="fa-primary-blue-500 text-4xl xs:text-5xl md:text-7xl absolute left-6 bottom-8 xs:bottom-10 -rotate-12 animate-wiggle"
+				/>
+				<Fa
+					icon={faSchool}
+					opacity={[0.8, 0.9]}
+					class="text-4xl xs:text-5xl md:text-7xl absolute -rotate-12 animate-wiggle top-12 xs:top-14 right-8 md:top-16 md:right-10 fa-primary-blue-500"
+				/>
+				<Fa
+					icon={faMoneyBill1Wave}
+					opacity={[0.8, 0.9]}
+					class="text-4xl xs:text-5xl md:text-7xl absolute -bottom-12 md:-bottom-20 rotate-12 animate-wiggle left-20"
+				/>
 
-			<p>
-				If you've come across this page, hello! 👋 Welcome to{" "}
-				<abbr title="🍐 Loans, Peer Loans">🍐 Pear Loans.</abbr>
-			</p>
-			<p>
-				This place allows you to list your student loans and / or donate
-				directly to other students.
-			</p>
-
-			<br />
-
-			<p>
-				Unfortunately, this website is still under construction. 🚧 Much of the
-				functionality mentioned on the home page is not present. Many things,
-				like login, donation pages, and the ability to donate do not exist.
-			</p>
-			<p>
-				This project has been created and is currently maintained by one person.
-				I'm so excited to create this site, and I very much hope this helps
-				reduce someone's financial burden.
-			</p>
-
-			<br />
-
-			<p>
-				I'd like to answer a couple questions I think you may have, but please
-				feel free to{" "}
-				<a class="italic underline" href="mailto:info@pear.loans">
-					email me
-				</a>{" "}
-				📬 any questions or comments.
-			</p>
-
-			<br />
-
-			<ul class="space-y-5">
-				<li class="space-y-2">
-					<h3 class="font-bold">🤔 What is this site?</h3>
-					<p>
-						This site will let you list your student loan balance alongside a
-						profile you create. People who wish to donate can then find your
-						profile and donate directly to you!
-					</p>
-					<p>
-						I intend to give donors tools to find students they want to donate
-						to, such as filtering by school, major, or other criteria. Also,
-						donors can choose to donate to random student(s).
-					</p>
-					<p>
-						The hope is that this site will give students another means to pay
-						down their student loans, if not at least reduce the burden of their
-						monthly payment.
-					</p>
-				</li>
-
-				<li class="space-y-2">
-					<h3 class="font-bold">✍️ How will I list my student loan?</h3>
-					<p>
-						I am hoping to use{" "}
-						<a
-							class="italic underline"
-							target="_blank"
-							href="https://plaid.com"
-							rel="noreferrer"
-						>
-							Plaid
-						</a>{" "}
-						to allow students to list their loan. Plaid allows the website to
-						see your student loan balance - if you've used apps like{" "}
-						<a
-							href="https://mint.intuit.com"
-							class="italic underline"
-							target="_blank"
-							rel="noreferrer"
-						>
-							Mint
-						</a>{" "}
-						or{" "}
-						<a
-							href="https://www.rocketmoney.com/?rebrand=true"
-							class="italic underline"
-							target="_blank"
-							rel="noreferrer"
-						>
-							Truebill
-						</a>{" "}
-						(now branded "Rocket Money"), they will use Plaid or a service like
-						it to link your financial accounts.
-					</p>
-				</li>
-				<li class="space-y-2">
-					<h3 class="font-bold">🔐 Privacy concerns?</h3>
-					<p>
-						I wish to allow students to create their own donation profile, and
-						there, they can give as much or as little information as they'd
-						like. I would encourage them to not include anything they feel
-						uncomfortable sharing. I only want to also store the minimal amount
-						of information Plaid gives me to keep the loan balance linked to
-						your account.
-					</p>
-					<p>
-						This site will showcase your student loan balance once linked to
-						your profile. Perhaps I could truncate or round this amount, or show
-						a percentage left to pay, or nothing at all. This also could be
-						configurable by the user.
-					</p>
-					<p>
-						Generally, I want to only store the absolute minimum amount of
-						information necessary to facilitate showcasing student loans and
-						payments to them. I am no expert or lawyer on this matter and will
-						need to consult one to make sure I'm doing things right.{" "}
-						<span class="italic">I want to respect you and your privacy.</span>
-					</p>
-					<p>
-						Please don't hesitate to email me any suggestions or comments on
-						this matter as well. I am always open to feedback.
-					</p>
-				</li>
-				<li class="space-y-2">
-					<h3 class="font-bold">
-						💵 How will donations be paid to the student loan?
-					</h3>
-					<p>
-						Unfortunately this is one aspect I have not been able to solution
-						yet. If I were to build it right now, students would be receiving
-						payment directly from donors, which means it would be the student's
-						responsibility to ensure donations are paid to the loan. Ideally,
-						payments would pay down the loan directly, automatically.
-					</p>
-					<p>
-						This means donors would have to trust that students would use
-						donations for their student loans. I am sure that a large majority
-						of people would do this in good faith, however, I am sure there
-						could be some that would game the system.
-					</p>
-					<p>
-						As far as I am aware, there is no financial product that exists that
-						would allow me to apply donations to the loan directly. I am also
-						unsure if this is legally possible for the website to pay on behalf
-						of the student.
-					</p>
-					<p>
-						In my opinion, it is acceptable, at least for the sake of getting
-						this website out there, to allow direct payments to students where
-						they would be responsible to apply donations to their loan balance.
-						To some capacity, it would be possible to see if a student is acting
-						in bad faith if the displayed loan balance does not decrease over
-						time despite having received many donations.
-					</p>
-					<p>
-						Nevertheless, I would like to reduce this friction / worry as much
-						as possible, whenever I can.
-					</p>
-				</li>
-			</ul>
+				<h1 class="font-extrabold text-4xl xs:text-5xl md:text-6xl text-center relative inline-block animate-fade-in-up">
+					<span class="block">
+						Help out your{" "}
+						<span class="bg-gradient-to-br from-green-700 to-blue-500 dark:from-green-300 dark:to-blue-300 text-transparent bg-clip-text animate-pulse">
+							peers
+						</span>
+					</span>
+					<span class="block">with their</span>
+					<span class="block bg-gradient-to-br from-green-700 to-blue-500 dark:from-green-300 dark:to-blue-300 text-transparent bg-clip-text animate-pulse">
+						student loans
+					</span>
+				</h1>
+			</div>
 		</section>
-	);
-});
+
+		<section class="py-20 md:py-40 flex flex-col justify-center">
+			<h2>Student Loans are a huge problem</h2>
+		</section>
+	</>
+));

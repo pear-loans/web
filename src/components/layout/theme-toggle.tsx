@@ -1,16 +1,20 @@
-// Theme toggle component
-
+import { Fa } from "🍐/includes/fa";
+import {
+	faMoonStars,
+	faSunCloud,
+	faTimer,
+} from "@fortawesome/pro-duotone-svg-icons";
 import { component$, useContext, event$ } from "@builder.io/qwik";
 import { ThemeContext, type ThemeOptions } from "../../theme";
 
 const THEME_ICON = {
-	light: ["🌞", "Light Theme"],
-	dark: ["🌚", "Dark Theme"],
-	device: ["📱", "Device Theme"],
+	light: [<Fa icon={faSunCloud} title="Light Theme" />, "Light Theme"],
+	dark: [<Fa icon={faMoonStars} title="Dark Theme" />, "Dark Theme"],
+	device: [<Fa icon={faTimer} title="Use Device Theme" />, "Device Theme"],
 };
 const ORDER = Object.keys(THEME_ICON) as Array<ThemeOptions>;
 
-export const ThemeToggle = component$(() => {
+export default component$(() => {
 	const currentTheme = useContext(ThemeContext);
 	const onClick$ = event$(() => {
 		const currentIndex = ORDER.indexOf(currentTheme.mode);
@@ -36,11 +40,13 @@ export const ThemeToggle = component$(() => {
 			onClick$={onClick$}
 			type="button"
 			class={[
-				"transition-opacity duration-75",
+				"transition-opacity duration-300 p-5 rounded-full",
 				currentTheme.loading ? "opacity-0" : "opacity-100",
 			]}
+			role="menuitem"
 		>
-			{THEME_ICON[currentTheme.mode][0]} {THEME_ICON[currentTheme.mode][1]}
+			{THEME_ICON[currentTheme.mode][0]}{" "}
+			<span class="sr-only">{THEME_ICON[currentTheme.mode][1]}</span>
 		</button>
 	);
 });

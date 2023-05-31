@@ -1,37 +1,28 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "incremental": true,
-    "isolatedModules": true,
+    "target": "ES2017",
+    "module": "ES2022",
+    "lib": ["es2022", "DOM", "WebWorker", "DOM.Iterable"],
     "jsx": "react-jsx",
     "jsxImportSource": "@builder.io/qwik",
-    "lib": [
-      "es2022",
-      "DOM",
-      "WebWorker",
-      "DOM.Iterable"
-    ],
-    "module": "ESNext",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
     "moduleResolution": "node",
-    "noEmit": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "incremental": true,
+    "isolatedModules": true,
     "outDir": "tmp",
+    "noEmit": true,
+    "types": ["node", "vite/client"],
     "paths": {
       "🍐/*": [
         "./src/*"
       ]
-    },
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "ESNext",
-    "types": [
-      "vite/client"
-    ]
+    }
   },
-  "include": [
-    "src",
-    "./*.d.ts"
-  ]
+  "files": ["./.eslintrc.cjs"],
+  "include": ["src", "./*.d.ts"]
 }

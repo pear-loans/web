@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fa {
+  @apply w-6 h-6 inline-block align-top pointer-events-none;
+}
+
+.fa path:first-child {
+  fill: var(--fa-primary, #000);
+}
+
+.fa path:last-child {
+  fill: var(--fa-secondary, #000);
+}
+
+.fa+span {
+  margin-left: theme("spacing.3");
+}

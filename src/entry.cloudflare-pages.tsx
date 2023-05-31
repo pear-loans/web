@@ -16,9 +16,8 @@ import { manifest } from "@qwik-client-manifest";
 import render from "./entry.ssr";
 
 declare global {
-	// Lint removed the following:
-	// interface QwikCityPlatform extends PlatformCloudflarePages {}
-	type QwikCityPlatform = PlatformCloudflarePages;
+	// rome-ignore lint/suspicious/noEmptyInterface: The following comes this way from Qwik.
+	interface QwikCityPlatform extends PlatformCloudflarePages {}
 }
 
 const fetch = createQwikCity({ render, qwikCityPlan, manifest });
