@@ -37,6 +37,9 @@ export default {
 					"fa-secondary": (value) => ({
 						"--fa-secondary": value,
 					}),
+					"stop-color": (value) => ({
+						"stop-color": value,
+					}),
 				},
 				{ values: flattenColors(theme("colors")) },
 			);

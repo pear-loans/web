@@ -89,7 +89,7 @@ export default component$(() => {
 				<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
 				<RouterHead />
 			</head>
-			<body class="text-base dark:bg-black dark:text-white fa-primary-green-500 fa-secondary-green-900 dark:fa-primary-green-400 dark:fa-secondary-green-50 min-w-[320px]">
+			<body class="text-base dark:bg-black dark:text-white fa-primary-green-500 fa-secondary-green-900 dark:fa-primary-green-400 dark:fa-secondary-green-50 min-w-[320px] [scrollbar-gutter:stable]">
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 			</body>
