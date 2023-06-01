@@ -19,9 +19,6 @@ export default defineConfig(() => ({
 			],
 		},
 	},
-	optimizeDeps: {
-		disabled: false,
-	},
 	preview: {
 		headers: {
 			"Cache-Control": "public, max-age=600",
