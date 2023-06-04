@@ -1,4 +1,4 @@
-import { Fa } from "🍐/includes/fa";
+import Fa from "🍐/includes/fa";
 import {
 	faMoonStars,
 	faSunCloud,
@@ -40,7 +40,7 @@ export default component$(() => {
 			onClick$={onClick$}
 			type="button"
 			class={[
-				"transition-opacity duration-300 p-5 rounded-full",
+				"transition-opacity duration-100 p-5 rounded-full",
 				currentTheme.loading ? "opacity-0" : "opacity-100",
 			]}
 			role="menuitem"

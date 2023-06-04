@@ -2,10 +2,7 @@ import {
 	component$,
 	useContextProvider,
 	useStore,
-	useSignal,
 	useVisibleTask$,
-	createContextId,
-	type Signal,
 } from "@builder.io/qwik";
 import {
 	QwikCityProvider,
@@ -15,26 +12,17 @@ import {
 import { RouterHead } from "./components/layout/head";
 import { ThemeContext, type ThemeOptions, type Theme } from "./theme";
 
-import styles from "./global.css?inline";
-
-export const InitialLoadContext =
-	createContextId<Signal<boolean>>("site.initial_load");
+import styles from "./global.scss?inline";
 
 export default component$(() => {
-	// Handles Initializing the current theme
-	const initialLoad = useSignal(true);
 	const theme = useStore<Theme>(
 		{ mode: "device", loading: true },
 		{ deep: false },
 	);
 	useContextProvider(ThemeContext, theme);
-	useContextProvider(InitialLoadContext, initialLoad);
 	useVisibleTask$(() => {
 		theme.loading = false;
 		theme.mode = (localStorage.getItem("theme") as ThemeOptions) || "device";
-		setTimeout(() => {
-			initialLoad.value = false;
-		}, 100);
 	});
 
 	return (

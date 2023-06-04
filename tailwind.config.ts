@@ -62,8 +62,8 @@ export default {
 			keyframes: {
 				wiggle: {
 					"0%, 100%": { transform: "rotate(calc(0deg + var(--tw-rotate, 0)))" },
-					"25%": { transform: "rotate(calc(-10deg + var(--tw-rotate, 0)))" },
-					"75%": { transform: "rotate(calc(10deg + var(--tw-rotate, 0)))" },
+					"25%": { transform: "rotate(calc(-8deg + var(--tw-rotate, 0)))" },
+					"75%": { transform: "rotate(calc(8deg + var(--tw-rotate, 0)))" },
 				},
 				"fade-in-up": {
 					"0%": {
