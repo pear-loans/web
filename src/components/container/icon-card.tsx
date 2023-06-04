@@ -55,28 +55,30 @@ export default component$(
 				]}
 				style={{ aspectRatio: `${width}/${height}` }}
 			>
-				<div
-					class={[
-						"absolute h-full top-0 left-0 pointer-events-none grid z-0 place-items-center",
-						className,
-					]}
-					style={{
-						margin: `-${negativeMargin}px`,
-						width: `calc(100% + ${negativeMargin * 2}px)`,
-						height: `calc(100% + ${negativeMargin * 2}px)`,
-						gridTemplateColumns: `repeat(${Math.round(
-							width * density,
-						)}, minmax(0, 1fr))`,
-						gridTemplateRows: `repeat(${Math.round(
-							height * density,
-						)}, minmax(0, 1fr))`,
-					}}
-				>
-					<Resource
-						value={iconsToRender}
-						onResolved={(icons) => icons.map((icon) => icon)}
-					/>
-				</div>
+				<Resource
+					value={iconsToRender}
+					onResolved={(icons) => (
+						<div
+							class={[
+								"absolute h-full top-0 left-0 pointer-events-none grid z-0 place-items-center",
+								className,
+							]}
+							style={{
+								margin: `-${negativeMargin}px`,
+								width: `calc(100% + ${negativeMargin * 2}px)`,
+								height: `calc(100% + ${negativeMargin * 2}px)`,
+								gridTemplateColumns: `repeat(${Math.round(
+									width * density,
+								)}, minmax(0, 1fr))`,
+								gridTemplateRows: `repeat(${Math.round(
+									height * density,
+								)}, minmax(0, 1fr))`,
+							}}
+						>
+							{icons}
+						</div>
+					)}
+				/>
 				<div class="relative z-10">
 					<Slot />
 				</div>
