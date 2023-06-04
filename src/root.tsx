@@ -12,10 +12,9 @@ import {
 import { RouterHead } from "./components/layout/head";
 import { ThemeContext, type ThemeOptions, type Theme } from "./theme";
 
-import "./global.css";
+import styles from "./global.scss?inline";
 
 export default component$(() => {
-	// Handles Initializing the current theme
 	const theme = useStore<Theme>(
 		{ mode: "device", loading: true },
 		{ deep: false },
@@ -29,6 +28,8 @@ export default component$(() => {
 	return (
 		<QwikCityProvider>
 			<head>
+				{/* rome-ignore lint/security/noDangerouslySetInnerHtml: Disabled to inline essential tailwind styles to HTML */}
+				<style dangerouslySetInnerHTML={styles} />
 				{/* rome-ignore lint/security/noDangerouslySetInnerHtml: Getting theme from storage */}
 				<script dangerouslySetInnerHTML='"dark"===localStorage.theme||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches||document.documentElement.classList.remove("dark")' />
 				<title>Pear Loans</title>
@@ -76,7 +77,7 @@ export default component$(() => {
 				<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
 				<RouterHead />
 			</head>
-			<body class="dark:bg-black dark:text-white">
+			<body class="text-base dark:bg-black dark:text-white fa-primary-green-500 fa-secondary-green-900 dark:fa-primary-green-400 dark:fa-secondary-green-50 min-w-[320px] [scrollbar-gutter:stable]">
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 			</body>
