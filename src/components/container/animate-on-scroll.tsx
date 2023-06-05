@@ -1,4 +1,4 @@
-import { component$, Slot, useSignal, useVisibleTask$ } from "@builder.io/qwik";
+import { Slot, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 
 interface Props {
 	class?: string;

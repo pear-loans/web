@@ -1,11 +1,11 @@
-import Fa from "🍐/includes/fa";
+import { ThemeContext, type ThemeOptions } from "../../theme";
+import { component$, event$, useContext } from "@builder.io/qwik";
 import {
 	faMoonStars,
 	faSunCloud,
 	faTimer,
 } from "@fortawesome/pro-duotone-svg-icons";
-import { component$, useContext, event$ } from "@builder.io/qwik";
-import { ThemeContext, type ThemeOptions } from "../../theme";
+import Fa from "🍐/includes/fa";
 
 const THEME_ICON = {
 	light: [<Fa icon={faSunCloud} title="Light Theme" />, "Light Theme"],

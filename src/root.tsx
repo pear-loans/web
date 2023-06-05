@@ -1,3 +1,5 @@
+import { RouterHead } from "./components/layout/head";
+import { type Theme, ThemeContext, type ThemeOptions } from "./theme";
 import {
 	component$,
 	useContextProvider,
@@ -9,8 +11,6 @@ import {
 	RouterOutlet,
 	ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
-import { RouterHead } from "./components/layout/head";
-import { ThemeContext, type ThemeOptions, type Theme } from "./theme";
 
 import styles from "./global.scss?inline";
 

@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import Fa from "🍐/includes/fa";
 import {
 	faChartLineUp,
 	faCircleDollarToSlot,
@@ -19,6 +18,7 @@ import {
 } from "@fortawesome/pro-duotone-svg-icons";
 import AnimateOnScroll from "🍐/components/container/animate-on-scroll";
 import IconCard from "🍐/components/container/icon-card";
+import Fa from "🍐/includes/fa";
 
 export default component$(() => (
 	<>

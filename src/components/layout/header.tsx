@@ -1,13 +1,13 @@
 import { component$, useContext, useSignal } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import {
-	faHouseChimney,
 	faCircleInfo,
+	faHouseChimney,
 	// faCircleUser,
 } from "@fortawesome/pro-duotone-svg-icons";
 
-import Fa from "🍐/includes/fa";
 import ThemeToggle from "./theme-toggle";
+import Fa from "🍐/includes/fa";
 
 import styles from "./header.module.scss";
 

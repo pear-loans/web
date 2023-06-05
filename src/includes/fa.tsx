@@ -1,5 +1,5 @@
-import type { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import { component$ } from "@builder.io/qwik";
+import type { IconDefinition } from "@fortawesome/fontawesome-common-types";
 
 export const FA_CLASS = "fa";
 interface Props {

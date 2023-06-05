@@ -24,6 +24,7 @@ export const RouterHead = component$(() => {
 			))}
 
 			{head.styles.map((s) => (
+				// rome-ignore lint/security/noDangerouslySetInnerHtml: TODO: Is this necessary? Generated from Qwik
 				<style key={s.key} {...s.props} dangerouslySetInnerHTML={s.style} />
 			))}
 		</>

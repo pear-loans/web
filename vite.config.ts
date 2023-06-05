@@ -1,14 +1,15 @@
-import { defineConfig } from "vite";
-import { qwikVite } from "@builder.io/qwik/optimizer";
 import { qwikCity } from "@builder.io/qwik-city/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { qwikVite } from "@builder.io/qwik/optimizer";
+import postcss_lightningcss from "postcss-lightningcss";
 import postcss_variables from "postcss-variable-compress";
 import postcss_tailwind from "tailwindcss";
-import postcss_lightningcss from "postcss-lightningcss";
+import tsconfigPaths from "vite-tsconfig-paths";
+
+import type { UserConfig } from "vite";
 
 import { browserslist } from "./package.json";
 
-export default defineConfig(() => ({
+export default {
 	plugins: [tsconfigPaths(), qwikCity(), qwikVite()],
 	css: {
 		postcss: {
@@ -24,4 +25,4 @@ export default defineConfig(() => ({
 			"Cache-Control": "public, max-age=600",
 		},
 	},
-}));
+} satisfies UserConfig;

@@ -1,5 +1,5 @@
+import { Resource, Slot, component$, useResource$ } from "@builder.io/qwik";
 import type { IconDefinition } from "@fortawesome/fontawesome-common-types";
-import { component$, Slot, useResource$, Resource } from "@builder.io/qwik";
 import Fa from "🍐/includes/fa";
 
 interface Props {
