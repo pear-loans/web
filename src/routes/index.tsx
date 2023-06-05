@@ -22,36 +22,35 @@ import Fa from "🍐/includes/fa";
 
 export default component$(() => (
 	<>
-		<section class="py-20 md:py-40 flex justify-center">
+		<section class="py-20 md:py-40 flex justify-center items-center h-[60vh] sm:h-[66vh]">
 			<div class="relative">
 				<div class="animate-fade-in-up z-10 animate-delay-700 pointer-events-none w-full h-full absolute">
 					<Fa
 						icon={faPear}
 						opacity={[0.8, 0.9]}
-						class="text-4xl xs:text-5xl md:text-7xl absolute -top-8 xs:-top-12 md:-top-20 right-8 rotate-12 animate-wiggle"
+						class="text-4xl xs:text-6xl md:text-7xl absolute -top-8 xs:-top-12 md:-top-20 right-8 rotate-12 animate-wiggle"
 					/>
 					<Fa
 						icon={faGraduationCap}
 						opacity={[0.8, 0.9]}
-						class="fa-primary-blue-500 dark:fa-secondary-slate-200 text-4xl xs:text-5xl md:text-7xl absolute left-6 bottom-8 xs:bottom-10 -rotate-12 animate-wiggle"
+						class="fa-primary-blue-500 dark:fa-secondary-slate-200 text-4xl xs:text-6xl md:text-7xl absolute left-2 xs:left-6 bottom-12 xs:bottom-14 -rotate-12 animate-wiggle"
 					/>
 					<Fa
 						icon={faSchool}
 						opacity={[0.8, 0.9]}
-						class="text-4xl xs:text-5xl md:text-7xl absolute -rotate-12 animate-wiggle top-12 xs:top-14 right-8 md:top-16 md:right-10 fa-primary-blue-500 dark:fa-secondary-slate-200"
+						class="text-4xl xs:text-6xl md:text-7xl absolute -rotate-12 animate-wiggle -top-12 left-2 xs:left-auto xs:top-20 xs:right-8 md:top-24 md:right-16 fa-primary-blue-500 dark:fa-secondary-slate-200"
 					/>
 					<Fa
 						icon={faMoneyBill1Wave}
 						opacity={[0.8, 0.9]}
-						class="text-4xl xs:text-5xl md:text-7xl absolute -bottom-12 xs:-bottom-14 md:-bottom-24 rotate-12 animate-wiggle left-20"
+						class="text-4xl xs:text-6xl md:text-7xl absolute -bottom-12 xs:-bottom-14 md:-bottom-24 rotate-12 animate-wiggle left-20"
 					/>
 				</div>
-
 				{/* SVG generated from https://www.blobmaker.app/, https://app.haikei.app/ */}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 200 200"
-					class="absolute block -top-28 xs:-top-40 left-0 z-0 pointer-events-none animate-fade-in-up"
+					class="absolute block -top-1/2 xs:-top-52 md:-top-60 -left-1/4 xs:left-0 z-0 pointer-events-none animate-fade-in-up w-[150%] xs:w-full"
 					role="none"
 					aria-hidden="true"
 				>
@@ -75,7 +74,7 @@ export default component$(() => (
 					/>
 				</svg>
 
-				<h1 class="font-extrabold text-4xl xs:text-5xl md:text-6xl text-center relative z-30 inline-block animate-fade-in-up animate-delay-300">
+				<h1 class="font-extrabold text-6xl xs:text-7xl md:text-8xl text-center relative z-30 inline-block animate-fade-in-up animate-delay-300">
 					<span class="block">
 						Help out your{" "}
 						<span class="bg-gradient-to-br from-green-700 to-blue-500 dark:from-green-300 dark:to-blue-300 text-transparent bg-clip-text animate-pulse">

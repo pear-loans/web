@@ -1,4 +1,4 @@
-import { component$, useContext, useSignal } from "@builder.io/qwik";
+import { component$, useSignal, useTask$ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import {
 	faCircleInfo,
@@ -13,15 +13,24 @@ import styles from "./header.module.scss";
 
 export default component$(() => {
 	const { url } = useLocation();
+	const hasInit = useSignal(false);
+
+	useTask$(() => {
+		if (url.pathname !== "/") hasInit.value = true;
+	});
 
 	return (
 		<header
 			class={[
 				"mx-auto max-w-screen-xl",
 				{
-					"animate-fade-in-down animate-delay-1000": url.pathname === "/",
+					"animate-fade-in-down animate-delay-1000":
+						!hasInit.value && url.pathname === "/",
 				},
 			]}
+			onAnimationEnd$={() => {
+				hasInit.value = true;
+			}}
 		>
 			<nav>
 				<div class="flex justify-between" role="menubar">
