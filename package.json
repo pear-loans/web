@@ -1,8 +1,13 @@
 {
 	"author": "info@pear.loans",
-	"browserslist": [">= 0.5% and last 4 versions", "not dead"],
+	"browserslist": [
+		">= 0.5% and last 4 versions",
+		"not dead"
+	],
 	"dependencies": {
+		"@auth/core": "0.8.2",
 		"@builder.io/qwik": "1.1.5",
+		"@builder.io/qwik-auth": "0.1.0",
 		"@builder.io/qwik-city": "1.1.5",
 		"@fortawesome/fontawesome-common-types": "6.4.0",
 		"@fortawesome/pro-duotone-svg-icons": "6.4.0",
