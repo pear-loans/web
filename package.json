@@ -1,9 +1,6 @@
 {
 	"author": "info@pear.loans",
-	"browserslist": [
-		">= 0.5% and last 4 versions",
-		"not dead"
-	],
+	"browserslist": [">= 0.5% and last 4 versions", "not dead"],
 	"dependencies": {
 		"@builder.io/qwik": "1.1.5",
 		"@builder.io/qwik-city": "1.1.5",
@@ -25,9 +22,9 @@
 		"wrangler": "3.1.0"
 	},
 	"engines": {
-		"node": ">=20.3.0"
+		"node": "20.3.0"
 	},
-	"packageManager": "pnpm@8.6.1",
+	"packageManager": "pnpm@8.6.2",
 	"private": true,
 	"scripts": {
 		"build": "qwik build",
