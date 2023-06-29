@@ -7,15 +7,15 @@ import postcss_tailwind from "tailwindcss";
 import vite_lightningcss from "vite-plugin-lightningcss";
 import vite_paths from "vite-tsconfig-paths";
 
-import type { UserConfig } from "vite";
+import { defineConfig } from "vite";
 
 import { browserslist } from "./package.json";
 
-export default {
+export default defineConfig(() => ({
 	plugins: [
-		vite_paths(),
 		qwikCity(),
 		qwikVite(),
+		vite_paths(),
 		vite_lightningcss({ browserslist }),
 	],
 	css: {
@@ -31,4 +31,4 @@ export default {
 			"Cache-Control": "public, max-age=600",
 		},
 	},
-} satisfies UserConfig;
+}));

@@ -16,8 +16,7 @@ import qwikCityPlan from "@qwik-city-plan";
 import { manifest } from "@qwik-client-manifest";
 
 declare global {
-	// rome-ignore lint/suspicious/noEmptyInterface: The following comes this way from Qwik.
-	interface QwikCityPlatform extends PlatformCloudflarePages {}
+	type QwikCityPlatform = PlatformCloudflarePages;
 }
 
 const fetch = createQwikCity({ render, qwikCityPlan, manifest });

@@ -33,6 +33,7 @@
 	},
 	"include": [
 		"src",
-		"./*.d.ts"
+		"./*.d.ts",
+		"./*.config.ts"
 	]
 }
