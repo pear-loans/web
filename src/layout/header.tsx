@@ -43,7 +43,6 @@ export default component$(() => {
 								styles.link,
 								url.pathname === "/" && styles.active,
 							]}
-							aria-selected={url.pathname === "/"}
 						>
 							<Fa icon={faHouseChimney} />
 							<span>Home</span>
@@ -56,7 +55,6 @@ export default component$(() => {
 								styles.link,
 								url.pathname === "/about/" && styles.active,
 							]}
-							aria-selected={url.pathname === "/about/"}
 						>
 							<Fa icon={faCircleInfo} />
 							<span>About</span>

@@ -1,4 +1,4 @@
-import { ThemeContext, type ThemeOptions } from "../../theme";
+import { ThemeContext, type ThemeOptions } from "../theme";
 import { component$, event$, useContext } from "@builder.io/qwik";
 import {
 	faMoonStars,

@@ -1,4 +1,4 @@
-import { RouterHead } from "./components/layout/head";
+import { RouterHead } from "./layout/head";
 import { type Theme, ThemeContext, type ThemeOptions } from "./theme";
 import {
 	component$,
