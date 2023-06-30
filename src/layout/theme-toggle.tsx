@@ -1,52 +1,58 @@
 import { ThemeContext, type ThemeOptions } from "../theme";
 import { component$, event$, useContext } from "@builder.io/qwik";
 import {
-	faMoonStars,
-	faSunCloud,
-	faTimer,
+  faMoonStars,
+  faSunCloud,
+  faTimer,
 } from "@fortawesome/pro-duotone-svg-icons";
-import Fa from "🍐/includes/fa";
+import Fa from "~/includes/fa";
 
 const THEME_ICON = {
-	light: [<Fa icon={faSunCloud} title="Light Theme" />, "Light Theme"],
-	dark: [<Fa icon={faMoonStars} title="Dark Theme" />, "Dark Theme"],
-	device: [<Fa icon={faTimer} title="Use Device Theme" />, "Device Theme"],
+  light: [
+    <Fa icon={faSunCloud} title="Light Theme" key="light" />,
+    "Light Theme",
+  ],
+  dark: [<Fa icon={faMoonStars} title="Dark Theme" key="dark" />, "Dark Theme"],
+  device: [
+    <Fa icon={faTimer} title="Use Device Theme" key="device" />,
+    "Device Theme",
+  ],
 };
 const ORDER = Object.keys(THEME_ICON) as Array<ThemeOptions>;
 
 export default component$(() => {
-	const currentTheme = useContext(ThemeContext);
-	const onClick$ = event$(() => {
-		const currentIndex = ORDER.indexOf(currentTheme.mode);
-		const nextIndex = (currentIndex + 1) % ORDER.length;
-		currentTheme.mode = ORDER[nextIndex];
+  const currentTheme = useContext(ThemeContext);
+  const onClick$ = event$(() => {
+    const currentIndex = ORDER.indexOf(currentTheme.mode);
+    const nextIndex = (currentIndex + 1) % ORDER.length;
+    currentTheme.mode = ORDER[nextIndex];
 
-		if (currentTheme.mode === "device") {
-			localStorage.removeItem("theme");
-		} else {
-			localStorage.setItem("theme", currentTheme.mode);
-		}
+    if (currentTheme.mode === "device") {
+      localStorage.removeItem("theme");
+    } else {
+      localStorage.setItem("theme", currentTheme.mode);
+    }
 
-		document.documentElement.classList.toggle(
-			"dark",
-			currentTheme.mode === "dark" ||
-				(currentTheme.mode === "device" &&
-					window.matchMedia("(prefers-color-scheme: dark)").matches),
-		);
-	});
+    document.documentElement.classList.toggle(
+      "dark",
+      currentTheme.mode === "dark" ||
+        (currentTheme.mode === "device" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+    );
+  });
 
-	return (
-		<button
-			onClick$={onClick$}
-			type="button"
-			class={[
-				"transition-opacity duration-100 p-5 rounded-full",
-				currentTheme.loading ? "opacity-0" : "opacity-100",
-			]}
-			role="menuitem"
-		>
-			{THEME_ICON[currentTheme.mode][0]}{" "}
-			<span class="sr-only">{THEME_ICON[currentTheme.mode][1]}</span>
-		</button>
-	);
+  return (
+    <button
+      onClick$={onClick$}
+      type="button"
+      class={[
+        "transition-opacity duration-100 p-5 rounded-full",
+        currentTheme.loading ? "opacity-0" : "opacity-100",
+      ]}
+      role="menuitem"
+    >
+      {THEME_ICON[currentTheme.mode][0]}{" "}
+      <span class="sr-only">{THEME_ICON[currentTheme.mode][1]}</span>
+    </button>
+  );
 });

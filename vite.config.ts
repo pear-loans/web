@@ -1,9 +1,6 @@
 import { qwikCity } from "@builder.io/qwik-city/vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
 
-import postcss_variables from "postcss-variable-compress";
-import postcss_tailwind from "tailwindcss";
-
 import vite_lightningcss from "vite-plugin-lightningcss";
 import vite_paths from "vite-tsconfig-paths";
 
@@ -18,11 +15,6 @@ export default defineConfig(() => ({
 		vite_paths(),
 		vite_lightningcss({ browserslist }),
 	],
-	css: {
-		postcss: {
-			plugins: [postcss_tailwind(), postcss_variables()],
-		},
-	},
 	optimizeDeps: {
 		include: ["@auth/core"],
 	},

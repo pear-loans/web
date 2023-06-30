@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+// @ts-expect-error Tailwind doesn't have types for this yet.
 import flattenColors from "tailwindcss/lib/util/flattenColorPalette";
 import plugin from "tailwindcss/plugin";
 

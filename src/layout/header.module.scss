@@ -12,7 +12,7 @@
     &::after {
       @apply w-0 h-[2px] bg-green-600 transition-[width_height];
 
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: 0;
@@ -20,14 +20,12 @@
   }
 
   &.active {
-
     span::after {
       @apply w-full h-[4px];
     }
   }
 
   :global(.dark) & {
-
     &:hover {
       @apply text-green-300;
     }

@@ -1,15 +1,15 @@
-import type { Provider } from "@auth/core/providers";
-// import GitHub from "@auth/core/providers/github";
 import { serverAuth$ } from "@builder.io/qwik-auth";
+import Discord from "@auth/core/providers/Discord";
+import type { Provider } from "@auth/core/providers";
 
 export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
-	serverAuth$(({ env }) => ({
-		secret: env.get("AUTH_SECRET"),
-		trustHost: true,
-		providers: [
-			// GitHub({
-			// 	clientId: env.get("GITHUB_ID")!,
-			// 	clientSecret: env.get("GITHUB_SECRET")!,
-			// }),
-		] as Provider[],
-	}));
+  serverAuth$(({ env }) => ({
+    secret: env.get("AUTH_SECRET"),
+    trustHost: true,
+    providers: [
+      Discord({
+        clientId: env.get("DISCORD_ID")!,
+        clientSecret: env.get("DISCORD_SECRET")!,
+      }),
+    ] as Provider[],
+  }));
