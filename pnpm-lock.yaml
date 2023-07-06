@@ -11,6 +11,9 @@ dependencies:
   '@fortawesome/pro-duotone-svg-icons':
     specifier: 6.4.0
     version: 6.4.0
+  postcss-lightningcss:
+    specifier: ^0.9.0
+    version: 0.9.0(postcss@8.4.24)
   postcss-variable-compress:
     specifier: 3.0.0
     version: 3.0.0(postcss@8.4.24)
@@ -20,9 +23,6 @@ dependencies:
   sass:
     specifier: 1.63.6
     version: 1.63.6
-  vite-plugin-lightningcss:
-    specifier: 0.0.5
-    version: 0.0.5
 
 devDependencies:
   '@auth/core':
@@ -2291,6 +2291,17 @@ packages:
       postcss: 8.4.24
     dev: true
 
+  /postcss-lightningcss@0.9.0(postcss@8.4.24):
+    resolution: {integrity: sha512-Qfmei+Pq31AJUkqcF53s08VWhMIbCYvgsuFyEk0urnm6O5kA4C1/utnSNEKPTAzXx4Fm/IwK/1zFDRUjDGn+KQ==}
+    engines: {node: ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      browserslist: 4.21.9
+      lightningcss: 1.21.5
+      postcss: 8.4.24
+    dev: false
+
   /postcss-load-config@4.0.1(postcss@8.4.24):
     resolution: {integrity: sha512-vEJIc8RdiBRu3oRAI0ymerOn+7rPuMvRXslTvZUKZonDHFIczxztIyJ1urxM1x9JXEikvpWWTUUqal5j/8QgvA==}
     engines: {node: '>= 14'}
@@ -2927,13 +2938,6 @@ packages:
     transitivePeerDependencies:
       - rollup
     dev: true
-
-  /vite-plugin-lightningcss@0.0.5:
-    resolution: {integrity: sha512-lhz5GkXeRT/k09A7qEqmoL3CwdJDHgODPeGVlWGU1UxuGPEKfvSpKnDXza8nawKvxvc0eawJEsKjBzQP4AeGHw==}
-    dependencies:
-      browserslist: 4.21.9
-      lightningcss: 1.21.5
-    dev: false
 
   /vite-tsconfig-paths@4.2.0(typescript@5.1.6)(vite@4.3.9):
     resolution: {integrity: sha512-jGpus0eUy5qbbMVGiTxCL1iB9ZGN6Bd37VGLJU39kTDD6ZfULTTb1bcc5IeTWqWJKiWV5YihCaibeASPiGi8kw==}
