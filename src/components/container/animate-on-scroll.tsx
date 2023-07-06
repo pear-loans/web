@@ -21,7 +21,7 @@ export default component$((props: Props) => {
 		delay = 0,
 		class: className,
 		rootMargin = "0px 0px 0px 0px",
-		threshold = 1,
+		threshold = 0.33,
 	} = props;
 
 	const container = useSignal<Element>();
@@ -47,7 +47,7 @@ export default component$((props: Props) => {
 	return (
 		<div
 			class={["invisible", className]}
-			style={`padding: ${delay}ms`}
+			style={`animation-delay: ${delay}ms`}
 			ref={container}
 		>
 			<Slot />
