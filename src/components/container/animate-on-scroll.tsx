@@ -1,10 +1,10 @@
 import { Slot, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 
 interface Props {
-  class?: string;
-  delay?: number;
-  rootMargin?: string;
-  threshold?: number;
+	class?: string;
+	delay?: number;
+	rootMargin?: string;
+	threshold?: number;
 }
 
 /**
@@ -17,40 +17,40 @@ interface Props {
  * @param {number} [props.threshold=1] Number between 0 and 1, passed to IntersectionObserver
  */
 export default component$((props: Props) => {
-  const {
-    delay = 0,
-    class: className,
-    rootMargin = "0px 0px 0px 0px",
-    threshold = 1,
-  } = props;
+	const {
+		delay = 0,
+		class: className,
+		rootMargin = "0px 0px 0px 0px",
+		threshold = 1,
+	} = props;
 
-  const container = useSignal<Element>();
+	const container = useSignal<Element>();
 
-  useVisibleTask$(() => {
-    if (container.value) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.remove("invisible");
-              entry.target.classList.add("animate-fade-in-up");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { rootMargin, threshold }
-      );
-      observer.observe(container.value);
-    }
-  });
+	useVisibleTask$(() => {
+		if (container.value) {
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.remove("invisible");
+							entry.target.classList.add("animate-fade-in-up");
+							observer.unobserve(entry.target);
+						}
+					});
+				},
+				{ rootMargin, threshold },
+			);
+			observer.observe(container.value);
+		}
+	});
 
-  return (
-    <div
-      class={["invisible", className]}
-      style={`padding: ${delay}ms`}
-      ref={container}
-    >
-      <Slot />
-    </div>
-  );
+	return (
+		<div
+			class={["invisible", className]}
+			style={`padding: ${delay}ms`}
+			ref={container}
+		>
+			<Slot />
+		</div>
+	);
 });

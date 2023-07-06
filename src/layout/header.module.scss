@@ -1,37 +1,37 @@
 .link {
-  @apply rounded-full transition-colors;
+	@apply rounded-full transition-colors;
 
-  &:hover {
-    @apply text-green-600;
-  }
+	&:hover {
+		@apply text-green-600;
+	}
 
-  span {
-    display: inline-block;
-    position: relative;
+	span {
+		display: inline-block;
+		position: relative;
 
-    &::after {
-      @apply w-0 h-[2px] bg-green-600 transition-[width_height];
+		&::after {
+			@apply w-0 h-[2px] bg-green-600 transition-[width_height];
 
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-  }
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
 
-  &.active {
-    span::after {
-      @apply w-full h-[4px];
-    }
-  }
+	&.active {
+		span::after {
+			@apply w-full h-[4px];
+		}
+	}
 
-  :global(.dark) & {
-    &:hover {
-      @apply text-green-300;
-    }
+	:global(.dark) & {
+		&:hover {
+			@apply text-green-300;
+		}
 
-    span::after {
-      @apply bg-green-300;
-    }
-  }
+		span::after {
+			@apply bg-green-300;
+		}
+	}
 }
