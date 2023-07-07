@@ -9,14 +9,14 @@ dependencies:
     specifier: 0.9.0
     version: 0.9.0
   '@builder.io/qwik':
-    specifier: 1.2.5
-    version: 1.2.5(undici@5.22.1)
+    specifier: 1.2.6
+    version: 1.2.6(undici@5.22.1)
   '@builder.io/qwik-auth':
     specifier: 0.1.0
-    version: 0.1.0(@auth/core@0.9.0)(@builder.io/qwik-city@1.2.5)(@builder.io/qwik@1.2.5)
+    version: 0.1.0(@auth/core@0.9.0)(@builder.io/qwik-city@1.2.6)(@builder.io/qwik@1.2.6)
   '@builder.io/qwik-city':
-    specifier: 1.2.5
-    version: 1.2.5
+    specifier: 1.2.6
+    version: 1.2.6
   '@fortawesome/fontawesome-common-types':
     specifier: 6.4.0
     version: 6.4.0
@@ -51,14 +51,14 @@ dependencies:
     specifier: 5.22.1
     version: 5.22.1
   vite:
-    specifier: 4.4.0
-    version: 4.4.0(@types/node@20.4.0)(sass@1.63.6)
+    specifier: 4.4.2
+    version: 4.4.2(@types/node@20.4.0)(sass@1.63.6)
   vite-tsconfig-paths:
     specifier: 4.2.0
-    version: 4.2.0(typescript@5.1.6)(vite@4.4.0)
+    version: 4.2.0(typescript@5.1.6)(vite@4.4.2)
   wrangler:
-    specifier: 3.1.1
-    version: 3.1.1
+    specifier: 3.1.2
+    version: 3.1.2
 
 packages:
 
@@ -83,7 +83,7 @@ packages:
       preact-render-to-string: 5.2.3(preact@10.11.3)
     dev: false
 
-  /@builder.io/qwik-auth@0.1.0(@auth/core@0.9.0)(@builder.io/qwik-city@1.2.5)(@builder.io/qwik@1.2.5):
+  /@builder.io/qwik-auth@0.1.0(@auth/core@0.9.0)(@builder.io/qwik-city@1.2.6)(@builder.io/qwik@1.2.6):
     resolution: {integrity: sha512-uwwVbam6yQs9evtmof/+SpRT7DzoxD+2DSwsndGcm9JBU4Sh1xMyzll6F9QbivKVboglx+4X05OzJG7QTttWMQ==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     peerDependencies:
@@ -92,12 +92,12 @@ packages:
       '@builder.io/qwik-city': '>=0.6.0'
     dependencies:
       '@auth/core': 0.9.0
-      '@builder.io/qwik': 1.2.5(undici@5.22.1)
-      '@builder.io/qwik-city': 1.2.5
+      '@builder.io/qwik': 1.2.6(undici@5.22.1)
+      '@builder.io/qwik-city': 1.2.6
     dev: false
 
-  /@builder.io/qwik-city@1.2.5:
-    resolution: {integrity: sha512-kmxh5KQ+amsPla4l51myX2d7QRsQRQtSZolQJEkrNNyH5onBTLlkDKl35KVJLLv/4S57MaEb3AcruKPiiLvWBw==}
+  /@builder.io/qwik-city@1.2.6:
+    resolution: {integrity: sha512-/uo58NysxpdsiEwuuKo8HDM9UYYAofrniupor2v5vci3Dr6PTXcvKAFJ1Z+SdJGv2uxr5hvKsbVohnVYa9jxYg==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     dependencies:
       '@mdx-js/mdx': 2.3.0
@@ -105,15 +105,15 @@ packages:
       source-map: 0.7.4
       svgo: 3.0.2
       vfile: 5.3.7
-      vite-imagetools: 5.0.4
+      vite-imagetools: 5.0.5
       zod: 3.21.4
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: false
 
-  /@builder.io/qwik@1.2.5(undici@5.22.1):
-    resolution: {integrity: sha512-yLBKW2CTIAh8wo+OEgaDIE2ubIuIv4yo7faV6LErZYfZAZvfNxG+uBwZaSnshkF+uJR9gtS1gBlOjtDTEhCRqw==}
+  /@builder.io/qwik@1.2.6(undici@5.22.1):
+    resolution: {integrity: sha512-Cm1sLAimML55I5T1RI80R1lLgI4cnSeQt5obQtcMKa8wMmf2/luEyQaEkeN2fV3sp/gaVXCfAuKaddXK6ONdww==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
     peerDependencies:
@@ -783,7 +783,7 @@ packages:
   /@types/mdast@3.0.11:
     resolution: {integrity: sha512-Y/uImid8aAwrEA24/1tcRZwpxX3pIFTSilcNDKSPn+Y2iDywSEachzRuvgAYYLR3wpGXAsMbv5lvKLDZLeYPAw==}
     dependencies:
-      '@types/unist': 2.0.6
+      '@types/unist': 3.0.0
     dev: false
 
   /@types/mdx@2.0.5:
@@ -800,6 +800,10 @@ packages:
 
   /@types/unist@2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: false
+
+  /@types/unist@3.0.0:
+    resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
     dev: false
 
   /acorn-jsx@5.3.2(acorn@8.10.0):
@@ -914,9 +918,9 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001512
-      electron-to-chromium: 1.4.451
-      node-releases: 2.0.12
+      caniuse-lite: 1.0.30001513
+      electron-to-chromium: 1.4.454
+      node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.9)
     dev: false
 
@@ -943,8 +947,8 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /caniuse-lite@1.0.30001512:
-    resolution: {integrity: sha512-2S9nK0G/mE+jasCUsMPlARhRCts1ebcp2Ji8Y8PWi4NDE1iRdLCnEPHkEfeBrGC45L4isBx5ur3IQ6yTE2mRZw==}
+  /caniuse-lite@1.0.30001513:
+    resolution: {integrity: sha512-pnjGJo7SOOjAGytZZ203Em95MRM8Cr6jhCXNF/FAXTpCTRTECnqQWLpiTRqrFtdYcth8hf4WECUpkezuYsMVww==}
     dev: false
 
   /capnp-ts@0.7.0:
@@ -1182,8 +1186,8 @@ packages:
       domhandler: 5.0.3
     dev: false
 
-  /electron-to-chromium@1.4.451:
-    resolution: {integrity: sha512-YYbXHIBxAHe3KWvGOJOuWa6f3tgow44rBW+QAuwVp2DvGqNZeE//K2MowNdWS7XE8li5cgQDrX1LdBr41LufkA==}
+  /electron-to-chromium@1.4.454:
+    resolution: {integrity: sha512-pmf1rbAStw8UEQ0sr2cdJtWl48ZMuPD9Sto8HVQOq9vx9j2WgDEN6lYoaqFvqEHYOmGA9oRGn7LqWI9ta0YugQ==}
     dev: false
 
   /end-of-stream@1.4.4:
@@ -2196,8 +2200,8 @@ packages:
     engines: {node: '>= 6.13.0'}
     dev: false
 
-  /node-releases@2.0.12:
-    resolution: {integrity: sha512-QzsYKWhXTWx8h1kIvqfnC++o0pEmpRQA/aenALsL2F4pqNVr7YzcdMlDij5WBnwftRbJCNJL/O7zdKaxKPHqgQ==}
+  /node-releases@2.0.13:
+    resolution: {integrity: sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ==}
     dev: false
 
   /normalize-path@3.0.0:
@@ -2953,8 +2957,8 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /vite-imagetools@5.0.4:
-    resolution: {integrity: sha512-EIRstqWlmoQipsucFCioqCYpfp+rG5v8gpKDFvFJBxEKEAEBPnxW+swmE5dfoRQkwMKkYwmBWeXYsnMaDohUtg==}
+  /vite-imagetools@5.0.5:
+    resolution: {integrity: sha512-q+BRot2b7AxUHgkQzU+5ku+NERVZcXmLdAnQWSnIw31bRoPIBSDxmDRTDldX8gqyjQNkIBjObF+xqPCeNp7CzQ==}
     engines: {node: '>=12.0.0'}
     dependencies:
       '@rollup/pluginutils': 5.0.2
@@ -2963,7 +2967,7 @@ packages:
       - rollup
     dev: false
 
-  /vite-tsconfig-paths@4.2.0(typescript@5.1.6)(vite@4.4.0):
+  /vite-tsconfig-paths@4.2.0(typescript@5.1.6)(vite@4.4.2):
     resolution: {integrity: sha512-jGpus0eUy5qbbMVGiTxCL1iB9ZGN6Bd37VGLJU39kTDD6ZfULTTb1bcc5IeTWqWJKiWV5YihCaibeASPiGi8kw==}
     peerDependencies:
       vite: '*'
@@ -2974,14 +2978,14 @@ packages:
       debug: 4.3.4
       globrex: 0.1.2
       tsconfck: 2.1.1(typescript@5.1.6)
-      vite: 4.4.0(@types/node@20.4.0)(sass@1.63.6)
+      vite: 4.4.2(@types/node@20.4.0)(sass@1.63.6)
     transitivePeerDependencies:
       - supports-color
       - typescript
     dev: false
 
-  /vite@4.4.0(@types/node@20.4.0)(sass@1.63.6):
-    resolution: {integrity: sha512-Wf+DCEjuM8aGavEYiF77hnbxEZ+0+/jC9nABR46sh5Xi+GYeSvkeEFRiVuI3x+tPjxgZeS91h1jTAQTPFgePpA==}
+  /vite@4.4.2(@types/node@20.4.0)(sass@1.63.6):
+    resolution: {integrity: sha512-zUcsJN+UvdSyHhYa277UHhiJ3iq4hUBwHavOpsNUGsTgjBeoBlK8eDt+iT09pBq0h9/knhG/SPrZiM7cGmg7NA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -3030,8 +3034,8 @@ packages:
       '@cloudflare/workerd-windows-64': 1.20230628.0
     dev: false
 
-  /wrangler@3.1.1:
-    resolution: {integrity: sha512-iG6QGOt+qgSm7UroJ8IJ+JdXEcDcW7yp9ilP0V7alCGhKm8shqa/M1iyMOpukZSCSZo8Vmn5nH2C9OY1PR3dQQ==}
+  /wrangler@3.1.2:
+    resolution: {integrity: sha512-UvpKpemw2Bt0tSS3Dspkw0tp/d2dR3W3hdHjyM7jEsv+xgmQgEZqoN8gdA/2sgECO3FXRdLuQZDdcuOO43aHFw==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     dependencies:
