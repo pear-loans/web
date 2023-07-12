@@ -1,4 +1,0 @@
-[[d1_databases]]
-binding = "DB_USERS" # i.e. available in your Worker on env.DB
-database_name = "PEAR_USERS"
-database_id = "6bfb8358-0458-4e73-97a3-9ac10e27aea7"
