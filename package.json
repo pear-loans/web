@@ -38,9 +38,12 @@
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
-    "preview": "qwik build && wrangler pages dev ./dist",
-    "qwik": "qwik",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "preview": "qwik build preview && vite preview --open",
     "serve": "wrangler pages dev ./dist",
-    "start": "vite --open --mode ssr"
+    "start": "vite --open --mode ssr",
+    "qwik": "qwik",
+    "pages:dev": "wrangler pages dev --compatibility-date=2023-07-12 -- pnpm run dev",
+    "pages:deploy": "pnpm run build && pnpm run deploy"
   }
 }
