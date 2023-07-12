@@ -4,7 +4,7 @@ import { routeLoader$ } from "@builder.io/qwik-city";
 import { type D1Database } from "@cloudflare/workers-types";
 
 export const useGetDb = routeLoader$((thing) => {
-	console.log("fuck you", thing);
+	console.log("fuck you", thing.platform.env.DB_USERS);
 });
 
 export default component$(() => {
