@@ -1,0 +1,4 @@
+[[d1_databases]]
+binding="DB_USERS"
+database_name = "pear-loans-users"
+database_id = "83346bfb-f5c3-4f2c-bab7-97083951d690"

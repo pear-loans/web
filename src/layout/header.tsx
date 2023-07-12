@@ -61,6 +61,19 @@ export default component$(() => {
 						</Link>
 					</div>
 					<div class="flex items-center" role="none">
+						<Link
+							href="/login/"
+							role="menuitem"
+							class={[
+								"p-5 font-semibold",
+								styles.link,
+								url.pathname === "/about/" && styles.active,
+							]}
+						>
+							<Fa icon={faCircleInfo} />
+							<span>Login</span>
+						</Link>
+
 						<ThemeToggle />
 					</div>
 				</div>
