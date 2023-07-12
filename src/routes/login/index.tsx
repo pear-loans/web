@@ -5,7 +5,7 @@ import { routeLoader$ } from "@builder.io/qwik-city";
 export const useGetDb = routeLoader$(async ({ platform }) => {
 	const { DB_USERS } = platform;
 	const { results } = await DB_USERS.prepare("SELECT * FROM Users").all();
-	cconsole.log(results);
+	console.log(results);
 	return "default";
 });
 
