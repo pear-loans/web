@@ -17,6 +17,9 @@ dependencies:
   '@builder.io/qwik-city':
     specifier: 1.2.6
     version: 1.2.6
+  '@cloudflare/workers-types':
+    specifier: ^4.20230710.0
+    version: 4.20230710.0
   '@fortawesome/fontawesome-common-types':
     specifier: 6.4.0
     version: 6.4.0
@@ -173,6 +176,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@cloudflare/workers-types@4.20230710.0:
+    resolution: {integrity: sha512-bq0QMM51KyqTL/lIFUToT2AZfulO7pqwQvdZhjPMbxlIJADDNYeFd+GEQ6YGiGl5G/xxVEkpEql59sYlSfzYIg==}
+    dev: false
 
   /@esbuild-plugins/node-globals-polyfill@0.1.1(esbuild@0.16.3):
     resolution: {integrity: sha512-MR0oAA+mlnJWrt1RQVQ+4VYuRJW/P2YmRTv1AsplObyvuBMnPHiizUF95HHYiSsMGLhyGtWufaq2XQg6+iurBg==}
