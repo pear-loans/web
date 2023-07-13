@@ -9,7 +9,6 @@
     "@fortawesome/fontawesome-common-types": "6.4.0",
     "@fortawesome/pro-duotone-svg-icons": "6.4.0",
     "@miniflare/d1": "^2.14.0",
-    "@miniflare/shared": "^2.14.0",
     "@types/node": "20.4.1",
     "postcss": "8.4.25",
     "postcss-lightningcss": "0.9.0",
@@ -41,7 +40,7 @@
     "setup": "wrangler d1 execute production --local --file=./setup/d1-setup.sql",
     "start": "vite --open --mode ssr",
     "qwik": "qwik",
-    "pages:dev": "wrangler pages dev -- pnpm run dev",
-    "pages:preview": "pnpm run build && wrangler pages dev ./dist"
+    "pages:dev__DONTUSE": "wrangler pages dev -- pnpm run dev",
+    "pages:preview__DONTUSE": "pnpm run build && wrangler pages dev ./dist"
   }
 }
