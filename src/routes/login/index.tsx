@@ -1,17 +1,19 @@
-// @ts-nocheck
 import { component$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
-import { type D1Database } from "@cloudflare/workers-types";
+import { D1Database } from "@cloudflare/workers-types";
 
-export const useGetDb = routeLoader$(async (thing) => {
-	const db = thing.platform.env.DB_USERS as D1Database;
-	const test = await db.prepare("SELECT * FROM Users").all();
+import getDb from "~/db";
+import { type User } from "~/types/db";
 
-	console.log("fuck you", test);
+export const useGetDb = routeLoader$(async ({ platform: { env } }) => {
+	const db = (await getDb(env?.DB)) as D1Database;
+	const { results } = await db.prepare("SELECT * FROM Users").all<User>();
+	// @ts-ignore
+	return results[0].Platform;
 });
 
 export default component$(() => {
 	const action = useGetDb();
 
-	return <div>Login {action || "egg"}</div>;
+	return <div>Login {action}</div>;
 });
