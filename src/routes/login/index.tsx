@@ -1,19 +1,61 @@
 import { component$ } from "@builder.io/qwik";
-import { routeLoader$ } from "@builder.io/qwik-city";
-import { D1Database } from "@cloudflare/workers-types";
-
-import getDb from "~/db";
-import { type User } from "~/types/db";
-
-export const useGetDb = routeLoader$(async ({ platform: { env } }) => {
-	const db = (await getDb(env?.DB)) as D1Database;
-	const { results } = await db.prepare("SELECT * FROM Users").all<User>();
-	// @ts-ignore
-	return results[0].Platform;
-});
+import {
+	useAuthSession,
+	useAuthSignin,
+	useAuthSignout,
+} from "~/routes/plugin@auth";
 
 export default component$(() => {
-	const action = useGetDb();
+	const signin = useAuthSignin();
+	const signOut = useAuthSignout();
+	const session = useAuthSession();
 
-	return <div>Login {action}</div>;
+	return (
+		<>
+			<div>Session: {JSON.stringify(session)}</div>
+			<div class="flex flex-col">
+				<button
+					onClick$={() =>
+						signin.submit({
+							providerId: "discord",
+						})
+					}
+					type="button"
+				>
+					Sign In - Discord
+				</button>
+				<button
+					onClick$={() =>
+						signin.submit({
+							providerId: "google",
+							options: {
+								callbackUrl: "http://localhost:5173/login",
+							},
+						})
+					}
+					type="button"
+				>
+					Sign In - Google
+				</button>
+				<button
+					onClick$={() =>
+						signin.submit({
+							providerId: "apple",
+						})
+					}
+					type="button"
+				>
+					Sign In - Apple
+				</button>
+			</div>
+			<button
+				onClick$={() =>
+					signOut.submit({ callbackUrl: "http://localhost:5173/login" })
+				}
+				type="button"
+			>
+				Sign Out
+			</button>
+		</>
+	);
 });
