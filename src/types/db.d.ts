@@ -3,3 +3,7 @@ export type User = {
 	Platform: string;
 	Email: string;
 };
+
+export interface DB {
+	Users: User[];
+}

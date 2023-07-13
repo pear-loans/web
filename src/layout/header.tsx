@@ -67,7 +67,7 @@ export default component$(() => {
 							class={[
 								"p-5 font-semibold",
 								styles.link,
-								url.pathname === "/about/" && styles.active,
+								url.pathname === "/login/" && styles.active,
 							]}
 						>
 							<Fa icon={faCircleInfo} />

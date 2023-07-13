@@ -5,12 +5,12 @@
     "@builder.io/qwik": "1.2.6",
     "@builder.io/qwik-auth": "0.1.0",
     "@builder.io/qwik-city": "1.2.6",
-    "@cloudflare/workers-types": "4.20230710.0",
+    "@cloudflare/workers-types": "4.20230710.1",
     "@fortawesome/fontawesome-common-types": "6.4.0",
     "@fortawesome/pro-duotone-svg-icons": "6.4.0",
     "@miniflare/d1": "2.14.0",
     "@miniflare/shared": "2.14.0",
-    "@types/node": "20.4.1",
+    "@types/node": "20.4.2",
     "postcss": "8.4.25",
     "postcss-lightningcss": "0.9.0",
     "postcss-variable-compress": "3.0.0",
@@ -30,18 +30,17 @@
   "packageManager": "pnpm@8.6.7",
   "private": true,
   "scripts": {
-    "__DONTUSE:pages:dev": "wrangler pages dev -- pnpm run dev",
     "__DONTUSE:pages:preview": "pnpm run build && wrangler pages dev ./dist",
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
-    "lint": "rome check ./src",
-		"fmt": "rome format ./src --write",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "rome format ./src --write",
+    "lint": "rome check ./src",
     "qwik": "qwik",
-    "setup": "wrangler d1 execute production --local --file=./setup/d1-setup.sql"
+    "setup": "wrangler d1 execute production --local --file=./config/d1-setup.sql"
   }
 }
