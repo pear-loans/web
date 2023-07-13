@@ -1,6 +1,5 @@
 import type { Provider } from "@auth/core/providers";
-// @ts-ignore
-import Discord from "@auth/core/providers/Discord";
+import Discord from "@auth/core/providers/discord";
 import { serverAuth$ } from "@builder.io/qwik-auth";
 import { getDb } from "~/db";
 import { BothDB, D1Adapter } from "~/includes/temp/d1-authjs-adapter";
