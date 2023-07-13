@@ -30,18 +30,18 @@
   "packageManager": "pnpm@8.6.7",
   "private": true,
   "scripts": {
+    "__DONTUSE:pages:dev": "wrangler pages dev -- pnpm run dev",
+    "__DONTUSE:pages:preview": "pnpm run build && wrangler pages dev ./dist",
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
+    "lint": "rome check ./src",
+		"fmt": "rome format ./src --write",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
-    "preview": "qwik build preview && vite preview --open",
-    "setup": "wrangler d1 execute production --local --file=./setup/d1-setup.sql",
-    "start": "vite --open --mode ssr",
     "qwik": "qwik",
-    "pages:dev__DONTUSE": "wrangler pages dev -- pnpm run dev",
-    "pages:preview__DONTUSE": "pnpm run build && wrangler pages dev ./dist"
+    "setup": "wrangler d1 execute production --local --file=./setup/d1-setup.sql"
   }
 }
