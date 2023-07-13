@@ -1,4 +1,5 @@
 import type { Provider } from "@auth/core/providers";
+// @ts-ignore
 import Discord from "@auth/core/providers/Discord";
 import { serverAuth$ } from "@builder.io/qwik-auth";
 import { getDb } from "~/db";

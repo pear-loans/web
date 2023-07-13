@@ -28,9 +28,6 @@ export default component$(() => {
 					onClick$={() =>
 						signin.submit({
 							providerId: "google",
-							options: {
-								callbackUrl: "http://localhost:5173/login",
-							},
 						})
 					}
 					type="button"
@@ -48,12 +45,7 @@ export default component$(() => {
 					Sign In - Apple
 				</button>
 			</div>
-			<button
-				onClick$={() =>
-					signOut.submit({ callbackUrl: "http://localhost:5173/login" })
-				}
-				type="button"
-			>
+			<button onClick$={() => signOut.submit({})} type="button">
 				Sign Out
 			</button>
 		</>
