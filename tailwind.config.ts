@@ -57,6 +57,14 @@ export default {
 	],
 	theme: {
 		extend: {
+			colors: {
+				brands: {
+					// https://discord.com/branding
+					discord: "#5865F2",
+					// https://developers.google.com/identity/branding-guidelines
+					google: "#5383ee",
+				},
+			},
 			screens: {
 				xs: "480px",
 			},
