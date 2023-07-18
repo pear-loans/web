@@ -62,16 +62,16 @@ export default component$(() => {
 					</div>
 					<div class="flex items-center" role="none">
 						<Link
-							href="/login/"
+							href="/account/"
 							role="menuitem"
 							class={[
 								"p-5 font-semibold",
 								styles.link,
-								url.pathname === "/login/" && styles.active,
+								url.pathname === "/account/" && styles.active,
 							]}
 						>
 							<Fa icon={faCircleInfo} />
-							<span>Login</span>
+							<span>Account</span>
 						</Link>
 
 						<ThemeToggle />

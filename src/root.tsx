@@ -4,6 +4,7 @@ import {
 	component$,
 	useContextProvider,
 	useStore,
+	useStyles$,
 	useVisibleTask$,
 } from "@builder.io/qwik";
 import {
@@ -24,12 +25,11 @@ export default component$(() => {
 		theme.loading = false;
 		theme.mode = (localStorage.getItem("theme") || "device") as ThemeOptions;
 	});
+	useStyles$(styles);
 
 	return (
 		<QwikCityProvider>
 			<head>
-				{/* rome-ignore lint/security/noDangerouslySetInnerHtml: Disabled to inline essential tailwind styles to HTML */}
-				<style dangerouslySetInnerHTML={styles} />
 				{/* rome-ignore lint/security/noDangerouslySetInnerHtml: Getting theme from storage */}
 				<script dangerouslySetInnerHTML='"dark"===localStorage.theme||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches||document.documentElement.classList.remove("dark")' />
 				<title>Pear Loans</title>
