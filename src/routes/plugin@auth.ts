@@ -1,9 +1,11 @@
 import type { Provider } from "@auth/core/providers";
 import Discord from "@auth/core/providers/discord";
+import Google from "@auth/core/providers/google";
 import { serverAuth$ } from "@builder.io/qwik-auth";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { getDb } from "~/db";
 import { BothDB, D1Adapter } from "~/includes/temp/d1-authjs-adapter";
+
 export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
 	serverAuth$(({ env }) => {
 		const DB = (env.get("DB") as unknown as BothDB) || getDb();
@@ -17,6 +19,10 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
 					clientId: env.get("DISCORD_ID")!,
 					// rome-ignore lint/style/noNonNullAssertion: Suggested auth setup from Qwik uses non-null assertion.
 					clientSecret: env.get("DISCORD_SECRET")!,
+				}),
+				Google({
+					clientId: env.get("GOOGLE_ID"),
+					clientSecret: env.get("GOOGLE_SECRET"),
 				}),
 			] as Provider[],
 			adapter: D1Adapter(DB),

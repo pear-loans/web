@@ -32,7 +32,7 @@ export default component$(() => {
 				</>
 			) : (
 				<div class="gap-y-3 flex flex-col max-w-screen-xs m-auto mt-20">
-					<Button
+					{/* <Button
 						icon={faApple}
 						color={0}
 						class="w-full fa-primary-white text-white bg-black dark:bg-white dark:text-black dark:fa-primary-black block"
@@ -40,7 +40,7 @@ export default component$(() => {
 							signin.submit({ providerId: "apple" });
 						}}
 						label="Continue with Apple"
-					/>
+					/> */}
 					<Button
 						icon={faGoogle}
 						color={0}
