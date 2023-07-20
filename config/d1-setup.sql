@@ -9,19 +9,16 @@ DROP TABLE IF EXISTS 'authjs_users';
 
 DROP TABLE IF EXISTS 'authjs_verification_tokens';
 
--------- Set up the 'Users' table
-CREATE TABLE IF NOT EXISTS Users (
-	CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-	Email TEXT,
-	Id TEXT PRIMARY KEY,
-	Platform TEXT
-);
+DROP TABLE IF EXISTS 'profiles';
 
-INSERT INTO
-	Users (Id, Platform, Email)
-VALUES
-	('1', 'Google', 'test1@test.com'),
-	('4', 'Apple', 'test2@test.com');
+-------- Set up the 'Users' table
+CREATE TABLE IF NOT EXISTS 'profiles' (
+	'profile_data' TEXT,
+	'full_name' TEXT,
+	'user_id' TEXT NOT NULL DEFAULT NULL,
+	'school' TEXT,
+	PRIMARY KEY (user_id)
+);
 
 -------- Required Auth.js tables
 CREATE TABLE IF NOT EXISTS 'authjs_accounts' (

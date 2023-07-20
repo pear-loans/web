@@ -16,7 +16,6 @@ import {
 import styles from "./global.scss?inline";
 
 export default component$(() => {
-	console.log("test");
 	const theme = useStore<Theme>(
 		{ mode: "device", loading: true },
 		{ deep: false },

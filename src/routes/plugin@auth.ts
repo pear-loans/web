@@ -3,6 +3,7 @@ import Discord from "@auth/core/providers/discord";
 import Google from "@auth/core/providers/google";
 import { serverAuth$ } from "@builder.io/qwik-auth";
 import type { RequestHandler } from "@builder.io/qwik-city";
+
 import { getDb } from "~/db";
 import { BothDB, D1Adapter } from "~/includes/temp/d1-authjs-adapter";
 
@@ -14,6 +15,12 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
 			callbacks: {
 				async redirect({ baseUrl }) {
 					return `${baseUrl}/account`;
+				},
+				async session({ session, user }) {
+					if (user.id && session.user) {
+						session.user.id = user.id;
+					}
+					return session;
 				},
 			},
 			secret: env.get("AUTH_SECRET"),
