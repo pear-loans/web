@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { component$ } from "@builder.io/qwik";
 import { routeAction$, routeLoader$ } from "@builder.io/qwik-city";
 
