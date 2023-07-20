@@ -5,6 +5,7 @@ import Login from "~/components/routes/account/login";
 import Account from "~/components/routes/account/profile";
 import { getDb } from "~/db";
 import { getHandler, useAuthSession } from "~/routes/plugin@auth";
+import type { UserSession } from "~/routes/plugin@auth";
 import { isValidSession } from "~/utils/is-valid-session";
 
 export const onGet = getHandler;
@@ -14,6 +15,7 @@ export const ERRORS = {
 	UNEXPECTED: "UNEXPECTED",
 };
 
+// Notes: I'd loooooove to put this in components/routes/account but this doesn't work.
 export const useAddProfile = routeAction$(async (data, requestEvent) => {
 	if (!data.name || !data.school) return { errors: [ERRORS.MISSING_INPUT] };
 
@@ -38,7 +40,9 @@ export const useAddProfile = routeAction$(async (data, requestEvent) => {
 });
 
 export const useAccountData = routeLoader$(async (requestEvent) => {
-	const session = await requestEvent.resolveValue(useAuthSession);
+	const session = (await requestEvent.resolveValue(
+		useAuthSession,
+	)) as UserSession;
 	if (!session || !session.user?.id) return;
 
 	const base64id = btoa(session.user.id);

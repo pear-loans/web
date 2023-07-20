@@ -11,13 +11,18 @@ import Input from "~/components/input/input";
 import { ERRORS, useAddProfile } from "~/routes/account";
 import { useAuthSignout } from "~/routes/plugin@auth";
 
-type ProfileData = {
+type Profile = {
+	full_name: string;
+	school: string;
+};
+
+type Data = {
 	userId: string;
-	profile: string;
+	profile: Profile;
 };
 
 interface Props {
-	data: ProfileData;
+	data: Data;
 }
 
 export default component$<Props>((props) => {
@@ -27,6 +32,10 @@ export default component$<Props>((props) => {
 
 	const addProfile = useAddProfile();
 	const signOut = useAuthSignout();
+
+	const visibleProfileInfo = addProfile.value?.profile || profile;
+	const errors = addProfile.value?.errors || [];
+	const hasErrors = errors.length > 0;
 
 	return (
 		<div class="py-20 relative">
@@ -39,14 +48,10 @@ export default component$<Props>((props) => {
 				class="absolute top-0 right-0"
 			/>
 
-			{(profile || addProfile.value?.profile) &&
-			!addProfile.value?.errors?.length ? (
+			{visibleProfileInfo && !hasErrors ? (
 				<div>
 					<Heading level="h1">
-						Hello{" "}
-						<span>
-							{profile.full_name || addProfile.value?.profile?.full_name}
-						</span>
+						Hello <span>{visibleProfileInfo.full_name}</span>
 					</Heading>
 				</div>
 			) : (
@@ -89,8 +94,8 @@ export default component$<Props>((props) => {
 						<AnimateOnScroll delay={2200}>
 							<Button type="submit" label="Submit" class="w-full" />
 						</AnimateOnScroll>
-						{addProfile.value?.errors?.length &&
-							addProfile.value?.errors.map((error) => {
+						{hasErrors &&
+							errors.map((error) => {
 								return {
 									[ERRORS.MISSING_INPUT]: (
 										<div class="text-red-500">Please fill out all fields</div>
