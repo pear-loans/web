@@ -1,9 +1,24 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "qwik-project-name",
-  "short_name": "Welcome to Qwik",
-  "start_url": ".",
+  "background_color": "#ecfdf5",
+  "description": "Student loan peer-to-peer crowdfunding. List your student loan or help others by donating.",
   "display": "standalone",
-  "background_color": "#fff",
-  "description": "A Qwik project app."
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "/android-chrome-192x192.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "512x512",
+      "src": "/android-chrome-512x512.png",
+      "type": "image/png"
+    }
+  ],
+  "lang": "en",
+  "name": "Pear Loans",
+  "orientation": "natural",
+  "short_name": "🍐 Loans",
+  "start_url": "/",
+  "theme_color": "#ecfdf5"
 }

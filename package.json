@@ -1,30 +1,36 @@
 {
   "browserslist": "> 0.75%",
   "dependencies": {
-    "@auth/core": "0.9.0",
+    "@auth/core": "0.10.0",
     "@builder.io/qwik": "1.2.6",
     "@builder.io/qwik-auth": "0.1.0",
     "@builder.io/qwik-city": "1.2.6",
+    "@cloudflare/workers-types": "4.20230717.0",
     "@fortawesome/fontawesome-common-types": "6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/pro-duotone-svg-icons": "6.4.0",
-    "@types/node": "20.4.1",
-    "postcss": "8.4.25",
+    "@miniflare/d1": "2.14.0",
+    "@miniflare/shared": "2.14.0",
+    "@types/node": "20.4.2",
+    "nanoid": "^4.0.2",
+    "postcss": "8.4.26",
     "postcss-lightningcss": "0.9.0",
     "postcss-variable-compress": "3.0.0",
     "rome": "12.1.3",
-    "sass": "1.63.6",
-    "tailwindcss": "3.3.2",
+    "sass": "1.64.0",
+    "set-cookie-parser": "^2.6.0",
+    "tailwindcss": "3.3.3",
     "typescript": "5.1.6",
     "undici": "5.22.1",
-    "vite": "4.4.2",
+    "vite": "4.4.5",
     "vite-tsconfig-paths": "4.2.0",
-    "wrangler": "3.1.2"
+    "wrangler": "3.3.0"
   },
   "engines": {
-    "node": "20.3.1",
-    "pnpm": "8.6.7"
+    "node": "20.4.0",
+    "pnpm": "8.6.9"
   },
-  "packageManager": "pnpm@8.6.7",
+  "packageManager": "pnpm@8.6.9",
   "private": true,
   "scripts": {
     "build": "qwik build",
@@ -32,14 +38,13 @@
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/cloudflare-pages/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
-    "deploy": "wrangler pages publish ./dist",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
-    "fmt": "prettier --write .",
-    "fmt.check": "prettier --check .",
-    "preview": "qwik build preview && vite preview --open",
+    "fmt": "rome format ./src --write",
+    "fmt.check": "rome format ./src",
+    "lint": "rome check ./src",
+    "preview": "pnpm run build && wrangler pages dev ./dist",
     "qwik": "qwik",
-    "serve": "wrangler pages dev ./dist",
-    "start": "vite --open --mode ssr"
+    "setup": "wrangler d1 execute production --local --file=./config/d1-setup.sql"
   }
 }

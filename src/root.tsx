@@ -4,6 +4,7 @@ import {
 	component$,
 	useContextProvider,
 	useStore,
+	useStyles$,
 	useVisibleTask$,
 } from "@builder.io/qwik";
 import {
@@ -15,6 +16,7 @@ import {
 import styles from "./global.scss?inline";
 
 export default component$(() => {
+	console.log("test");
 	const theme = useStore<Theme>(
 		{ mode: "device", loading: true },
 		{ deep: false },
@@ -24,12 +26,11 @@ export default component$(() => {
 		theme.loading = false;
 		theme.mode = (localStorage.getItem("theme") || "device") as ThemeOptions;
 	});
+	useStyles$(styles);
 
 	return (
 		<QwikCityProvider>
 			<head>
-				{/* rome-ignore lint/security/noDangerouslySetInnerHtml: Disabled to inline essential tailwind styles to HTML */}
-				<style dangerouslySetInnerHTML={styles} />
 				{/* rome-ignore lint/security/noDangerouslySetInnerHtml: Getting theme from storage */}
 				<script dangerouslySetInnerHTML='"dark"===localStorage.theme||!("theme"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches||document.documentElement.classList.remove("dark")' />
 				<title>Pear Loans</title>
@@ -73,7 +74,7 @@ export default component$(() => {
 					sizes="16x16"
 					href="/favicon-16x16.png"
 				/>
-				<link rel="manifest" href="/site.webmanifest" />
+				<link rel="manifest" href="/manifest.json" />
 				<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
 				<RouterHead />
 				<ServiceWorkerRegister />

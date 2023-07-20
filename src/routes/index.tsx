@@ -22,7 +22,7 @@ import Fa from "~/includes/fa";
 
 export default component$(() => (
 	<>
-		<section class="py-20 md:py-40 flex justify-center items-center h-[60vh] sm:h-[66vh]">
+		<section class="py-20 md:py-40 flex justify-center items-center h-[60vh] sm:h-[66vh] overflow-hidden">
 			<div class="relative">
 				<div class="animate-fade-in-up z-10 animate-delay-700 pointer-events-none w-full h-full absolute">
 					<Fa
@@ -229,7 +229,7 @@ export default component$(() => (
 			</svg>
 		</section>
 
-		<section class="py-20 md:py-40 flex flex-col justify-center relative">
+		<section class="py-20 md:py-40 flex flex-col justify-center relative mx-3">
 			<AnimateOnScroll>
 				<h2 class="font-extrabold text-4xl xs:text-5xl xs:leading-[1.125] text-center mb-10">
 					<span class="block">
