@@ -1,9 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 import {
-	faApple,
+	// faApple,
 	faDiscord,
 	faGoogle,
 } from "@fortawesome/free-brands-svg-icons";
+import Heading from "~/components/content/heading";
 import Button from "~/components/input/button";
 import {
 	getHandler,
@@ -19,19 +20,28 @@ export default component$(() => {
 	const signin = useAuthSignin();
 	const signOut = useAuthSignout();
 	const session = useAuthSession();
+
+	const callbackUrl = "/account/";
+
 	return (
 		<>
 			{isValidSession(session?.value) ? (
 				<>
 					<Button
 						onClick$={() => {
-							signOut.submit({ callbackUrl: "/account/" });
+							signOut.submit({ callbackUrl });
 						}}
 						label="Sign Out"
 					/>
 				</>
 			) : (
-				<div class="gap-y-3 flex flex-col max-w-screen-xs m-auto mt-20">
+				<div class="space-y-5 max-w-screen-xs m-auto mt-20">
+					<Heading class="text-center" level="h1">
+						Account Center
+					</Heading>
+					<Heading class="text-center text-gray-500 font-normal" level="h5">
+						Sign In or Create an Account to create a donation profile.
+					</Heading>
 					{/* <Button
 						icon={faApple}
 						color={0}
@@ -41,24 +51,32 @@ export default component$(() => {
 						}}
 						label="Continue with Apple"
 					/> */}
-					<Button
-						icon={faGoogle}
-						color={0}
-						class="w-full fa-primary-black text-black bg-gray-100 dark:bg-brands-google dark:text-white dark:fa-primary-white block"
-						onClick$={() => {
-							signin.submit({ providerId: "google" });
-						}}
-						label="Continue with Google"
-					/>
-					<Button
-						icon={faDiscord}
-						color={0}
-						class="w-full bg-brands-discord fa-primary-white text-white block"
-						onClick$={() => {
-							signin.submit({ providerId: "discord" });
-						}}
-						label="Continue with Discord"
-					/>
+					<div class="space-y-3">
+						<Button
+							icon={faGoogle}
+							color={0}
+							class="w-full fa-primary-black text-black bg-gray-100 dark:bg-brands-google dark:text-white dark:fa-primary-white block"
+							onClick$={() => {
+								signin.submit({
+									providerId: "google",
+									options: { callbackUrl },
+								});
+							}}
+							label="Continue with Google"
+						/>
+						<Button
+							icon={faDiscord}
+							color={0}
+							class="w-full bg-brands-discord fa-primary-white text-white block"
+							onClick$={() => {
+								signin.submit({
+									providerId: "discord",
+									options: { callbackUrl },
+								});
+							}}
+							label="Continue with Discord"
+						/>
+					</div>
 				</div>
 			)}
 		</>

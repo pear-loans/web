@@ -3,8 +3,8 @@ import { Link, useLocation } from "@builder.io/qwik-city";
 import {
 	faBars,
 	faCircleInfo,
+	faCircleUser,
 	faHouseChimney,
-	// faCircleUser,
 	faPear,
 } from "@fortawesome/pro-duotone-svg-icons";
 
@@ -100,7 +100,7 @@ export default component$(() => {
 								url.pathname === "/account/" && styles.active,
 							]}
 						>
-							<Fa icon={faCircleInfo} />
+							<Fa icon={faCircleUser} />
 							<span>Account</span>
 						</Link>
 

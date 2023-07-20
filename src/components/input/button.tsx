@@ -1,8 +1,4 @@
-import {
-	type PropFunction,
-	type QwikMouseEvent,
-	component$,
-} from "@builder.io/qwik";
+import { type PropFunction, component$ } from "@builder.io/qwik";
 import type { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import Fa from "~/includes/fa";
 

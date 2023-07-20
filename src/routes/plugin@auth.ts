@@ -11,6 +11,11 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
 		const DB = (env.get("DB") as unknown as BothDB) || getDb();
 
 		return {
+			callbacks: {
+				async redirect({ baseUrl }) {
+					return `${baseUrl}/account`;
+				},
+			},
 			secret: env.get("AUTH_SECRET"),
 			trustHost: true,
 			providers: [
@@ -19,13 +24,18 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
 					clientId: env.get("DISCORD_ID")!,
 					// rome-ignore lint/style/noNonNullAssertion: Suggested auth setup from Qwik uses non-null assertion.
 					clientSecret: env.get("DISCORD_SECRET")!,
+					allowDangerousEmailAccountLinking: true,
 				}),
 				Google({
 					clientId: env.get("GOOGLE_ID"),
 					clientSecret: env.get("GOOGLE_SECRET"),
+					allowDangerousEmailAccountLinking: true,
 				}),
 			] as Provider[],
 			adapter: D1Adapter(DB),
+			pages: {
+				error: "/account/",
+			},
 		};
 	});
 
