@@ -93,7 +93,7 @@ export default component$(() => (
 			<AnimateOnScroll rootMargin="0px 0px -200px 0px">
 				<h2 class="font-extrabold text-4xl xs:text-5xl xs:leading-[1.125] text-center mb-10">
 					<span class="block">Student Loans are a</span>
-					<span class="block bg-gradient-to-br from-red-700 to-orange-500 dark:from-red-300 dark:to-orange-300 text-transparent bg-clip-text animate-pulse">
+					<span class="pb-1 block bg-gradient-to-br from-red-700 to-orange-500 dark:from-red-300 dark:to-orange-300 text-transparent bg-clip-text animate-pulse">
 						huge problem
 					</span>
 				</h2>

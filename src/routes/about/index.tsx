@@ -123,35 +123,23 @@ export default component$(() => {
 						💵 How will donations be paid to the student loan?
 					</h3>
 					<p>
-						Unfortunately this is one aspect I have not been able to solution
-						yet. If I were to build it right now, students would be receiving
-						payment directly from donors, which means it would be the student's
-						responsibility to ensure donations are paid to the loan. Ideally,
-						payments would pay down the loan directly, automatically.
+						It is up to the recepient to use their donations to pay down their
+						student loan. I would always recommend they use this cash to pay
+						down high interest debts, such as their student loan, as quickly as
+						possible.
 					</p>
 					<p>
-						This means donors would have to trust that students would use
-						donations for their student loans. I am sure that a large majority
-						of people would do this in good faith, however, I am sure there
-						could be some that would game the system.
+						At present, I am unaware of any mechanism available to the site that
+						would let donations apply directly to the loan. If you are aware of
+						or able to provide such a service,{" "}
+						<a class="italic underline" href="mailto:info@pear.loans">
+							let us know.
+						</a>
 					</p>
 					<p>
-						As far as I am aware, there is no financial product that exists that
-						would allow me to apply donations to the loan directly. I am also
-						unsure if this is legally possible for the website to pay on behalf
-						of the student.
-					</p>
-					<p>
-						In my opinion, it is acceptable, at least for the sake of getting
-						this website out there, to allow direct payments to students where
-						they would be responsible to apply donations to their loan balance.
-						To some capacity, it would be possible to see if a student is acting
-						in bad faith if the displayed loan balance does not decrease over
-						time despite having received many donations.
-					</p>
-					<p>
-						Nevertheless, I would like to reduce this friction / worry as much
-						as possible, whenever I can.
+						Nonetheless, I believe any money donated will help those with
+						student loans reduce their immediate financial burdens and ease the
+						stress.
 					</p>
 				</li>
 			</ul>
