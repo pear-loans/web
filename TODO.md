@@ -1,1 +1,1 @@
-- Keep eye on `postcss-rename` / futher minify CSS ootput.
+- Keep eye on `postcss-rename` / further minify CSS ootput.
