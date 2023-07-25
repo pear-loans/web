@@ -49,7 +49,7 @@ export default component$(() => (
 				<h1 class="font-extrabold text-6xl xs:text-7xl md:text-8xl text-center relative z-30 inline-block">
 					<span class="block">
 						Help out your{" "}
-						<span class="inline-block animate-fade-in-up animate-delay-300 bg-gradient-to-br from-green-700 to-blue-500 dark:from-green-300 dark:to-blue-300 text-transparent bg-clip-text">
+						<span class="inline-block pb-3 animate-fade-in-up animate-delay-300 bg-gradient-to-br from-green-700 to-blue-500 dark:from-green-300 dark:to-blue-300 text-transparent bg-clip-text">
 							peers
 						</span>
 					</span>
