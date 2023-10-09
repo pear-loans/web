@@ -13,13 +13,13 @@ import { INVALID_STRING, MAX_LENGTH, REGEX } from "~/utils/validate";
 import Button from "./Button";
 import Input from "./Input";
 
-type Props = {
+interface Props {
 	icon?: IconDefinition;
 	label?: string;
 	maxItems?: number;
 	name?: string;
 	placeholder?: string;
-};
+}
 
 /**
  * ### "Tags" input component. Lets user add a list of strings for submission.

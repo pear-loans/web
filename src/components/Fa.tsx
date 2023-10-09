@@ -19,7 +19,7 @@ interface Props {
  * @param {Props['icon']} props.icon Icon to render imported from FontAwesome
  * @param {Props['class']} [class="w-7"] CSS class name, if any
  * @param {Props['color']} [props.color=1] Primary and secondary colors. If only one color is provided, it will be used for both
- * @param {Props['opacity']} [props.opacity=[0.75, 1]] Primary and secondary opacity. If only one opacity is provided, it will be used for both
+ * @param {Props['opacity']} [props.opacity=[undefined, undefined]] Primary and secondary opacity. If only one opacity is provided, it will be used for both
  * @param {Props['title']} [props.title="Icon"] Title to add to the icon for accessibility
  * @param {Props['style']} [props.style=""] Style to add to the icon
  *
@@ -29,7 +29,7 @@ export default component$((props: Props) => {
 	const {
 		icon: { icon = [0, 0, "", [], ""] } = {},
 		class: className = "w-5 h-5",
-		opacity = [1, 1],
+		opacity = [],
 		title = undefined,
 		style = undefined
 	} = props;
@@ -56,13 +56,17 @@ export default component$((props: Props) => {
 						<>
 							<path
 								d={icon[4][0]}
-								fill-opacity={primaryOpacity || 1}
 								transform={`translate(${icon[0] / -2} ${icon[1] / -2})`}
+								style={primaryOpacity ? `fill-opacity: ${primaryOpacity || 1}` : undefined}
 							/>
 							<path
 								d={icon[4][1]}
-								fill-opacity={secondaryOpacity || primaryOpacity || 1}
 								transform={`translate(${icon[0] / -2} ${icon[1] / -2})`}
+								style={
+									primaryOpacity
+										? `fill-opacity: ${secondaryOpacity || primaryOpacity || 1}`
+										: undefined
+								}
 							/>
 						</>
 					)}

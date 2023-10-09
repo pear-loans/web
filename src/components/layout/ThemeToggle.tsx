@@ -3,6 +3,10 @@ import { faMoonStars, faSunCloud, faTimer } from "@fortawesome/pro-duotone-svg-i
 import Fa from "~/components/Fa";
 import { GlobalStore, type ThemeOptions } from "~/context";
 
+interface Props {
+	_menuOpen: boolean;
+}
+
 const THEME_ICON = {
 	auto: [<Fa icon={faTimer} title="Use Device Theme" key="device" />, "Device Theme"],
 	light: [<Fa icon={faSunCloud} title="Light Theme" key="light" />, "Light Theme"],
@@ -10,7 +14,7 @@ const THEME_ICON = {
 };
 const ORDER = Object.keys(THEME_ICON) as Array<ThemeOptions>;
 
-export default component$(() => {
+export default component$<Props>(({ _menuOpen = false }) => {
 	const store = useContext(GlobalStore);
 
 	useVisibleTask$(() => {
@@ -41,6 +45,7 @@ export default component$(() => {
 			type="button"
 			class="flex rounded-full p-5 transition-opacity duration-100"
 			role="menuitem"
+			tabIndex={_menuOpen ? 0 : -1}
 		>
 			{THEME_ICON[store.theme][0]} <span class="sr-only">{THEME_ICON[store.theme][1]}</span>
 		</button>

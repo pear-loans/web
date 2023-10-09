@@ -1,4 +1,4 @@
-import { $, component$, useSignal, useTask$ } from "@builder.io/qwik";
+import { $, component$, useSignal, useTask$, useVisibleTask$ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import {
 	faBars,
@@ -11,6 +11,8 @@ import {
 import Fa from "~/components/Fa";
 import ThemeToggle from "./ThemeToggle";
 
+const MOBILE_MENU_WIDTH = 768;
+
 export default component$(() => {
 	const { url } = useLocation();
 	const hasInit = useSignal(false);
@@ -18,6 +20,13 @@ export default component$(() => {
 
 	useTask$(() => {
 		if (url.pathname !== "/") hasInit.value = true;
+	});
+
+	useVisibleTask$(() => {
+		const resizeObserver = new ResizeObserver(() => {
+			menuOpen.value = window.innerWidth >= MOBILE_MENU_WIDTH;
+		});
+		resizeObserver.observe(document.body);
 	});
 
 	const toggleMenu = $(() => {
@@ -61,6 +70,7 @@ export default component$(() => {
 						menuOpen.value ? "top-full" : "-top-100"
 					]}
 					role="menubar"
+					on
 				>
 					<div class="flex flex-col items-end md:flex-row" role="none">
 						<Link
@@ -68,6 +78,7 @@ export default component$(() => {
 							onClick$={toggleMenu}
 							role="menuitem"
 							class="flex items-center gap-x-2 p-5"
+							tabIndex={menuOpen.value ? 0 : -1}
 						>
 							<Fa icon={faHouseChimney} />
 							<span>Home</span>
@@ -77,6 +88,7 @@ export default component$(() => {
 							href="/about/"
 							role="menuitem"
 							class="flex items-center gap-x-2 p-5"
+							tabIndex={menuOpen.value ? 0 : -1}
 						>
 							<Fa icon={faCircleInfo} />
 							<span>About</span>
@@ -88,12 +100,13 @@ export default component$(() => {
 							href="/account/"
 							role="menuitem"
 							class="flex items-center gap-x-2 p-5"
+							tabIndex={menuOpen.value ? 0 : -1}
 						>
 							<Fa icon={faCircleUser} />
 							<span>Account</span>
 						</Link>
 
-						<ThemeToggle />
+						<ThemeToggle _menuOpen={menuOpen.value} />
 					</div>
 				</div>
 			</nav>

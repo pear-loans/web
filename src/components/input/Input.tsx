@@ -2,12 +2,12 @@ import { component$, type QwikIntrinsicElements } from "@builder.io/qwik";
 import type { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import Fa from "~/components/Fa";
 
-type Props = {
+interface Props {
 	attributes?: QwikIntrinsicElements["input"];
 	class?: string;
 	icon?: IconDefinition;
 	label?: string;
-};
+}
 
 /**
  * ### Creates an input with optional icon and label
@@ -25,7 +25,7 @@ export default component$<Props>(
 				<label class="flex flex-col">
 					{label && <span class="block pb-1 text-sm">{label}</span>}
 					{icon && (
-						<Fa icon={icon} class="absolute bottom-[13px] left-0 ml-4 h-5 w-5 text-lg opacity-20" />
+						<Fa icon={icon} class="absolute bottom-[14px] left-0 ml-4 h-5 w-5 text-lg opacity-75" />
 					)}
 					<input
 						{...attributes}
