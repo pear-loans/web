@@ -70,7 +70,6 @@ export default component$(() => {
 						menuOpen.value ? "top-full" : "-top-100"
 					]}
 					role="menubar"
-					on
 				>
 					<div class="flex flex-col items-end md:flex-row" role="none">
 						<Link
