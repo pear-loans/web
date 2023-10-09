@@ -50,13 +50,13 @@ export default component$(() => {
 					<Link
 						href="/"
 						role="menuitem"
-						class="flex items-center gap-x-2 p-5 text-xl font-bold text-green-800 dark:text-green-200"
+						class="flex items-center gap-x-2 p-5 pl-3 text-xl font-bold text-green-800 dark:text-green-200"
 					>
 						<Fa icon={faPear} class="w-8" />
 						<span>Pear Loans</span>
 					</Link>
 					<button
-						class="block flex items-center gap-x-2 px-5 md:hidden"
+						class="block flex items-center gap-x-2 px-5 pr-3 md:hidden"
 						type="button"
 						onClick$={toggleMenu}
 					>
