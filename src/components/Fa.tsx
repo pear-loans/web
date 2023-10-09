@@ -51,7 +51,11 @@ export default component$((props: Props) => {
 			>
 				<g>
 					{typeof icon[4] === "string" ? (
-						<path d={icon[4]} transform={`translate(${icon[0] / -2} ${icon[1] / -2})`} />
+						<path
+							d={icon[4]}
+							transform={`translate(${icon[0] / -2} ${icon[1] / -2})`}
+							style={primaryOpacity ? `fill-opacity: ${primaryOpacity || 1}` : undefined}
+						/>
 					) : (
 						<>
 							<path

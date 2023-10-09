@@ -50,9 +50,13 @@ export default component$<Props>(
 				// `tabIndex` needed for Safari to work with `relatedTarget`
 				tabIndex={0}
 			>
-				{icon !== undefined && iconPosition === "left" && <Fa icon={icon} class="h-5 w-5" />}
+				{icon !== undefined && iconPosition === "left" && (
+					<Fa icon={icon} class="h-5 w-5" opacity={[1, 0.5]} />
+				)}
 				<span>{label}</span>
-				{icon !== undefined && iconPosition === "right" && <Fa icon={icon} class="ml-2 h-5 w-5" />}
+				{icon !== undefined && iconPosition === "right" && (
+					<Fa icon={icon} opacity={[1, 0.5]} class="ml-2 h-5 w-5" />
+				)}
 			</button>
 		);
 	}
