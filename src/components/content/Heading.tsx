@@ -1,4 +1,5 @@
 import { Slot, component$ } from "@builder.io/qwik";
+
 interface Props {
 	class?: string;
 	level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";

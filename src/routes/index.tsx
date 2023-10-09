@@ -25,27 +25,23 @@ export default component$(() => (
 		<section class="h-[60vh] flex items-center justify-center overflow-hidden py-20 sm:h-[83vh] md:py-32">
 			<div class="relative">
 				<div class="pointer-events-none absolute z-10 h-full w-full fade-up animate-delay-700">
-					<div class="text-green-800">
+					<div class="text-green-800 dark:text-green-500">
 						<Fa
 							icon={faPear}
-							opacity={[0.8, 0.9]}
 							class="animate-wiggle absolute right-8 w-20 rotate-12 text-4xl -top-18 md:text-7xl sm:text-6xl md:-top-20 sm:-top-18"
 						/>
 						<Fa
 							icon={faGraduationCap}
-							opacity={[0.8, 0.9]}
 							class="animate-wiggle absolute bottom-12 left-2 w-20 text-4xl sm:bottom-20 sm:left-6 -rotate-12 md:text-7xl sm:text-6xl"
 						/>
 					</div>
-					<div class="text-blue-800">
+					<div class="text-blue-800 dark:text-blue-500">
 						<Fa
 							icon={faSchool}
-							opacity={[0.8, 0.9]}
 							class="animate-wiggle absolute right-2 top-18 w-20 text-4xl md:right-16 md:top-34 sm:left-auto sm:right-8 sm:top-24 -rotate-12 md:text-7xl sm:text-6xl"
 						/>
 						<Fa
 							icon={faMoneyBill1Wave}
-							opacity={[0.8, 0.9]}
 							class="animate-wiggle absolute left-20 w-20 rotate-12 text-4xl -bottom-20 md:text-7xl sm:text-6xl md:-bottom-24 sm:-bottom-20"
 						/>
 					</div>
@@ -143,7 +139,7 @@ export default component$(() => (
 				<div class="group max-w-md flex items-center gap-x-5">
 					<Fa
 						icon={faPersonCircleCheck}
-						class="w-12 shrink-0 text-5xl text-green-800 transition-transform group-hover:scale-125"
+						class="w-12 shrink-0 text-5xl text-green-800 transition-transform group-hover:scale-125 dark:text-green-500"
 					/>
 					<div class="bg-">
 						<h3 class="text-2xl font-bold">List your loan</h3>
@@ -157,7 +153,7 @@ export default component$(() => (
 				<div class="group max-w-md flex animate-delay-none items-center gap-x-5 md:animate-delay-200">
 					<Fa
 						icon={faHandsHoldingDollar}
-						class="w-12 shrink-0 text-5xl text-blue-800 transition-transform group-hover:scale-125"
+						class="w-12 shrink-0 text-5xl text-blue-800 transition-transform group-hover:scale-125 dark:text-blue-500"
 					/>
 					<div>
 						<h3 class="text-2xl font-bold">Donate to your peers</h3>
@@ -170,7 +166,7 @@ export default component$(() => (
 				<div class="group col-span-1 max-w-md flex items-center gap-x-5 sm:col-span-2 md:animate-delay-400">
 					<Fa
 						icon={faCircleDollarToSlot}
-						class="w-12 shrink-0 text-5xl text-green-800 transition-transform group-hover:scale-125"
+						class="w-12 shrink-0 text-5xl text-green-800 transition-transform group-hover:scale-125 dark:text-green-500"
 					/>
 					<div>
 						<h3 class="text-2xl font-bold">Get paid</h3>

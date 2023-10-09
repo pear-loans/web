@@ -2,14 +2,14 @@ import { component$, type QwikIntrinsicElements } from "@builder.io/qwik";
 import type { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import Fa from "~/components/Fa";
 
-type Props = {
+interface Props {
 	attributes?: QwikIntrinsicElements["button"];
 	class?: string;
 	color?: 0 | 1 | 2 | 3 | null;
 	icon?: IconDefinition;
 	iconPosition?: "left" | "right";
 	label?: string;
-};
+}
 
 /**
  * ### Creates a Button with optional icon

@@ -1,13 +1,13 @@
 @unocss;
 
 :root {
-	--blend-white: color-mix(in srgb, currentColor, white 25%);
-	--blend-black: color-mix(in srgb, currentColor, black 25%);
+	--fa-opacity-1: 0.33;
+	--fa-opacity-2: 1;
 }
 
 .dark {
-	--blend-white: color-mix(in srgb, currentColor, white 25%);
-	--blend-black: color-mix(in srgb, currentColor, black 50%);
+	--fa-opacity-1: 0.5;
+	--fa-opacity-2: 1;
 }
 
 
@@ -16,10 +16,10 @@
 	@apply inline-block align-top pointer-events-none fill-current;
 
 	path:first-child {
-		fill: var(--blend-white);
+		fill-opacity: var(--fa-opacity-1);
 	}
 
 	path:last-child:not(:only-child) {
-		fill: var(--blend-black);
+		fill-opacity: var(--fa-opacity-2);
 	}
 }
