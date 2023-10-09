@@ -1,6 +1,6 @@
 export const REGEX = {
 	// EMAIL: /^[\w-.]+@([\w-]+\.)+[\w-]{2,12}$/,
-	GENERIC_STRING: /^[a-zA-Z0-9\-\s\,\.\(\)\/\'\"]+$/
+	GENERIC_STRING: /^[a-zA-Z0-9\-\s,.()/'"]+$/
 };
 export const MAX_LENGTH = {
 	STRING: 100
