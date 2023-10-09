@@ -14,226 +14,172 @@ import {
 	faPear,
 	faPerson,
 	faPersonCircleCheck,
-	faSchool,
+	faSchool
 } from "@fortawesome/pro-duotone-svg-icons";
-import AnimateOnScroll from "~/components/container/animate-on-scroll";
-import IconCard from "~/components/container/icon-card";
-import Fa from "~/includes/fa";
+import Fa from "~/components/Fa";
+import AnimateOnScroll from "~/components/container/AnimateOnScroll";
+import IconCard from "~/components/container/IconCard";
 
 export default component$(() => (
 	<>
-		<section class="py-20 md:py-32 flex justify-center items-center h-[60vh] sm:h-[66vh] overflow-hidden">
+		<section class="h-[60vh] flex items-center justify-center overflow-hidden py-20 sm:h-[83vh] md:py-32">
 			<div class="relative">
-				<div class="animate-fade-in-up z-10 animate-delay-700 pointer-events-none w-full h-full absolute">
-					<Fa
-						icon={faPear}
-						opacity={[0.8, 0.9]}
-						class="text-4xl xs:text-6xl md:text-7xl absolute -top-8 xs:-top-12 md:-top-20 right-8 rotate-12 animate-wiggle"
-					/>
-					<Fa
-						icon={faGraduationCap}
-						opacity={[0.8, 0.9]}
-						class="fa-primary-blue-500 dark:fa-secondary-slate-200 text-4xl xs:text-6xl md:text-7xl absolute left-2 xs:left-6 bottom-12 xs:bottom-14 -rotate-12 animate-wiggle"
-					/>
-					<Fa
-						icon={faSchool}
-						opacity={[0.8, 0.9]}
-						class="text-4xl xs:text-6xl md:text-7xl absolute -rotate-12 animate-wiggle -top-12 left-2 xs:left-auto xs:top-20 xs:right-8 md:top-24 md:right-16 fa-primary-blue-500 dark:fa-secondary-slate-200"
-					/>
-					<Fa
-						icon={faMoneyBill1Wave}
-						opacity={[0.8, 0.9]}
-						class="text-4xl xs:text-6xl md:text-7xl absolute -bottom-12 xs:-bottom-14 md:-bottom-24 rotate-12 animate-wiggle left-20"
-					/>
+				<div class="pointer-events-none absolute z-10 h-full w-full fade-up animate-delay-700">
+					<div class="text-green-800">
+						<Fa
+							icon={faPear}
+							opacity={[0.8, 0.9]}
+							class="animate-wiggle absolute right-8 w-20 rotate-12 text-4xl -top-18 md:text-7xl sm:text-6xl md:-top-20 sm:-top-18"
+						/>
+						<Fa
+							icon={faGraduationCap}
+							opacity={[0.8, 0.9]}
+							class="animate-wiggle absolute bottom-12 left-2 w-20 text-4xl sm:bottom-20 sm:left-6 -rotate-12 md:text-7xl sm:text-6xl"
+						/>
+					</div>
+					<div class="text-blue-800">
+						<Fa
+							icon={faSchool}
+							opacity={[0.8, 0.9]}
+							class="animate-wiggle absolute right-2 top-18 w-20 text-4xl md:right-16 md:top-34 sm:left-auto sm:right-8 sm:top-24 -rotate-12 md:text-7xl sm:text-6xl"
+						/>
+						<Fa
+							icon={faMoneyBill1Wave}
+							opacity={[0.8, 0.9]}
+							class="animate-wiggle absolute left-20 w-20 rotate-12 text-4xl -bottom-20 md:text-7xl sm:text-6xl md:-bottom-24 sm:-bottom-20"
+						/>
+					</div>
 				</div>
-				<h1 class="font-extrabold text-6xl xs:text-7xl md:text-8xl text-center relative z-30 inline-block">
+				<h1 class="relative z-30 inline-block text-center text-6xl font-extrabold md:text-8xl sm:text-7xl">
 					<span class="block">
 						Help out your{" "}
-						<span class="inline-block pb-3 animate-fade-in-up animate-delay-300 bg-gradient-to-br from-green-700 to-blue-500 dark:from-green-300 dark:to-blue-300 text-transparent bg-clip-text">
+						<span class="inline-block fade-up animate-delay-300 from-green-700 to-blue-500 bg-gradient-to-br bg-clip-text pb-3 text-transparent dark:from-green-300 dark:to-blue-300">
 							peers
 						</span>
 					</span>
 					<span class="block">with their</span>
-					<span class="block animate-fade-in-up animate-delay-500 bg-gradient-to-br from-green-700 to-blue-500 dark:from-green-300 dark:to-blue-300 text-transparent bg-clip-text">
+					<span class="block fade-up animate-delay-500 from-green-700 to-blue-500 bg-gradient-to-br bg-clip-text text-transparent dark:from-green-300 dark:to-blue-300">
 						student loans
 					</span>
 				</h1>
 			</div>
 		</section>
 
-		<section class="py-20 md:py-32 flex flex-col justify-center relative">
-			<AnimateOnScroll rootMargin="0px 0px -200px 0px">
-				<h2 class="font-extrabold text-4xl xs:text-5xl xs:leading-[1.125] text-center mb-10">
-					<span class="block">Student Loans are a</span>
-					<span class="pb-1 block bg-gradient-to-br from-red-700 to-orange-500 dark:from-red-300 dark:to-orange-300 text-transparent bg-clip-text animate-pulse">
+		<section class="relative flex flex-col justify-center py-20 md:py-32">
+			<h2 class="mb-10 text-center text-4xl font-extrabold sm:text-5xl sm:leading-[1.125]">
+				<span class="block">Student Loans are a</span>
+				<AnimateOnScroll>
+					<span class="block animate-pulse from-red-700 to-orange-500 bg-gradient-to-br bg-clip-text pb-1 text-transparent dark:from-red-300 dark:to-orange-300">
 						huge problem
 					</span>
-				</h2>
-			</AnimateOnScroll>
+				</AnimateOnScroll>
+			</h2>
 
-			<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 md:gap-10 px-5 sm:px-10">
-				<AnimateOnScroll delay={300}>
-					<IconCard
-						icons={[faMoneyBill, faLandmark]}
-						class="bg-orange-300 dark:bg-orange-600"
-					>
-						<div class="text-center opacity-75 text-black dark:text-white">
-							<h3 class="text-4xl xs:text-5xl sm:text-3xl md:text-5xl font-extrabold">
-								~$1.73 Trillion
-							</h3>
-							<p class="text-xl md:text-2xl font-bold">
-								Student loan debt in the US
-							</p>
-						</div>
-					</IconCard>
-				</AnimateOnScroll>
-				<AnimateOnScroll delay={600}>
-					<IconCard
-						icons={[faGauge, faGraduationCap]}
-						class="bg-red-500 dark:bg-red-800"
-					>
-						<div class="text-center opacity-75 text-black dark:text-white">
-							<h3 class="text-4xl xs:text-5xl sm:text-3xl md:text-5xl font-extrabold">
-								~$20,000
-							</h3>
-							<p class="text-xl md:text-2xl font-bold">
-								Median student loan debt
-							</p>
-						</div>
-					</IconCard>
-				</AnimateOnScroll>
-				<AnimateOnScroll delay={900}>
-					<IconCard
-						icons={[faPerson, faHandHoldingDollar]}
-						class="bg-yellow-400 dark:bg-yellow-700"
-					>
-						<div class="text-center opacity-75 text-black dark:text-white">
-							<h3 class="text-4xl xs:text-5xl sm:text-3xl md:text-5xl font-extrabold">
-								~$220
-							</h3>
-							<p class="text-xl md:text-2xl font-bold">
-								Median monthly payment
-							</p>
-						</div>
-					</IconCard>
-				</AnimateOnScroll>
-				<AnimateOnScroll delay={1200}>
-					<IconCard
-						icons={[faMoneyBill, faChartLineUp]}
-						class="bg-orange-200 dark:bg-orange-400"
-					>
-						<div class="text-center opacity-75 text-black dark:text-white">
-							<h3 class="text-4xl xs:text-5xl sm:text-3xl md:text-5xl font-extrabold">
-								~47%
-							</h3>
-							<p class="text-xl md:text-2xl font-bold">
-								of students with growing loan balances
-							</p>
-						</div>
-					</IconCard>
-				</AnimateOnScroll>
-				<AnimateOnScroll delay={1500}>
-					<IconCard
-						icons={[faCoins, faCoin]}
-						class="bg-red-300 dark:bg-red-950"
-					>
-						<div class="text-center opacity-75 text-black dark:text-white">
-							<h3 class="text-4xl xs:text-5xl sm:text-3xl md:text-5xl font-extrabold">
-								~5.8%
-							</h3>
-							<p class="text-xl md:text-2xl font-bold">
-								average loan interest rate
-							</p>
-						</div>
-					</IconCard>
-				</AnimateOnScroll>
-				<AnimateOnScroll delay={1800}>
-					<IconCard
-						icons={[faPerson, faGraduationCap]}
-						class="bg-red-400 dark:bg-red-600"
-					>
-						<div class="text-center opacity-75 text-black dark:text-white">
-							<h3 class="text-4xl xs:text-5xl sm:text-3xl md:text-5xl font-extrabold">
-								~43.5 million
-							</h3>
-							<p class="text-xl md:text-2xl font-bold">
-								Students with Federal debt alone
-							</p>
-						</div>
-					</IconCard>
-				</AnimateOnScroll>
+			<div class="grid gap-3 px-5 lg:grid-cols-3 sm:grid-cols-2 md:gap-10 sm:gap-5 sm:px-10">
+				<IconCard icons={[faMoneyBill, faLandmark]} class="bg-orange-300 dark:bg-orange-600">
+					<div class="text-center text-black opacity-75 dark:text-white">
+						<h3 class="text-4xl font-extrabold md:text-5xl sm:text-3xl sm:text-5xl">
+							~$1.73 Trillion
+						</h3>
+						<p class="text-xl font-bold md:text-2xl">Student loan debt in the US</p>
+					</div>
+				</IconCard>
+				<IconCard icons={[faGauge, faGraduationCap]} class="bg-red-500 dark:bg-red-800">
+					<div class="text-center text-black opacity-75 dark:text-white">
+						<h3 class="text-4xl font-extrabold md:text-5xl sm:text-3xl sm:text-5xl">~$20,000</h3>
+						<p class="text-xl font-bold md:text-2xl">Median student loan debt</p>
+					</div>
+				</IconCard>
+				<IconCard icons={[faPerson, faHandHoldingDollar]} class="bg-yellow-400 dark:bg-yellow-700">
+					<div class="text-center text-black opacity-75 dark:text-white">
+						<h3 class="text-4xl font-extrabold md:text-5xl sm:text-3xl sm:text-5xl">~$220</h3>
+						<p class="text-xl font-bold md:text-2xl">Median monthly payment</p>
+					</div>
+				</IconCard>
+				<IconCard icons={[faMoneyBill, faChartLineUp]} class="bg-orange-200 dark:bg-orange-400">
+					<div class="text-center text-black opacity-75 dark:text-white">
+						<h3 class="text-4xl font-extrabold md:text-5xl sm:text-3xl sm:text-5xl">~47%</h3>
+						<p class="text-xl font-bold md:text-2xl">of students with growing loan balances</p>
+					</div>
+				</IconCard>
+				<IconCard icons={[faCoins, faCoin]} class="bg-red-300 dark:bg-red-950">
+					<div class="text-center text-black opacity-75 dark:text-white">
+						<h3 class="text-4xl font-extrabold md:text-5xl sm:text-3xl sm:text-5xl">~5.8%</h3>
+						<p class="text-xl font-bold md:text-2xl">average loan interest rate</p>
+					</div>
+				</IconCard>
+				<IconCard icons={[faPerson, faGraduationCap]} class="bg-red-400 dark:bg-red-600">
+					<div class="text-center text-black opacity-75 dark:text-white">
+						<h3 class="text-4xl font-extrabold md:text-5xl sm:text-3xl sm:text-5xl">
+							~43.5 million
+						</h3>
+						<p class="text-xl font-bold md:text-2xl">Students with Federal debt alone</p>
+					</div>
+				</IconCard>
 			</div>
 		</section>
 
-		<section class="py-20 md:py-32 flex flex-col justify-center relative mx-3">
-			<AnimateOnScroll>
-				<h2 class="font-extrabold text-4xl xs:text-5xl xs:leading-[1.125] text-center mb-10">
-					<span class="block">
-						<span class="bg-gradient-to-br from-green-700 to-blue-500 dark:from-green-300 dark:to-blue-300 text-transparent bg-clip-text animate-pulse">
-							List{" "}
+		<section class="relative mx-3 flex flex-col justify-center py-20 md:py-32">
+			<h2 class="mb-10 text-center text-4xl font-extrabold sm:text-5xl sm:leading-[1.125]">
+				<span class="block">
+					<AnimateOnScroll class="inline-block">
+						<span class="animate-pulse from-green-700 to-blue-500 bg-gradient-to-br bg-clip-text text-transparent dark:from-green-300 dark:to-blue-300">
+							List
 						</span>
-						your own student loan
-					</span>
-					<span class="block">
-						<span class="bg-gradient-to-br from-green-700 to-blue-500 dark:from-green-300 dark:to-blue-300 text-transparent bg-clip-text animate-pulse">
-							Donate{" "}
+					</AnimateOnScroll>{" "}
+					your own student loan
+				</span>
+				<span class="block">
+					<AnimateOnScroll class="inline-block animate-delay-500">
+						<span class="animate-pulse from-green-700 to-blue-500 bg-gradient-to-br bg-clip-text text-transparent dark:from-green-300 dark:to-blue-300">
+							Donate
 						</span>
-						to help others
-					</span>
-				</h2>
-			</AnimateOnScroll>
+					</AnimateOnScroll>{" "}
+					to help others
+				</span>
+			</h2>
 
-			<div class="grid grid-cols-1 sm:grid-cols-2 justify-center items-center gap-10 place-items-center">
-				<AnimateOnScroll
-					class="flex items-center gap-x-5 max-w-md group"
-					delay={200}
-				>
+			<div class="grid grid-cols-1 place-items-center items-center justify-center gap-10 sm:grid-cols-2">
+				<div class="group max-w-md flex items-center gap-x-5">
 					<Fa
 						icon={faPersonCircleCheck}
-						class="text-5xl shrink-0 group-hover:scale-125 transition-transform"
+						class="w-12 shrink-0 text-5xl text-green-800 transition-transform group-hover:scale-125"
 					/>
-					<div>
-						<h3 class="font-bold text-2xl">List your loan</h3>
+					<div class="bg-">
+						<h3 class="text-2xl font-bold">List your loan</h3>
 						<p class="text-gray-500 dark:text-gray-400">
-							Create a profile and list your student loan. We'll help you link
-							the loan balance. Tag yourself with your school, major, and more.
-							You can list as much or as little information as you want.
+							Create a profile and list your student loan. We'll help you link the loan balance. Tag
+							yourself with your school, major, and more. You can list as much or as little
+							information as you want.
 						</p>
 					</div>
-				</AnimateOnScroll>
-				<AnimateOnScroll
-					class="flex items-center gap-x-5 max-w-md group"
-					delay={400}
-				>
+				</div>
+				<div class="group max-w-md flex animate-delay-none items-center gap-x-5 md:animate-delay-200">
 					<Fa
 						icon={faHandsHoldingDollar}
-						class="text-5xl shrink-0 group-hover:scale-125 transition-transform fa-primary-blue-500 fa-secondary-slate-800 dark:fa-secondary-slate-200"
+						class="w-12 shrink-0 text-5xl text-blue-800 transition-transform group-hover:scale-125"
 					/>
 					<div>
-						<h3 class="font-bold text-2xl">Donate to your peers</h3>
+						<h3 class="text-2xl font-bold">Donate to your peers</h3>
 						<p class="text-gray-500 dark:text-gray-400">
-							Donate to help your peers pay off their student loans. Search for
-							students with your own school, major, or other info. You can
-							donate to as many students as you want.
+							Donate to help your peers pay off their student loans. Search for students with your
+							own school, major, or other info. You can donate to as many students as you want.
 						</p>
 					</div>
-				</AnimateOnScroll>
-				<AnimateOnScroll
-					class="flex items-center gap-x-5 max-w-md group col-span-1 sm:col-span-2"
-					delay={500}
-				>
+				</div>
+				<div class="group col-span-1 max-w-md flex items-center gap-x-5 sm:col-span-2 md:animate-delay-400">
 					<Fa
 						icon={faCircleDollarToSlot}
-						class="text-5xl shrink-0 group-hover:scale-125 transition-transform"
+						class="w-12 shrink-0 text-5xl text-green-800 transition-transform group-hover:scale-125"
 					/>
 					<div>
-						<h3 class="font-bold text-2xl">Get paid</h3>
+						<h3 class="text-2xl font-bold">Get paid</h3>
 						<p class="text-gray-500 dark:text-gray-400">
-							Donations are sent directly to the student. Students can use the
-							money to pay off their student loans.
+							Donations are sent directly to the student. Students can use the money to pay off
+							their student loans.
 						</p>
 					</div>
-				</AnimateOnScroll>
+				</div>
 			</div>
 		</section>
 	</>

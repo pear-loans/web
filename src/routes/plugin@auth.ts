@@ -1,21 +1,20 @@
 import type { Provider } from "@auth/core/providers";
 import Discord from "@auth/core/providers/discord";
 import Google from "@auth/core/providers/google";
-import type { Session, User } from "@auth/core/types";
+import type { User } from "@auth/core/types";
 import { serverAuth$ } from "@builder.io/qwik-auth";
 import type { RequestHandler } from "@builder.io/qwik-city";
+import { D1Adapter } from "~/tmp/d1-adapter";
+import { getDb } from "~/tmp/db";
 
-import { getDb } from "~/db";
-import { BothDB, D1Adapter } from "~/includes/temp/d1-authjs-adapter";
-
-export interface UserSession extends Session {
+export type Session = {
 	user: User;
-}
+	id: string;
+} | null;
 
-export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
-	serverAuth$(({ env }) => {
-		const DB = (env.get("DB") as unknown as BothDB) || getDb();
-
+export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } = serverAuth$(
+	({ env }) => {
+		const DB = env.get("DB") || getDb();
 		return {
 			callbacks: {
 				async redirect({ baseUrl }) {
@@ -26,7 +25,7 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
 						Object.assign(session.user, { ...session.user, id: user.id });
 					}
 					return session;
-				},
+				}
 			},
 			secret: env.get("AUTH_SECRET"),
 			trustHost: true,
@@ -36,24 +35,25 @@ export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } =
 					clientId: env.get("DISCORD_ID")!,
 					// rome-ignore lint/style/noNonNullAssertion: Suggested auth setup from Qwik uses non-null assertion.
 					clientSecret: env.get("DISCORD_SECRET")!,
-					allowDangerousEmailAccountLinking: true,
+					allowDangerousEmailAccountLinking: true
 				}),
 				Google({
 					clientId: env.get("GOOGLE_ID"),
 					clientSecret: env.get("GOOGLE_SECRET"),
-					allowDangerousEmailAccountLinking: true,
-				}),
+					allowDangerousEmailAccountLinking: true
+				})
 			] as Provider[],
 			adapter: D1Adapter(DB),
 			pages: {
-				error: "/account/",
-			},
+				error: "/account/"
+			}
 		};
-	});
+	}
+);
 
 // Note: May be unnecessary in future? Only used bc Sessioned pages could potentially have stale session data.
 export const getHandler: RequestHandler = async ({ cacheControl }) => {
 	cacheControl({
-		noStore: true,
+		noStore: true
 	});
 };

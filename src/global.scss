@@ -1,26 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@unocss;
+
+:root {
+	--blend-white: color-mix(in srgb, currentColor, white 25%);
+	--blend-black: color-mix(in srgb, currentColor, black 25%);
+}
+
+.dark {
+	--blend-white: color-mix(in srgb, currentColor, white 25%);
+	--blend-black: color-mix(in srgb, currentColor, black 50%);
+}
+
+
 
 .fa {
-	@apply inline-block align-top pointer-events-none;
-	@apply w-6 h-6;
-}
+	@apply inline-block align-top pointer-events-none fill-current;
 
+	path:first-child {
+		fill: var(--blend-white);
+	}
 
-.fa path:last-child {
-	fill: var(--fa-secondary, #000);
-}
-
-.fa path:first-child {
-	fill: var(--fa-primary, #000);
-}
-
-.fa+span {
-	margin-left: theme("spacing.3");
-}
-
-.animate-fade-in-up,
-.animate-fade-in-down {
-	animation-fill-mode: both;
+	path:last-child:not(:only-child) {
+		fill: var(--blend-black);
+	}
 }

@@ -1,13 +1,15 @@
-# Build
-/dist
-/server
-/tmp
-
-# Development
-node_modules
 *.env
-!.example.env
-*.vars
-
-# OS
-.DS_Store
+*.env.*
+*.log
+/.cache
+/.mf
+/.rollup.cache
+/dist
+/lib
+/lib-types
+/logs
+/node_modules
+/server
+functions/**/*.js
+pnpm-debug.log*
+tsconfig.tsbuildinfo

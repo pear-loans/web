@@ -1,6 +1,8 @@
 {
 	"recommendations": [
-		"bradlc.vscode-tailwindcss",
-		"rome.rome",
+		"antfu.unocss",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
 	],
+	"unwantedRecommendations": []
 }

@@ -8,8 +8,8 @@ interface Props {
  * Heading component for Text Headings
  *
  * @param {Props} props
- * @param {string} [props.class=""] CSS class name if any
- * @param {number} [props.level=2] HTML Heading level to use
+ * @param {string} [props.class=undefined] CSS class name if any
+ * @param {number} [props.level="h2"] HTML Heading level to use
  */
 export default component$<Props>((props) => {
 	const { class: extras, level: Heading = "h2" } = props;
@@ -20,7 +20,7 @@ export default component$<Props>((props) => {
 			h3: "text-2xl",
 			h4: "text-xl",
 			h5: "text-lg",
-			h6: "text-base",
+			h6: "text-base"
 		}[Heading] || "";
 	return (
 		<Heading class={["font-bold", classesForLevel, extras]}>
