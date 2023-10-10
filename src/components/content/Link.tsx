@@ -4,7 +4,7 @@ import type { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import Fa from "~/components/Fa";
 
 interface Props {
-	attributes?: QwikIntrinsicElements["button"];
+	attributes?: QwikIntrinsicElements["a"];
 	class?: ClassList;
 	color?: 0 | 1 | 2 | 3 | null;
 	icon?: IconDefinition;
@@ -15,16 +15,16 @@ interface Props {
 }
 
 /**
- * ### Creates a Button with optional icon
+ * ### Creates a Link with optional icon
  *
  * @param {Props} props
- * @param {Props['attributes']} [props.attributes=undefined] Attributes to pass to the button element.
+ * @param {Props['attributes']} [props.attributes=undefined] Attributes to pass to the Link element.
  * @param {Props['class']} [props.class=undefined] CSS class name, if any
  * @param {Props['color']} [props.color=1] Color to use, if any. If 0 is provided, it is assumed you will provide a background color
- * @param {Props['icon']} [props.icon=undefined] Icon to be used on button
+ * @param {Props['icon']} [props.icon=undefined] Icon to be used on Link
  * @param {Props['iconClass']} [props.iconClass=undefined] CSS class name for icon, if any
  * @param {Props['iconPosition']} [props.iconPosition="left"] Icon position, if any. Defaults to "left". If "right" is provided, the icon will be placed after the text
- * @param {Props['label']} [props.label="ReplaceMe"] Button Text
+ * @param {Props['label']} [props.label="ReplaceMe"] Link Text
  * @param {Props['removeDefaultClasses']} [props.removeDefaultClasses=false] Whether to use default classes or not
  *
  * @returns {Component<Props>}
@@ -40,12 +40,11 @@ export default component$<Props>(
 		label = "ReplaceMe",
 		removeDefaultClasses = false
 	}) => {
-		if (attributes && attributes.type === undefined) attributes.type = "button";
 		const iconClasses = iconClass || "w-5 h-5";
 
 		return (
 			// rome-ignore lint/a11y/useButtonType: Included in attributes
-			<button
+			<a
 				{...attributes}
 				class={[
 					!removeDefaultClasses &&
@@ -67,7 +66,7 @@ export default component$<Props>(
 				{icon !== undefined && iconPosition === "right" && (
 					<Fa icon={icon} class={[iconClasses, "ml-2"].join(" ")} opacity={[1, 0.5]} />
 				)}
-			</button>
+			</a>
 		);
 	}
 );

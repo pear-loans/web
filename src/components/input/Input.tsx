@@ -1,10 +1,11 @@
+import type { ClassList } from "@builder.io/qwik";
 import { component$, type QwikIntrinsicElements } from "@builder.io/qwik";
 import type { IconDefinition } from "@fortawesome/fontawesome-common-types";
 import Fa from "~/components/Fa";
 
 interface Props {
 	attributes?: QwikIntrinsicElements["input"];
-	class?: string;
+	class?: ClassList;
 	icon?: IconDefinition;
 	label?: string;
 }
