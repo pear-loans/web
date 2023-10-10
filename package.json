@@ -27,7 +27,7 @@
 		"postcss-lightningcss": "1.0.0",
 		"postcss-variable-compress": "3.0.0",
 		"prettier": "3.0.3",
-		"sass": "1.69.0",
+		"sass": "1.69.1",
 		"typescript": "5.2.2",
 		"undici": "5.25.4",
 		"unocss": "0.56.5",
