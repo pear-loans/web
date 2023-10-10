@@ -59,6 +59,9 @@ devDependencies:
   '@unocss/reset':
     specifier: 0.56.5
     version: 0.56.5
+  '@unpic/qwik':
+    specifier: 0.0.27
+    version: 0.0.27(@builder.io/qwik@1.2.13)
   '@vitest/ui':
     specifier: 0.34.6
     version: 0.34.6(vitest@0.34.6)
@@ -1390,6 +1393,15 @@ packages:
       vite: 4.4.11(@types/node@20.8.4)(sass@1.69.1)
     transitivePeerDependencies:
       - rollup
+    dev: true
+
+  /@unpic/qwik@0.0.27(@builder.io/qwik@1.2.13):
+    resolution: {integrity: sha512-g2qMgGY9RTfNj0gZE7BjuotrdKYRZWVjYc5h6dURFJjjAw/Gw2UvgNdRPG4miST9nvGawgmJNnQs1gshzLt10w==}
+    engines: {node: '>=15.0.0'}
+    peerDependencies:
+      '@builder.io/qwik': '*'
+    dependencies:
+      '@builder.io/qwik': 1.2.13(undici@5.25.4)
     dev: true
 
   /@vitest/expect@0.34.6:

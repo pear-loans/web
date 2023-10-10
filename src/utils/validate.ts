@@ -18,3 +18,11 @@ export const INVALID_STRING = (
 		validChars: REGEX.GENERIC_STRING
 	}
 ) => value === "" || value.length > options.maxLength || !options.validChars.test(value);
+
+export const EMPTY = (...params: string[] | Array<any>) => {
+	return params.some((value) => {
+		if (value === undefined || value === null) return true;
+		if (Array.isArray(value)) return value.length === 0;
+		return value === "";
+	});
+};

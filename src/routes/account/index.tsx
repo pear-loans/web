@@ -17,8 +17,9 @@ export const useAccountData = routeLoader$((...args) => {
 export default component$(() => {
 	const session = useAuthSession();
 	const profile = useAccountData();
-	return isValidSession(session.value) && profile.value?.userId ? (
-		<Profile data={profile.value} />
+	return isValidSession(session.value) && profile.value.userId ? (
+		// @ts-ignore - TODO: Figure out type error.
+		<Profile data={{ profile: profile.value, session: session.value }} />
 	) : (
 		<Login />
 	);

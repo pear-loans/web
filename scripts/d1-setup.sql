@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS 'profiles' (
 	'profile_data' TEXT,
 	'full_name' TEXT,
 	'user_id' TEXT NOT NULL DEFAULT NULL,
-	'school' TEXT,
+	'schools' TEXT,
 	'fields_of_study' TEXT,
 	PRIMARY KEY (user_id)
 );

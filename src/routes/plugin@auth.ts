@@ -1,16 +1,10 @@
 import type { Provider } from "@auth/core/providers";
 import Discord from "@auth/core/providers/discord";
 import Google from "@auth/core/providers/google";
-import type { User } from "@auth/core/types";
 import { serverAuth$ } from "@builder.io/qwik-auth";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { D1Adapter } from "~/tmp/d1-adapter";
 import { getDb } from "~/tmp/db";
-
-export type Session = {
-	user: User;
-	id: string;
-} | null;
 
 export const { onRequest, useAuthSession, useAuthSignin, useAuthSignout } = serverAuth$(
 	({ env }) => {

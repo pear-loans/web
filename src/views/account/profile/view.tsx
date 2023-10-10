@@ -1,45 +1,46 @@
 import { $, component$ } from "@builder.io/qwik";
 import { Form } from "@builder.io/qwik-city";
+import { Image } from "@unpic/qwik";
 
 import { faCircleExclamation, faPersonToDoor } from "@fortawesome/pro-duotone-svg-icons";
 import { faBook, faSchool, faSignature } from "@fortawesome/pro-regular-svg-icons";
-import Fa from "~/components/Fa";
 
+import Fa from "~/components/Fa";
 import AnimateOnScroll from "~/components/container/AnimateOnScroll";
 import Heading from "~/components/content/Heading";
 import Button from "~/components/input/Button";
 import Input from "~/components/input/Input";
 import InputTags from "~/components/input/Tags";
+import type { ProfileData, Session } from "~/config/db";
 import { useAddProfile } from "~/routes/account";
 import { useAuthSignout } from "~/routes/plugin@auth";
 import { MAX_LENGTH } from "~/utils/validate";
 
-import { ERRORS, FIELDS } from "./handlers";
-
-type Profile = {
-	fields_of_study: string[];
-	full_name: string;
-	school: string;
-};
-
-type Data = {
-	userId: string;
-	profile: Profile;
-};
+import { FIELDS } from "~/config/db";
+import { ERRORS } from "./handlers";
 
 type Props = {
-	data: Data;
+	data: {
+		profile: ProfileData;
+		session: Session;
+	};
+};
+
+const isEmptyProfile = (profile: ProfileData) => {
+	return Object.values(FIELDS).some((field) => {
+		// @ts-ignore - TODO: Figure out type error. Keys of FIELDS guaranteed to be in ProfileData (it is derived from ProfileData)
+		return !profile[field];
+	});
 };
 
 export default component$<Props>((props) => {
-	const { data } = props;
-	const { userId, profile } = data;
+	const { profile, session } = props.data;
 	const callbackUrl = "/account/";
 
 	const addProfile = useAddProfile();
 	const signOut = useAuthSignout();
 
-	const visibleProfileInfo = addProfile.value?.profile || profile;
+	const visibleProfileInfo = (addProfile.value || profile) as ProfileData;
 	const errors = addProfile.value?.errors || [];
 	const hasErrors = errors.length > 0;
 
@@ -63,18 +64,28 @@ export default component$<Props>((props) => {
 				class="absolute right-0 top-0"
 			/>
 
-			{visibleProfileInfo && !hasErrors ? (
-				<div>
+			{!isEmptyProfile(profile) && !hasErrors ? (
+				<>
 					<Heading level="h1">
 						Hello <span>{visibleProfileInfo.full_name}</span>
 					</Heading>
 					<div class="flex gap-x-2 text-gray-500 dark:text-gray-300">
-						{visibleProfileInfo.fields_of_study?.length > 0 &&
-							visibleProfileInfo.fields_of_study.map((field: string) => (
-								<div key={field}>{field}</div>
-							))}
+						{visibleProfileInfo.fields_of_study.map((field: string) => (
+							<div key={field}>{field}</div>
+						))}
+						{visibleProfileInfo.schools.map((field: string) => (
+							<div key={field}>{field}</div>
+						))}
 					</div>
-				</div>
+					<Image
+						src={session?.user?.image}
+						layout="constrained"
+						alt={session?.user?.name}
+						width={200}
+						height={200}
+						class="rounded-full"
+					/>
+				</>
 			) : (
 				<div class="m-auto max-w-xl space-y-5">
 					<AnimateOnScroll>
@@ -90,7 +101,7 @@ export default component$<Props>((props) => {
 						<Heading level="h2">Let's get some information.</Heading>
 					</AnimateOnScroll>
 					<Form class="space-y-5" action={addProfile}>
-						<input type="hidden" value={userId} name={FIELDS.ID} />
+						<input type="hidden" value={profile.userId} name={FIELDS.ID} />
 
 						<AnimateOnScroll delay={increment()}>
 							<Input
@@ -108,17 +119,12 @@ export default component$<Props>((props) => {
 							/>
 						</AnimateOnScroll>
 						<AnimateOnScroll delay={increment()}>
-							<Input
-								attributes={{
-									name: FIELDS.SCHOOL,
-									placeholder: "Littleroot University",
-									required: true,
-									type: "text",
-									minLength: 1,
-									maxLength: MAX_LENGTH.STRING
-								}}
+							<InputTags
 								icon={faSchool}
 								label="Where did you go to school?"
+								maxItems={4}
+								placeholder="Littleroot University"
+								name={FIELDS.SCHOOLS}
 							/>
 						</AnimateOnScroll>
 						<AnimateOnScroll delay={increment()}>
