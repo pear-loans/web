@@ -7,8 +7,10 @@ interface Props {
 	class?: string;
 	color?: 0 | 1 | 2 | 3 | null;
 	icon?: IconDefinition;
+	iconClass?: string;
 	iconPosition?: "left" | "right";
 	label?: string;
+	removeDefaultClasses?: boolean;
 }
 
 /**
@@ -19,8 +21,10 @@ interface Props {
  * @param {Props['class']} [props.class=undefined] CSS class name, if any
  * @param {Props['color']} [props.color=1] Color to use, if any. If 0 is provided, it is assumed you will provide a background color
  * @param {Props['icon']} [props.icon=undefined] Icon to be used on button
+ * @param {Props['iconClass']} [props.iconClass=undefined] CSS class name for icon, if any
  * @param {Props['iconPosition']} [props.iconPosition="left"] Icon position, if any. Defaults to "left". If "right" is provided, the icon will be placed after the text
  * @param {Props['label']} [props.label="ReplaceMe"] Button Text
+ * @param {Props['removeDefaultClasses']} [props.removeDefaultClasses=false] Whether to use default classes or not
  *
  * @returns {Component<Props>}
  */
@@ -30,16 +34,21 @@ export default component$<Props>(
 		class: className = undefined,
 		color = 1,
 		icon = undefined,
+		iconClass = undefined,
 		iconPosition = "left",
-		label = "ReplaceMe"
+		label = "ReplaceMe",
+		removeDefaultClasses = false
 	}) => {
 		if (attributes && attributes.type === undefined) attributes.type = "button";
+		const iconClasses = iconClass || "w-5 h-5";
+
 		return (
 			// rome-ignore lint/a11y/useButtonType: Included in attributes
 			<button
 				{...attributes}
 				class={[
-					"flex items-center justify-center gap-x-2 px-5 py-3 rounded-full font-semibold",
+					!removeDefaultClasses &&
+						"flex items-center justify-center gap-x-2 px-5 py-3 rounded-full font-semibold",
 					{
 						"bg-gray-200 dark:bg-gray-800": color === 0,
 						"bg-green-200 dark:bg-green-800": color === 1,
@@ -51,11 +60,11 @@ export default component$<Props>(
 				tabIndex={0}
 			>
 				{icon !== undefined && iconPosition === "left" && (
-					<Fa icon={icon} class="h-5 w-5" opacity={[1, 0.5]} />
+					<Fa icon={icon} class={iconClasses} opacity={[1, 0.5]} />
 				)}
-				<span>{label}</span>
+				{label !== "" && <span>{label}</span>}
 				{icon !== undefined && iconPosition === "right" && (
-					<Fa icon={icon} opacity={[1, 0.5]} class="ml-2 h-5 w-5" />
+					<Fa icon={icon} class={[iconClasses, "ml-2"].join(" ")} opacity={[1, 0.5]} />
 				)}
 			</button>
 		);

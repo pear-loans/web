@@ -1,7 +1,7 @@
 import type { User } from "@auth/core/types";
 
 export const FIELDS = {
-	ID: "user_id",
+	ID: "userId",
 	FULL_NAME: "full_name",
 	SCHOOLS: "schools",
 	FIELDS_OF_STUDY: "fields_of_study"
@@ -17,5 +17,5 @@ export type ProfileData = {
 export type Session = {
 	user?: User;
 	id?: string;
-	expires?: string;
+	expires: string;
 } | null;

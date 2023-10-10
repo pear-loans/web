@@ -4,6 +4,7 @@
 /.cache
 /.mf
 /.rollup.cache
+/.wrangler
 /dist
 /lib
 /lib-types

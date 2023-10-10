@@ -4,6 +4,7 @@ import { getDb } from "~/tmp/db";
 import type { RequestEventAction, RequestEventLoader } from "@builder.io/qwik-city";
 import type { Session } from "~/config/db";
 import { FIELDS } from "~/config/db";
+import { isValidSession } from "~/utils/is-valid-session";
 import { parse } from "~/utils/json";
 import { EMPTY, INVALID_STRING } from "~/utils/validate";
 
@@ -14,6 +15,7 @@ export const ERRORS = {
 };
 
 export const routeActionAddProfile = async (data: any, requestEvent: RequestEventAction) => {
+	console.info("LOG:", "routeActionAddProfile");
 	if (EMPTY(data[FIELDS.FULL_NAME], data[FIELDS.SCHOOLS], data[FIELDS.FIELDS_OF_STUDY]))
 		return { errors: [ERRORS.MISSING_INPUT] };
 
@@ -53,15 +55,18 @@ export const routeActionAddProfile = async (data: any, requestEvent: RequestEven
 };
 
 export const routeLoaderProfile = async (requestEvent: RequestEventLoader) => {
-	const session = (await requestEvent.resolveValue(useAuthSession)) as Session;
-	if (!session || !session.user?.id) return;
+	if (requestEvent.method !== "GET" || requestEvent.pathname !== "/account/") return;
+	console.info("LOG:", "routeLoaderProfile", requestEvent.pathname);
 
-	const base64id = btoa(session.user.id);
+	const session = (await requestEvent.resolveValue(useAuthSession)) as Session;
+	if (!isValidSession(session)) return;
+
+	const base64id = btoa(session?.user?.id || "");
 
 	try {
 		const db = await getDb(requestEvent.platform);
 		const profile = await db
-			.prepare("SELECT * FROM profiles WHERE user_id = ?")
+			.prepare(`SELECT * FROM profiles WHERE ${FIELDS.ID} = ?`)
 			.bind(base64id)
 			.first();
 

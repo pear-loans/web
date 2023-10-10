@@ -15,10 +15,10 @@ DROP TABLE IF EXISTS 'profiles';
 CREATE TABLE IF NOT EXISTS 'profiles' (
 	'profile_data' TEXT,
 	'full_name' TEXT,
-	'user_id' TEXT NOT NULL DEFAULT NULL,
+	'userId' TEXT NOT NULL DEFAULT NULL,
 	'schools' TEXT,
 	'fields_of_study' TEXT,
-	PRIMARY KEY (user_id)
+	PRIMARY KEY (userId)
 );
 
 -------- Required Auth.js tables
