@@ -23,10 +23,7 @@ export default component$(() => {
 				<Head />
 				<ServiceWorkerRegister />
 			</head>
-			<body
-				lang="en"
-				class="[scrollbar-gutter:stable] min-w-[320px] text-base dark:bg-black dark:text-white"
-			>
+			<body lang="en" class="min-w-[320px] text-base dark:bg-black dark:text-white">
 				<RouterOutlet />
 			</body>
 		</QwikCityProvider>
