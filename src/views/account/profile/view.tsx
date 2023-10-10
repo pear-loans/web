@@ -3,7 +3,7 @@ import { Form } from "@builder.io/qwik-city";
 import { Image } from "@unpic/qwik";
 
 import { faCircleExclamation, faPersonToDoor } from "@fortawesome/pro-duotone-svg-icons";
-import { faBook, faSchool, faSignature } from "@fortawesome/pro-regular-svg-icons";
+import { faBook, faBrush, faGear, faSchool, faSignature } from "@fortawesome/pro-regular-svg-icons";
 
 import Fa from "~/components/Fa";
 import AnimateOnScroll from "~/components/container/AnimateOnScroll";
@@ -65,27 +65,63 @@ export default component$<Props>((props) => {
 			/>
 
 			{!isEmptyProfile(profile) && !hasErrors ? (
-				<>
-					<Heading level="h1">
-						Hello <span>{visibleProfileInfo.full_name}</span>
-					</Heading>
-					<div class="flex gap-x-2 text-gray-500 dark:text-gray-300">
-						{visibleProfileInfo.fields_of_study.map((field: string) => (
-							<div key={field}>{field}</div>
-						))}
-						{visibleProfileInfo.schools.map((field: string) => (
-							<div key={field}>{field}</div>
-						))}
+				// User profile 'card'
+				<div class="mx-auto max-w-3xl flex rounded-xl bg-gray-100 px-8 py-7">
+					<div class="text-green-400">
+						<Image
+							src={session?.user?.image + "fff"}
+							layout="constrained"
+							alt={session?.user?.name}
+							width={200}
+							height={200}
+							class="h-max rounded-full"
+						/>
+						{/* Color circle with label saying "pick a color for profile card" */}
+						<div class="flex gap-x-2">
+							<div class="h-11 w-11 flex items-center justify-center rounded-full bg-white">
+								<Fa icon={faBrush} class="h-6 w-6 rotate-45" opacity={1} />
+							</div>
+							<div class="h-11 w-11 flex items-center justify-center rounded-full bg-white">
+								<Fa icon={faGear} class="h-6 w-6" opacity={1} />
+							</div>
+						</div>
 					</div>
-					<Image
-						src={session?.user?.image}
-						layout="constrained"
-						alt={session?.user?.name}
-						width={200}
-						height={200}
-						class="rounded-full"
-					/>
-				</>
+					<figure class="h-full flex grow flex-col gap-x-2 gap-y-1">
+						<div class="w-full flex items-center justify-between font-extrabold">
+							<Heading level="h1" class="text-black">
+								{visibleProfileInfo.full_name}
+							</Heading>
+							<Heading level="h2" class="flex items-center text-green-900">
+								$<span class="inline-block h-9 w-25 animate-pulse rounded-full bg-gray-400"></span>
+							</Heading>
+						</div>
+						<figcaption class="flex items-center gap-x-2 font-bold text-gray-700 dark:text-gray-300">
+							<Fa icon={faSchool} />
+							{visibleProfileInfo.schools.map((field: string, index) => (
+								<>
+									{field}
+									{index === visibleProfileInfo.schools.length - 1 ? "" : ", "}
+								</>
+							))}
+						</figcaption>
+						<figcaption class="flex items-center gap-x-2 font-bold text-gray-500 dark:text-gray-500">
+							<Fa icon={faBook} />
+							{visibleProfileInfo.fields_of_study.map((field: string, index) => (
+								<>
+									{field}
+									{index === visibleProfileInfo.fields_of_study.length - 1 ? "" : ", "}
+								</>
+							))}
+						</figcaption>
+						<div class="w-full py-20 space-y-3">
+							{/* Perhaps, show "add content" if empty or "edit content" if not. Also, show full content */}
+							<div class="text-center text-gray-400">
+								Content missing! Why not author a profile?
+							</div>
+							<Button label="Add Content" class="w-full" />
+						</div>
+					</figure>
+				</div>
 			) : (
 				<div class="m-auto max-w-xl space-y-5">
 					<AnimateOnScroll>
