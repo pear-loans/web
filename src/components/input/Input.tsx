@@ -8,6 +8,7 @@ interface Props {
 	class?: ClassList;
 	icon?: IconDefinition;
 	label?: string;
+	removeDefaultClasses?: boolean;
 }
 
 /**
@@ -18,9 +19,16 @@ interface Props {
  * @param {Props['class']} [class=undefined] Additional class names to apply to the input element.
  * @param {Props['icon']} [icon=undefined] Icon to show in the input, if any.
  * @param {Props['label']} [label=undefined] Label to show on the input, if any.
+ * @param {Props['removeDefaultClasses']} [removeDefaultClasses=false] Whether to use default classes or not
  */
 export default component$<Props>(
-	({ attributes, class: className = undefined, icon = undefined, label = undefined }) => {
+	({
+		attributes,
+		class: className = undefined,
+		icon = undefined,
+		label = undefined,
+		removeDefaultClasses = false
+	}) => {
 		return (
 			<div class="relative text-gray-700 dark:text-gray-300">
 				<label class="flex flex-col">
@@ -31,7 +39,8 @@ export default component$<Props>(
 					<input
 						{...attributes}
 						class={[
-							"p-3 w-full rounded-full font-semibold bg-gray-200 dark:bg-gray-800 text-black dark:text-white placeholder:opacity-50",
+							!removeDefaultClasses &&
+								"p-3 w-full rounded-full font-semibold bg-gray-200 dark:bg-gray-800 text-black dark:text-white placeholder:opacity-50",
 							className,
 							icon && "pl-12"
 						]}
