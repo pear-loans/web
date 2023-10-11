@@ -38,17 +38,6 @@ export default component$<Props>(
 
 		const borderClasses = "border border-black/10 dark:border-white/10 rounded-lg";
 
-		const endInput = $((_, currentTarget) => {
-			currentTarget.addEventListener(
-				"transitionend",
-				() => {
-					editMode.value = false;
-				},
-				{ once: true }
-			);
-			currentTarget.style.width = 0;
-		});
-
 		const onClick = $(
 			(
 				e: QwikMouseEvent<HTMLInputElement | HTMLButtonElement | HTMLDivElement>,
@@ -58,7 +47,6 @@ export default component$<Props>(
 				if (currentTarget === $input.value) return;
 				editMode.value = !editMode.value;
 				if (editMode.value) $input.value?.focus();
-				else endInput(undefined, $input.value);
 			}
 		);
 
@@ -77,27 +65,32 @@ export default component$<Props>(
 					]}
 					onClick$={onClick}
 				>
-					<span class="absolute h-0 overflow-hidden whitespace-pre" ref={$trackWidth}>
+					<div
+						aria-hidden="true"
+						class="absolute h-0 overflow-hidden tracking-inherit"
+						ref={$trackWidth}
+					>
 						{currentInput.value}
-					</span>
+					</div>
 					<Input
 						attributes={{
-							onInput$: $(() => {
-								currentInput.value = $input.value?.value || "";
-								if (!$input.value) return;
-								$input.value.style.width = `${$trackWidth.value?.offsetWidth + 45}px`;
+							onInput$: $((e, currentTarget) => {
+								console.log(currentTarget, e.target.value);
+								currentInput.value = currentTarget.value || "";
+								setTimeout(() => {
+									currentTarget.style.width = `${$trackWidth.value?.offsetWidth + 1}px`;
+								}, 1);
 							}),
-							onBlur$: endInput,
 							ref: $input,
 							style: {
-								width: editMode.value ? `${$trackWidth.value?.offsetWidth + 45}px` : undefined
+								width: editMode.value ? `${$trackWidth.value?.offsetWidth + 1}px` : undefined
 							},
 							tabIndex: editMode.value ? 0 : -1,
 							value: `${label}`
 						}}
 						class={[
-							"bg-transparent tracking-inherit transition-width overflow-hidden",
-							editMode.value ? "w-full min-w-44" : "w-0"
+							"bg-transparent tracking-inherit overflow-hidden",
+							editMode.value ? "w-full" : "w-0"
 						]}
 						removeDefaultClasses
 					/>
