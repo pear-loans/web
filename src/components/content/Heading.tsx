@@ -24,7 +24,7 @@ export default component$<Props>((props) => {
 			h6: "text-base"
 		}[Heading] || "";
 	return (
-		<Heading class={[classesForLevel, extras]}>
+		<Heading class={["tracking-tighter leading-tight", classesForLevel, extras]}>
 			<Slot />
 		</Heading>
 	);

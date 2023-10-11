@@ -1,7 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import { Image } from "@unpic/qwik";
 
-import { faBook, faBrush, faGear, faSchool } from "@fortawesome/pro-regular-svg-icons";
+import { faBook, faSchool } from "@fortawesome/pro-duotone-svg-icons";
+import { faBrush, faGear } from "@fortawesome/pro-regular-svg-icons";
 
 import Fa from "~/components/Fa";
 import Heading from "~/components/content/Heading";
@@ -38,7 +39,7 @@ export default component$<Props>((props) => {
 						class="h-max rounded-full"
 					/>
 					{/* Color circle with label saying "pick a color for profile card" */}
-					<div class="flex gap-x-2 text-green-600 dark:text-green-900">
+					<div class="flex gap-x-2 text-gray-800 dark:text-gray-400">
 						<Button
 							attributes={{ title: "Pick a color for your profile" }}
 							class="rounded-full bg-white p-3 dark:bg-black"
@@ -60,7 +61,7 @@ export default component$<Props>((props) => {
 					</div>
 				</div>
 				<div class="w-full flex flex-col gap-y-5">
-					<hgroup class="flex flex-col gap-x-2 gap-y-1">
+					<hgroup class="flex flex-col gap-x-2 leading-tight tracking-tighter">
 						<div class="flex items-center justify-between font-extrabold">
 							<Heading level="h1" class="text-black dark:text-white">
 								{visibleProfileInfo.full_name}
@@ -73,7 +74,7 @@ export default component$<Props>((props) => {
 								<span class="inline-block h-9 w-25 animate-pulse rounded-full bg-gray-400 dark:bg-gray-600"></span>
 							</Heading>
 						</div>
-						<div class="flex items-center gap-x-2 text-2xl font-bold text-gray-700 dark:text-gray-300">
+						<div class="flex items-center gap-x-2 text-2xl font-bold text-gray-700 dark:text-gray-200">
 							<Fa icon={faSchool} class="h-6 w-6" />
 							{visibleProfileInfo.schools.map((field: string, index) => (
 								<>
@@ -82,8 +83,8 @@ export default component$<Props>((props) => {
 								</>
 							))}
 						</div>
-						<div class="flex items-center gap-x-2 font-bold text-gray-500 dark:text-gray-500">
-							<Fa icon={faBook} />
+						<div class="mt-1 flex items-center gap-x-2 font-bold text-gray-500 dark:text-gray-300">
+							<Fa icon={faBook} class="h-6 w-6" />
 							{visibleProfileInfo.fields_of_study.map((field: string, index) => (
 								<>
 									{field}
