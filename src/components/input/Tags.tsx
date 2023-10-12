@@ -1,11 +1,5 @@
-import {
-	$,
-	component$,
-	useSignal,
-	useStore,
-	type QwikFocusEvent,
-	type QwikKeyboardEvent
-} from "@builder.io/qwik";
+import type { ClassList, QwikKeyboardEvent } from "@builder.io/qwik";
+import { $, component$, useSignal, useStore, type QwikFocusEvent } from "@builder.io/qwik";
 import { faPlus, faXmark, type IconDefinition } from "@fortawesome/pro-regular-svg-icons";
 
 import { INVALID_STRING, MAX_LENGTH, REGEX } from "~/utils/validate";
@@ -14,7 +8,10 @@ import Button from "./Button";
 import Input from "./Input";
 
 interface Props {
+	class?: ClassList;
 	icon?: IconDefinition;
+	isSmall?: boolean;
+	items?: string[];
 	label?: string;
 	maxItems?: number;
 	name?: string;
@@ -25,7 +22,10 @@ interface Props {
  * ### "Tags" input component. Lets user add a list of strings for submission.
  *
  * @param {Props} props
+ * @param {Props['class']} [class=undefined] Additional class names to apply to the input element.
  * @param {Props['icon']} [icon=undefined] Icon to show in the input, if any.
+ * @param {Props['isSmall']} [isSmall=false] Whether to use the small input variant or not.
+ * @param {Props['items']} [items=[]] List of items to start the input with, if any.
  * @param {Props['label']} [label="ReplaceMe"] Label to show on the tag input, if any.
  * @param {Props['maxItems']} [maxItems=10] Maximum number of items to allow in the list.
  * @param {Props['name']} [name="replace-me[]"] Name of the input field to use for submission.
@@ -35,7 +35,10 @@ interface Props {
  */
 export default component$<Props>(
 	({
+		class: className = undefined,
 		icon = undefined,
+		isSmall = false,
+		items: initialItems = [],
 		label = "ReplaceMe",
 		maxItems = 10,
 		name = "replace-me[]",
@@ -45,7 +48,7 @@ export default component$<Props>(
 		const $userAddButton = useSignal<HTMLButtonElement>();
 		const $userAddedItemsContainer = useSignal<HTMLDivElement>();
 
-		const items = useStore<string[]>([]);
+		const items = useStore<string[]>(initialItems);
 
 		const addItem = $(() => {
 			if (items.length > maxItems) return;
@@ -88,7 +91,9 @@ export default component$<Props>(
 		});
 
 		return (
-			<fieldset class="relative flex flex-row flex-wrap gap-3">
+			<fieldset
+				class={["relative flex flex-row flex-wrap", isSmall ? "gap-1" : "gap-3", className]}
+			>
 				{label && (
 					<legend
 						class="block cursor-default pb-1 text-sm text-gray-700 dark:text-gray-300"
@@ -112,6 +117,7 @@ export default component$<Props>(
 							label={item}
 							icon={faXmark}
 							iconPosition="right"
+							isSmall={isSmall}
 						/>
 					</div>
 				))}
@@ -129,8 +135,9 @@ export default component$<Props>(
 								required: items.length === 0,
 								pattern: REGEX.GENERIC_STRING.toString()
 							}}
-							class={icon ? "w-52" : "w-44"}
+							class={icon ? (isSmall ? "w-36" : "w-52") : isSmall ? "w-32" : "w-44"}
 							icon={icon}
+							isSmall={isSmall}
 						/>
 
 						<Button
@@ -144,6 +151,7 @@ export default component$<Props>(
 									focusTagInput();
 								})
 							}}
+							isSmall={isSmall}
 						/>
 					</>
 				)}

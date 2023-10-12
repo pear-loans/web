@@ -12,6 +12,8 @@ import Button from "~/components/input/Button";
 import type { ProfileData, Session } from "~/config/db";
 import { useAddProfile } from "~/routes/account";
 
+import Tags from "~/components/input/Tags";
+
 type Props = {
 	data: {
 		profile: ProfileData;
@@ -80,7 +82,7 @@ export default component$<Props>((props) => {
 				</div>
 				<div class="w-full flex flex-col gap-y-5">
 					<hgroup class="flex flex-col gap-x-2 leading-tight tracking-tighter space-y-1">
-						<div class="flex items-center justify-between font-extrabold">
+						<div class="flex items-center justify-between gap-x-5 font-extrabold">
 							<Heading level="h1" class="text-black dark:text-white">
 								<Authorable
 									label={visibleProfileInfo.full_name}
@@ -97,26 +99,47 @@ export default component$<Props>((props) => {
 							</Heading>
 						</div>
 						<div class="flex items-center gap-x-2 text-2xl font-bold text-gray-700 dark:text-gray-200">
-							<Fa icon={faSchool} class="h-6 w-6" />
+							<Fa icon={faSchool} class="h-6 w-6 shrink-0" />
 							<Authorable
-								label={visibleProfileInfo.schools.map((field: string, index) => (
+								editor={
+									<Tags label="" items={visibleProfileInfo.schools} class="text-sm" isSmall />
+								}
+								label={
 									<>
-										{field}
-										{index === visibleProfileInfo.schools.length - 1 ? "" : ", "}
+										{visibleProfileInfo.schools.map((field: string, index) => (
+											<>
+												{field}
+												{index === visibleProfileInfo.schools.length - 1 ? "" : ", "}
+											</>
+										))}
 									</>
-								))}
+								}
 								isPreview={isPreviewMode.value}
 							/>
 						</div>
 						<div class="flex items-center gap-x-2 font-bold text-gray-500 dark:text-gray-300">
-							<Fa icon={faBook} class="h-6 w-6" />
+							<Fa icon={faBook} class="h-6 w-6 shrink-0" />
 							<Authorable
-								label={visibleProfileInfo.fields_of_study.map((field: string, index) => (
+								editor={
+									<Tags
+										label=""
+										items={visibleProfileInfo.fields_of_study}
+										class="text-sm"
+										maxItems={4}
+										placeholder="Major, minor, etc."
+										isSmall
+									/>
+								}
+								label={
 									<>
-										{field}
-										{index === visibleProfileInfo.fields_of_study.length - 1 ? "" : ", "}
+										{visibleProfileInfo.fields_of_study.map((field: string, index) => (
+											<>
+												{field}
+												{index === visibleProfileInfo.fields_of_study.length - 1 ? "" : ", "}
+											</>
+										))}
 									</>
-								))}
+								}
 								isPreview={isPreviewMode.value}
 							/>
 						</div>

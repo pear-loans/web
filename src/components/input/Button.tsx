@@ -10,6 +10,7 @@ interface Props {
 	icon?: IconDefinition;
 	iconClass?: string;
 	iconPosition?: "left" | "right";
+	isSmall?: boolean;
 	label?: string;
 	removeDefaultClasses?: boolean;
 }
@@ -24,6 +25,7 @@ interface Props {
  * @param {Props['icon']} [props.icon=undefined] Icon to be used on button
  * @param {Props['iconClass']} [props.iconClass=undefined] CSS class name for icon, if any
  * @param {Props['iconPosition']} [props.iconPosition="left"] Icon position, if any. Defaults to "left". If "right" is provided, the icon will be placed after the text
+ * @param {Props['isSmall']} [props.isSmall=false] Whether to use the small button variant or not
  * @param {Props['label']} [props.label="ReplaceMe"] Button Text
  * @param {Props['removeDefaultClasses']} [props.removeDefaultClasses=false] Whether to use default classes or not
  *
@@ -37,19 +39,26 @@ export default component$<Props>(
 		icon = undefined,
 		iconClass = undefined,
 		iconPosition = "left",
+		isSmall = false,
 		label = "ReplaceMe",
 		removeDefaultClasses = false
 	}) => {
 		if (attributes && attributes.type === undefined) attributes.type = "button";
 		const iconClasses = iconClass || "w-5 h-5";
 
+		const classes = [];
+		if (!removeDefaultClasses) {
+			classes.push("flex items-center justify-center rounded-full font-semibold");
+			if (isSmall) classes.push("gap-x-1 px-3 py-1");
+			else classes.push("gap-x-2 px-5 py-3 ");
+		}
+
 		return (
 			// rome-ignore lint/a11y/useButtonType: Included in attributes
 			<button
 				{...attributes}
 				class={[
-					!removeDefaultClasses &&
-						"flex items-center justify-center gap-x-2 px-5 py-3 rounded-full font-semibold",
+					classes,
 					{
 						"bg-gray-200 dark:bg-gray-800": color === 0,
 						"bg-green-200 dark:bg-green-800": color === 1,
